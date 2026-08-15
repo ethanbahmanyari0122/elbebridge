@@ -11,13 +11,13 @@
     "home": "Home"
   },
   "site": {
-    "wordmark": "elbebridge",
+    "wordmark": "Elbebridge",
     "tagline": "Compliance. Clarity. Confidence.",
     "eyebrow": "German market compliance",
-    "title": "elbebridge — German compliance checks for brands selling into Germany",
+    "title": "Elbebridge — German compliance checks for brands selling into Germany",
     "metaDescription": "A fixed-price check of the three German obligations most foreign online brands are missing: accessibility (BFSG), an EU responsible person (GPSR), and packaging registration (LUCID).",
     "email": "hallo@elbebridge.com",
-    "footerNote": "© 2026 elbebridge, Hamburg. We don't track you: no cookies, no analytics, no third-party scripts.",
+    "footerNote": "© 2026 Elbebridge, Hamburg. We don't track you: no cookies, no analytics, no third-party scripts.",
     "social": []
   },
   "nav": {
@@ -57,7 +57,6 @@
   },
   "footer": {
     "blurb": "Independent compliance checks for foreign brands entering Germany. Clear, fast, and honest about what we can and cannot tell you.",
-    "foundersLine": "Founded by Ornella Buxbaum and Ethan Bahmanyari.",
     "location": "Hamburg, Germany",
     "columns": [
       {
@@ -123,7 +122,7 @@
       "disclaimer": "Technical and administrative services, not legal advice.",
       "privacyNote": "We don't track you. No cookies, no analytics."
     },
-    "copyright": "© 2026 elbebridge GbR · Hamburg. All rights reserved."
+    "copyright": "© 2026 Elbebridge GbR · Hamburg. All rights reserved."
   },
   "home": {
     "headline": "Selling into Germany? Three obligations most foreign brands are ==missing==.",
@@ -205,23 +204,13 @@
       "note": "No form, no tracking, no third party in between — your message goes straight to our inbox."
     },
     "peopleHeading": "About us",
-    "people": [
-      {
-        "name": "Ethan Bahmanyari",
-        "text": "builds the checking and writes the findings reports."
-      },
-      {
-        "name": "Ornella Buxbaum",
-        "text": "handles the register searches, the provider relationships and everything that has to be argued in German."
-      }
-    ],
-    "peopleNote": "We're Ethan and Ornella, and we started elbebridge to make selling in Germany feel less complicated. We help international businesses understand what's required, spot what's missing, and get the right pieces in place without getting lost in German bureaucracy.",
-    "disclaimer": "elbebridge is not a law or a tax firm and does not provide legal advice. Information and findings provided through this website are for general informational purposes and do not replace advice from a qualified legal professional.",
+    "peopleNote": "We started Elbebridge to make selling in Germany feel less complicated. We help international businesses understand what's required, spot what's missing, and get the right pieces in place without getting lost in German bureaucracy.",
+    "disclaimer": "Elbebridge is not a law or a tax firm and does not provide legal advice. Information and findings provided through this website are for general informational purposes and do not replace advice from a qualified legal professional.",
     "formDisclaimer": "Our check provides general information based on the website you give us. It does not constitute legal advice or create a lawyer-client relationship.",
     "comparison": {
       "heading": "Why not just ask an AI?",
       "intro": "You can, and it will tell you something. Here is what it will not do.",
-      "colUs": "elbebridge",
+      "colUs": "Elbebridge",
       "colAi": "An AI or a free scanner",
       "rows": [
         {
@@ -258,7 +247,7 @@
       "slug": "impressum",
       "lang": "de",
       "title": "Impressum",
-      "metaDescription": "Anbieterkennzeichnung gemäß § 5 DDG für elbebridge, Hamburg.",
+      "metaDescription": "Anbieterkennzeichnung gemäß § 5 DDG für Elbebridge, Hamburg.",
       "intro": "Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz).",
       "sections": [
         {
@@ -267,7 +256,7 @@
             {
               "type": "address",
               "lines": [
-                "elbebridge GbR",
+                "Elbebridge GbR",
                 "Stormarner Straße 41",
                 "22049 Hamburg",
                 "Deutschland"
@@ -344,7 +333,7 @@
       "key": "privacy",
       "slug": "privacy",
       "title": "Privacy policy",
-      "metaDescription": "What personal data elbebridge collects, why, on what legal basis, and what rights you have under the GDPR.",
+      "metaDescription": "What personal data Elbebridge collects, why, on what legal basis, and what rights you have under the GDPR.",
       "intro": "How we handle personal data under the General Data Protection Regulation (GDPR). Last updated 15 August 2026.",
       "sections": [
         {
@@ -357,7 +346,7 @@
             {
               "type": "address",
               "lines": [
-                "elbebridge GbR",
+                "Elbebridge GbR",
                 "Stormarner Straße 41",
                 "22049 Hamburg, Germany",
                 "[hallo@elbebridge.com](mailto:hallo@elbebridge.com) · [+49 151 20277581](tel:+4915120277581)"

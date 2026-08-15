@@ -14,7 +14,6 @@ const f = copy.footer;
       <div class="footer-brand">
         <Wordmark href={localePath(locale, '/')} label={copy.site.wordmark} />
         <p set:html={inline(f.blurb)} />
-        <p class="founders" set:html={inline(f.foundersLine)} />
         <p class="location"><Icon name="pin" size={17} />{f.location}</p>
       </div>
 

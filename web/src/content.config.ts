@@ -138,8 +138,6 @@ const copy = defineCollection({
       }),
       peopleHeading: richText,
       peopleNote: richText,
-      /** Space for portraits; the layout holds even while they are absent. */
-      people: z.array(z.object({ name: z.string(), text: richText, photo: z.string().optional() })).min(1),
       disclaimer: richText,
       formDisclaimer: richText,
     }),
@@ -157,7 +155,6 @@ const copy = defineCollection({
      */
     footer: z.object({
       blurb: richText,
-      foundersLine: richText,
       location: z.string(),
       columns: z.array(z.object({
         heading: z.string(),

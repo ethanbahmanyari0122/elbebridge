@@ -87,7 +87,7 @@ body {
    can force the whole track wider than the viewport. This is the single most
    common cause of a WCAG 1.4.10 reflow failure, and axe cannot see it. */
 .hero-grid > *, .split > *, .cards > li, .steps > li, .checkpoints > li, .checkpoints a,
-.cp-text, .disclaimer > *, .people > li, .trust > li, .compare td, .compare th { min-width: 0; }
+.cp-text, .disclaimer > *, .trust > li, .compare td, .compare th { min-width: 0; }
 
 /* `overflow-wrap: break-word` breaks a word visually but still reports the
    whole word as the min-content width, so a grid track sized to min-content
@@ -324,13 +324,6 @@ section { scroll-margin-top: 2rem; }
 .contact-note { margin: .55rem 0 0; font-size: .92rem; color: var(--ink-muted); }
 
 /* ---- People + disclaimer -------------------------------------------------- */
-.people { list-style: none; margin: 0 0 1.25rem; padding: 0; display: grid; gap: 1rem; }
-.people li { max-width: var(--prose); padding-left: 1.5rem; position: relative; }
-.people li::before {
-  content: ""; position: absolute; left: 0; top: .75em;
-  width: .9rem; height: 2px; background: var(--line-strong);
-}
-.people .name { font-weight: 700; }
 .disclaimer {
   display: flex; gap: 1rem; align-items: flex-start;
   padding: 1.4rem; border: 1px solid var(--line); border-radius: var(--radius-lg);
@@ -370,10 +363,6 @@ section { scroll-margin-top: 2rem; }
 
 /* ---- About + portraits --------------------------------------------------- */
 .about { max-width: var(--prose); }
-.people > li { display: flex; gap: .85rem; align-items: flex-start; padding-left: 0; }
-.people > li::before { content: none; }
-.portrait { flex: none; width: 3rem; height: 3rem; border-radius: 999px; object-fit: cover; }
-.portrait-empty { background: var(--sand); border: 1px dashed var(--line-strong); }
 .contact-legal { margin: .6rem 0 0; font-size: .85rem; color: var(--ink-muted); }
 
 /* ---- Legal pages ---------------------------------------------------------- */
@@ -414,7 +403,6 @@ section { scroll-margin-top: 2rem; }
 .footer-grid > * { min-width: 0; }
 
 .footer-brand p { margin: 1rem 0 0; max-width: 22rem; font-size: .92rem; }
-.footer-brand .founders { font-size: .89rem; }
 .footer-brand .location { display: flex; align-items: center; gap: .4rem; }
 .footer-brand .location .icon { color: var(--accent-on-navy); flex: none; }
 

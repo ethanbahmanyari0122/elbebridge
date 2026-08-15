@@ -349,6 +349,21 @@ function serve() {
     ok('the AI comparison lives in content, not markup',
        Array.isArray(en.home.comparison.rows) && en.home.comparison.rows.length >= 4
        && !src.includes('Why not just ask an AI'));
+    // The brand is written Elbebridge in prose; lowercase survives only inside
+    // email addresses and domains.
+    for (const loc of ['en', 'de']) {
+      const raw = fs.readFileSync(path.join(__dirname, `src/content/copy/${loc}.json`), 'utf8');
+      const bad = raw.match(/(?<![\w@./-])elbebridge(?![\w.@-]*(?:\.com|\.de|@))/g);
+      ok(`${loc} — brand written "Elbebridge" outside addresses`, !bad, (bad || []).slice(0, 3).join(' '));
+    }
+    ok('founder names are not on the marketing pages',
+       !/Bahmanyari|Buxbaum/.test(JSON.stringify(en.home)) && !/Bahmanyari|Buxbaum/.test(JSON.stringify(en.footer)),
+       'home/footer');
+    // ...but § 5 DDG requires them in the Impressum, so they must stay there.
+    const impressumPage = en.legal.find((x) => x.key === 'impressum');
+    ok('both representatives still named in the Impressum',
+       /Bahmanyari/.test(JSON.stringify(impressumPage)) && /Buxbaum/.test(JSON.stringify(impressumPage)));
+
     ok('the price is credited against remediation',
        en.home.priceLines.some((l) => /credited in full/i.test(l)), JSON.stringify(en.home.priceLines));
     // Promising two days in one place and one in another is just a bug.

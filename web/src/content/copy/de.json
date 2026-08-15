@@ -11,13 +11,13 @@
     "home": "Start"
   },
   "site": {
-    "wordmark": "elbebridge",
+    "wordmark": "Elbebridge",
     "tagline": "Klarheit. Sicherheit. Vertrauen.",
     "eyebrow": "Deutsche Marktpflichten",
-    "title": "elbebridge — Prüfung der deutschen Pflichten für ausländische Online-Marken",
+    "title": "Elbebridge — Prüfung der deutschen Pflichten für ausländische Online-Marken",
     "metaDescription": "Festpreis-Prüfung der drei deutschen Pflichten, die ausländische Online-Marken meist übersehen: Barrierefreiheit (BFSG), verantwortliche Person in der EU (GPSR) und Verpackungsregistrierung (LUCID).",
     "email": "hallo@elbebridge.com",
-    "footerNote": "© 2026 elbebridge, Hamburg. Wir tracken Sie nicht: keine Cookies, keine Analyse, keine Skripte Dritter.",
+    "footerNote": "© 2026 Elbebridge, Hamburg. Wir tracken Sie nicht: keine Cookies, keine Analyse, keine Skripte Dritter.",
     "social": []
   },
   "nav": {
@@ -56,7 +56,6 @@
   },
   "footer": {
     "blurb": "Unabhängige Prüfungen für ausländische Marken, die nach Deutschland verkaufen. Klar, schnell und ehrlich darüber, was wir Ihnen sagen können und was nicht.",
-    "foundersLine": "Gegründet von Ornella Buxbaum und Ethan Bahmanyari.",
     "location": "Hamburg, Deutschland",
     "columns": [
       {
@@ -121,7 +120,7 @@
       "disclaimer": "Technische und administrative Dienstleistungen, keine Rechtsberatung.",
       "privacyNote": "Wir tracken Sie nicht. Keine Cookies, keine Analyse."
     },
-    "copyright": "© 2026 elbebridge GbR · Hamburg. Alle Rechte vorbehalten."
+    "copyright": "© 2026 Elbebridge GbR · Hamburg. Alle Rechte vorbehalten."
   },
   "home": {
     "headline": "Sie verkaufen nach Deutschland? Drei Pflichten, die ausländische Marken meist ==übersehen==.",
@@ -203,23 +202,13 @@
       "note": "Kein Formular, kein Tracking, kein Dritter dazwischen — Ihre Nachricht geht direkt in unser Postfach."
     },
     "peopleHeading": "Über uns",
-    "people": [
-      {
-        "name": "Ethan Bahmanyari",
-        "text": "entwickelt die Prüfwerkzeuge und schreibt die Prüfberichte."
-      },
-      {
-        "name": "Ornella Buxbaum",
-        "text": "übernimmt die Registerrecherchen, die Kontakte zu den Systembetreibern und alles, was auf Deutsch verhandelt werden muss."
-      }
-    ],
-    "peopleNote": "Wir sind Ethan und Ornella. Wir haben elbebridge gegründet, damit der Verkauf nach Deutschland weniger kompliziert wird. Wir helfen internationalen Unternehmen zu verstehen, was gefordert ist, zu erkennen, was fehlt, und das Richtige aufzusetzen — ohne sich in der deutschen Bürokratie zu verlieren.",
-    "disclaimer": "elbebridge ist keine Rechts- oder Steuerberatungsgesellschaft und erbringt keine Rechtsberatung. Informationen und Feststellungen auf dieser Website dienen der allgemeinen Information und ersetzen keine Beratung durch eine qualifizierte Anwältin oder einen qualifizierten Anwalt.",
+    "peopleNote": "Wir haben Elbebridge gegründet, damit der Verkauf nach Deutschland weniger kompliziert wird. Wir helfen internationalen Unternehmen zu verstehen, was gefordert ist, zu erkennen, was fehlt, und das Richtige aufzusetzen — ohne sich in der deutschen Bürokratie zu verlieren.",
+    "disclaimer": "Elbebridge ist keine Rechts- oder Steuerberatungsgesellschaft und erbringt keine Rechtsberatung. Informationen und Feststellungen auf dieser Website dienen der allgemeinen Information und ersetzen keine Beratung durch eine qualifizierte Anwältin oder einen qualifizierten Anwalt.",
     "formDisclaimer": "Unsere Prüfung liefert allgemeine Informationen auf Grundlage der von Ihnen genannten Website. Sie stellt keine Rechtsberatung dar und begründet kein Mandatsverhältnis.",
     "comparison": {
       "heading": "Warum nicht einfach eine KI fragen?",
       "intro": "Können Sie — und Sie bekommen eine Antwort. Das hier bekommen Sie nicht.",
-      "colUs": "elbebridge",
+      "colUs": "Elbebridge",
       "colAi": "Eine KI oder ein kostenloser Scanner",
       "rows": [
         {
@@ -255,7 +244,7 @@
       "key": "impressum",
       "slug": "impressum",
       "title": "Impressum",
-      "metaDescription": "Anbieterkennzeichnung gemäß § 5 DDG für elbebridge, Hamburg.",
+      "metaDescription": "Anbieterkennzeichnung gemäß § 5 DDG für Elbebridge, Hamburg.",
       "intro": "Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz).",
       "sections": [
         {
@@ -264,7 +253,7 @@
             {
               "type": "address",
               "lines": [
-                "elbebridge GbR",
+                "Elbebridge GbR",
                 "Stormarner Straße 41",
                 "22049 Hamburg",
                 "Deutschland"
@@ -341,7 +330,7 @@
       "key": "privacy",
       "slug": "datenschutz",
       "title": "Datenschutzerklärung",
-      "metaDescription": "Welche personenbezogenen Daten elbebridge verarbeitet, zu welchem Zweck, auf welcher Rechtsgrundlage und welche Rechte Sie nach der DSGVO haben.",
+      "metaDescription": "Welche personenbezogenen Daten Elbebridge verarbeitet, zu welchem Zweck, auf welcher Rechtsgrundlage und welche Rechte Sie nach der DSGVO haben.",
       "intro": "Wie wir personenbezogene Daten nach der Datenschutz-Grundverordnung (DSGVO) verarbeiten. Zuletzt aktualisiert am 15. August 2026.",
       "sections": [
         {
@@ -354,7 +343,7 @@
             {
               "type": "address",
               "lines": [
-                "elbebridge GbR",
+                "Elbebridge GbR",
                 "Stormarner Straße 41",
                 "22049 Hamburg",
                 "[hallo@elbebridge.com](mailto:hallo@elbebridge.com) · [+49 151 20277581](tel:+4915120277581)"

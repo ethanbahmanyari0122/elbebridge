@@ -138,16 +138,6 @@ const mailto = `mailto:${copy.site.email}`
       <div>
         <h2 class="section-title" id="who-we-are-h" set:html={inline(h.peopleHeading)} />
         <p class="about" set:html={inline(h.peopleNote)} />
-        <ul class="people">
-          {h.people.map((p) => (
-            <li>
-              {p.photo
-                ? <img class="portrait" src={p.photo} alt={`${p.name}, co-founder of elbebridge`} width="72" height="72" />
-                : <span class="portrait portrait-empty" aria-hidden="true"></span>}
-              <span><span class="name">{p.name}</span> — <span set:html={inline(p.text)} /></span>
-            </li>
-          ))}
-        </ul>
       </div>
 
       <div class="disclaimer">
