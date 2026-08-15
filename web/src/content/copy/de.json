@@ -133,6 +133,11 @@
       "Unverbindlich"
     ],
     "journeyEnd": "Bereit für den Verkauf in Deutschland",
+    "heroImage": {
+      "src": "/hero-germany-de.webp",
+      "width": 1240,
+      "height": 827
+    },
     "obligationsHeading": "Die drei Pflichten",
     "obligations": [
       {

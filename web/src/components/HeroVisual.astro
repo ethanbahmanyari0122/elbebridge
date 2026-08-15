@@ -5,36 +5,54 @@ import { localePath } from '../lib/site';
 interface Props { copy: Copy; locale: Locale }
 const { copy, locale } = Astro.props;
 const to = localePath(locale, '/#obligations');
+const art = copy.home.heroImage;
 ---
 {/*
-  The journey rather than a shop: a parcel crossing into Germany through three
-  checkpoints. Ornella's idea, and a better one — it explains the product in a
-  glance where the previous abstract mock explained nothing.
+  Two renderings of the same idea, one visible at a time.
 
-  Built in markup rather than shipped as an image so it stays sharp, translates
-  with the rest of the page, and weighs nothing. The three checkpoints are real
-  links to the section that explains them, which is what she asked for.
+  On a wide screen: Ornella's illustration — a parcel crossing into Germany
+  through the three checkpoints. It says more in a glance than markup can, and
+  it is decorative here because everything in it is stated as real text below.
+
+  On a phone, and anywhere the locale has no artwork of its own: the linked
+  list. It stays legible at 390px, translates with the rest of the page, and
+  each checkpoint is a real link to the section that explains it — which the
+  picture cannot be.
 */}
-<div class="journey">
-  <div class="journey-start" aria-hidden="true">
-    <span class="parcel"><Icon name="box" size={26} /></span>
-    <span class="track"></span>
+<div class="hero-visual">
+  {art && (
+    <img
+      class="hero-art"
+      src={art.src}
+      width={art.width}
+      height={art.height}
+      alt=""
+      fetchpriority="high"
+      decoding="async"
+    />
+  )}
+
+  <div class:list={['journey', art && 'journey-compact']}>
+    <div class="journey-start" aria-hidden="true">
+      <span class="parcel"><Icon name="box" size={26} /></span>
+      <span class="track"></span>
+    </div>
+
+    <ol class="checkpoints">
+      {copy.home.obligations.map((o, i) => (
+        <li>
+          <a href={to}>
+            <span class="cp-n">{String(i + 1).padStart(2, '0')}</span>
+            <span class="cp-icon"><Icon name={o.icon} size={19} /></span>
+            <span class="cp-text">
+              <span class="cp-code">{o.code}</span>
+              <span class="cp-label">{o.short}</span>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ol>
+
+    <p class="journey-end"><Icon name="check" size={18} />{copy.home.journeyEnd}</p>
   </div>
-
-  <ol class="checkpoints">
-    {copy.home.obligations.map((o, i) => (
-      <li>
-        <a href={to}>
-          <span class="cp-n">{String(i + 1).padStart(2, '0')}</span>
-          <span class="cp-icon"><Icon name={o.icon} size={19} /></span>
-          <span class="cp-text">
-            <span class="cp-code">{o.code}</span>
-            <span class="cp-label">{o.short}</span>
-          </span>
-        </a>
-      </li>
-    ))}
-  </ol>
-
-  <p class="journey-end"><Icon name="check" size={18} />{copy.home.journeyEnd}</p>
 </div>

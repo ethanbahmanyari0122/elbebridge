@@ -206,7 +206,28 @@ function serve() {
     await ctx.close();
   }
 
-  console.log('\n7. The comparison table stacks properly on a phone');
+  console.log('\n7. Hero artwork and the linked list never both show');
+  for (const [url, width, wantArt] of [['/', 1280, true], ['/', 390, false],
+                                       ['/de/', 1280, true], ['/de/', 390, false]]) {
+    const ctx = await b.newContext({ viewport: { width, height: 900 } });
+    const pg = await ctx.newPage();
+    await pg.goto(BASE + url, { waitUntil: 'networkidle' });
+    const r = await pg.evaluate(() => {
+      const art = document.querySelector('.hero-art');
+      const list = document.querySelector('.journey');
+      return {
+        art: art ? getComputedStyle(art).display !== 'none' : false,
+        list: list ? getComputedStyle(list).display !== 'none' : false,
+      };
+    });
+    ok(`${url} at ${width}px — exactly one hero rendering visible`,
+       r.art !== r.list, JSON.stringify(r));
+    ok(`${url} at ${width}px — ${wantArt ? 'artwork' : 'linked list'} is the one showing`,
+       r.art === wantArt, JSON.stringify(r));
+    await ctx.close();
+  }
+
+  console.log('\n8. The comparison table stacks properly on a phone');
   for (const url of ['/', '/de/']) {
     const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
     const pg = await ctx.newPage();
@@ -224,7 +245,7 @@ function serve() {
     await ctx.close();
   }
 
-  console.log('\n8. Nothing spills out of its column, 360–1440px, both languages');
+  console.log('\n9. Nothing spills out of its column, 360–1440px, both languages');
   {
     let spills = 0;
     for (const w of [1440, 1280, 1100, 900, 700, 480, 360]) {
@@ -253,7 +274,7 @@ function serve() {
     ok('no element overflows its column at any width', spills === 0, `${spills} combinations`);
   }
 
-  console.log('\n9. Palette contrast (scripts/contrast.cjs)');
+  console.log('\n10. Palette contrast (scripts/contrast.cjs)');
   {
     const { execFileSync } = require('child_process');
     let out = '';
@@ -265,7 +286,7 @@ function serve() {
        out.split('\n').filter((l) => l.startsWith('✗')).join(' | '));
   }
 
-  console.log('\n10. Cross-page links work from the legal pages too');
+  console.log('\n11. Cross-page links work from the legal pages too');
   for (const p of ['/impressum/', '/de/impressum/']) {
     const ctx = await b.newContext();
     const pg = await ctx.newPage();
@@ -283,7 +304,7 @@ function serve() {
     await ctx.close();
   }
 
-  console.log('\n11. Content is data, not markup');
+  console.log('\n12. Content is data, not markup');
   {
     const src = fs.readFileSync(path.join(__dirname, 'src/components/Home.astro'), 'utf8');
     const en = JSON.parse(fs.readFileSync(path.join(__dirname, 'src/content/copy/en.json'), 'utf8'));
@@ -294,6 +315,16 @@ function serve() {
     ok('hero checkpoints link to the obligations section',
        /journey/.test(fs.readFileSync(path.join(__dirname, 'src/components/HeroVisual.astro'), 'utf8'))
        && fs.readFileSync(path.join(__dirname, 'src/components/HeroVisual.astro'), 'utf8').includes('#obligations'));
+    // Both locales now ship artwork with their own labels baked in; a missing
+    // file would silently fall back to the list and nobody would notice.
+    for (const loc of ['en', 'de']) {
+      const c = JSON.parse(fs.readFileSync(path.join(__dirname, `src/content/copy/${loc}.json`), 'utf8'));
+      const img = c.home.heroImage;
+      ok(`${loc} — hero artwork declared and present on disk`,
+         Boolean(img) && fs.existsSync(path.join(__dirname, 'public', img.src.replace(/^\//, ''))),
+         JSON.stringify(img));
+    }
+
     ok('the AI comparison lives in content, not markup',
        Array.isArray(en.home.comparison.rows) && en.home.comparison.rows.length >= 4
        && !src.includes('Why not just ask an AI'));

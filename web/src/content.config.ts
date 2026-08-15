@@ -85,6 +85,17 @@ const copy = defineCollection({
       heroCta: z.string(),
       trust: z.array(z.string()).min(1),
       journeyEnd: richText,
+      /**
+       * Optional illustrated hero. Shown on wide screens only; the linked
+       * checkpoint list below is what renders on a phone, and what renders
+       * everywhere if no image is set. Labels are baked into the artwork, so a
+       * locale without its own version simply gets the live list.
+       */
+      heroImage: z.object({
+        src: z.string(),
+        width: z.number(),
+        height: z.number(),
+      }).optional(),
       obligationsHeading: richText,
       obligations: z.array(z.object({
         icon: iconName,

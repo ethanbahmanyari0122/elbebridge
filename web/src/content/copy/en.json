@@ -135,6 +135,11 @@
       "No commitment"
     ],
     "journeyEnd": "Ready to sell in Germany",
+    "heroImage": {
+      "src": "/hero-germany.webp",
+      "width": 1240,
+      "height": 826
+    },
     "obligationsHeading": "The three",
     "obligations": [
       {

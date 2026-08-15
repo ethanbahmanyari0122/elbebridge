@@ -201,6 +201,17 @@ section { scroll-margin-top: 2rem; }
 }
 .trust .icon { color: var(--ok); flex: none; }
 
+/* ---- Hero artwork ------------------------------------------------------- */
+.hero-art { display: none; width: 100%; height: auto; }
+/* Where the artwork shows, the linked list steps aside — but only above the
+   width at which the artwork's own labels stay readable. */
+@media (min-width: 62rem) {
+  .hero-art { display: block; }
+  /* Scoped to out-specify `.journey { display: grid }`, which is declared
+     later in this file and would otherwise win at equal specificity. */
+  .hero-visual .journey-compact { display: none; }
+}
+
 /* ---- Hero journey ------------------------------------------------------- */
 .journey { display: grid; gap: .75rem; justify-items: stretch; }
 .journey-start { display: flex; align-items: center; gap: .6rem; }
