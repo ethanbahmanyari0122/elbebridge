@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /checkoutDisallow: /cartDisallow: /policies/
-
-User-agent: Nutch
-Disallow: /
