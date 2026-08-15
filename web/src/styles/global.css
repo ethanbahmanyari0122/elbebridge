@@ -340,7 +340,13 @@ section { scroll-margin-top: 2rem; }
 .compare .col-ai { color: var(--ink-muted); }
 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 @media (max-width: 46rem) {
-  .compare, .compare tbody, .compare tr, .compare th, .compare td { display: block; width: auto; }
+  /* Each selector must match the specificity of the desktop rule it overrides.
+     `.compare th` (0,1,1) lost to `.compare tbody th` (0,1,2), so the row
+     header stayed 22% wide on a phone and hyphenated into "The pack-aging
+     regis-ter". */
+  .compare, .compare tbody, .compare tr,
+  .compare tbody th, .compare tbody td, .compare thead th { display: block; width: auto; }
+  .compare tbody th { hyphens: manual; }
   .compare thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
   .compare tbody tr { border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: .75rem; padding: .3rem 0; }
   .compare tbody th { border: none; padding-bottom: .1rem; }

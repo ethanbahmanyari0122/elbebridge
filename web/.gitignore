@@ -3,3 +3,7 @@ dist/
 .astro/
 .DS_Store
 *.log
+.idea/
+
+# Screenshots — regenerate with `npm run audit`.
+preview-*.png

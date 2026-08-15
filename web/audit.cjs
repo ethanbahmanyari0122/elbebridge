@@ -7,9 +7,23 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const SCANNER = path.resolve(__dirname, '../scanner/node_modules');
-const { chromium } = require(path.join(SCANNER, 'playwright'));
-const AxeBuilder = require(path.join(SCANNER, '@axe-core/playwright')).default;
+/**
+ * Resolve from this package first, then from the scanner's node_modules.
+ *
+ * The website lives in a public repository so GitHub Pages can serve it; the
+ * scanner and the report generator live in a private one. This file has to work
+ * in both layouts — beside the scanner, or entirely on its own.
+ */
+function requireEither(name) {
+  try { return require(name); } catch { /* not installed here */ }
+  const sibling = path.resolve(__dirname, '../scanner/node_modules', name);
+  if (fs.existsSync(sibling)) return require(sibling);
+  console.error(`\nCannot find ${name}. Run "npm install" in this folder.\n`);
+  process.exit(1);
+}
+
+const { chromium } = requireEither('playwright');
+const AxeBuilder = requireEither('@axe-core/playwright').default;
 
 const DIST = path.join(__dirname, 'dist');
 const PORT = Number(process.env.AUDIT_PORT || 39300);
@@ -192,7 +206,25 @@ function serve() {
     await ctx.close();
   }
 
-  console.log('\n7. Nothing spills out of its column, 360–1440px, both languages');
+  console.log('\n7. The comparison table stacks properly on a phone');
+  for (const url of ['/', '/de/']) {
+    const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
+    const pg = await ctx.newPage();
+    await pg.goto(BASE + url, { waitUntil: 'networkidle' });
+    const r = await pg.evaluate(() => {
+      const th = document.querySelector('.compare tbody th');
+      if (!th) return null;
+      const row = th.closest('tr');
+      return { th: th.getBoundingClientRect().width, row: row.getBoundingClientRect().width,
+        text: th.textContent.trim() };
+    });
+    // A row header squeezed into a narrow column hyphenates every word.
+    ok(`${url} — comparison row headers use the full width`,
+       r && r.th / r.row > 0.8, r ? `${Math.round(r.th)}px of ${Math.round(r.row)}px` : 'not found');
+    await ctx.close();
+  }
+
+  console.log('\n8. Nothing spills out of its column, 360–1440px, both languages');
   {
     let spills = 0;
     for (const w of [1440, 1280, 1100, 900, 700, 480, 360]) {
@@ -221,7 +253,7 @@ function serve() {
     ok('no element overflows its column at any width', spills === 0, `${spills} combinations`);
   }
 
-  console.log('\n8. Palette contrast (scripts/contrast.cjs)');
+  console.log('\n9. Palette contrast (scripts/contrast.cjs)');
   {
     const { execFileSync } = require('child_process');
     let out = '';
@@ -233,7 +265,7 @@ function serve() {
        out.split('\n').filter((l) => l.startsWith('✗')).join(' | '));
   }
 
-  console.log('\n9. Cross-page links work from the legal pages too');
+  console.log('\n10. Cross-page links work from the legal pages too');
   for (const p of ['/impressum/', '/de/impressum/']) {
     const ctx = await b.newContext();
     const pg = await ctx.newPage();
@@ -251,7 +283,7 @@ function serve() {
     await ctx.close();
   }
 
-  console.log('\n10. Content is data, not markup');
+  console.log('\n11. Content is data, not markup');
   {
     const src = fs.readFileSync(path.join(__dirname, 'src/components/Home.astro'), 'utf8');
     const en = JSON.parse(fs.readFileSync(path.join(__dirname, 'src/content/copy/en.json'), 'utf8'));
@@ -302,6 +334,10 @@ function serve() {
       // markdown rather than throwing. Catch that here.
       const raw = html.match(/\[[^\]]+\]\([^)]+\)/g);
       ok(`${f} — no unrendered markdown link syntax`, !raw, (raw || []).slice(0, 2).join(' | '));
+      // "/undefined/#obligations" reached production because a page forgot to
+      // pass `locale` down. Any attribute containing "undefined" is a bug.
+      const undef = html.match(/(?:href|src)="[^"]*undefined[^"]*"/g);
+      ok(`${f} — no "undefined" in any link or source`, !undef, (undef || []).slice(0, 2).join(' | '));
     }
 
     // The legal pages carry facts; assert the ones that must be right.

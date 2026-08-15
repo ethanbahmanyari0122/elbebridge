@@ -5,5 +5,5 @@ import { loadCopy } from '../../lib/site';
 const copy = await loadCopy('de');
 ---
 <Base locale="de" pageKey="home" title={copy.site.title} description={copy.site.metaDescription} bleed>
-  <Home copy={copy} />
+  <Home copy={copy} locale="de" />
 </Base>
