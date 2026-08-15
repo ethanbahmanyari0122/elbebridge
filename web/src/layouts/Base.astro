@@ -1,0 +1,62 @@
+---
+// Self-hosted variable fonts. Bundled into the build, so no request ever
+// leaves for a font CDN — the privacy policy says so, and hotlinked Google
+// Fonts have been held to leak visitor IPs in Germany.
+import '@fontsource-variable/inter';
+import '@fontsource-variable/source-serif-4';
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { loadCopy, localePath, alternates, type Locale } from '../lib/site';
+
+interface Props {
+  locale: Locale;
+  pageKey: string;
+  title: string;
+  description: string;
+  /** Set when the page's language differs from the locale, e.g. a German Impressum on the English site. */
+  contentLang?: string;
+  bodyClass?: string;
+  /** Full-bleed pages (the home page) lay out their own sections. */
+  bleed?: boolean;
+}
+
+const { locale, pageKey, title, description, contentLang, bodyClass, bleed } = Astro.props;
+const copy = await loadCopy(locale);
+const other: Locale = locale === 'en' ? 'de' : 'en';
+const otherCopy = await loadCopy(other);
+const alts = alternates(pageKey);
+const switchHref = alts.find((a) => a.locale === other)?.href ?? localePath(other, '/');
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!DOCTYPE html>
+<html lang={contentLang ?? copy.htmlLang}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical.href} />
+  {alts.map((a) => (
+    <link rel="alternate" hreflang={a.locale} href={new URL(a.href, Astro.site).href} />
+  ))}
+  <link rel="alternate" hreflang="x-default" href={new URL(alts.find((a) => a.locale === 'en')?.href ?? '/', Astro.site).href} />
+</head>
+<body class={bodyClass}>
+  <a class="skip-link" href="#main">{copy.ui.skipToContent}</a>
+
+  <SiteHeader
+    copy={copy}
+    locale={locale}
+    switchHref={switchHref}
+    switchLang={other}
+    switchLabel={otherCopy.localeName}
+  />
+
+  <main id="main">
+    {bleed ? <slot /> : <div class="wrap"><slot /></div>}
+  </main>
+
+  <SiteFooter copy={copy} locale={locale} />
+</body>
+</html>

@@ -1,0 +1,14 @@
+---
+import Blocks from './Blocks.astro';
+import { inline } from '../lib/inline';
+interface Props { page: any }
+const { page } = Astro.props;
+---
+<h1 set:html={inline(page.title)} />
+{page.intro && <p set:html={inline(page.intro)} />}
+{page.sections.map((s: any) => (
+  <section>
+    <h2 set:html={inline(s.heading)} />
+    <Blocks blocks={s.blocks} />
+  </section>
+))}

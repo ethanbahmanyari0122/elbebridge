@@ -1,0 +1,35 @@
+---
+import Icon from './Icon.astro';
+import Wordmark from './Wordmark.astro';
+import type { Copy, Locale } from '../lib/site';
+import { localePath } from '../lib/site';
+interface Props { copy: Copy; locale: Locale; switchHref: string; switchLang: string; switchLabel: string }
+const { copy, locale, switchHref, switchLang, switchLabel } = Astro.props;
+---
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">
+      <Wordmark href={localePath(locale, '/')} label={copy.site.wordmark} />
+      <p class="tagline">{copy.site.tagline}</p>
+    </div>
+
+    <nav class="site-nav" aria-label={copy.ui.primaryNavLabel}>
+      <ul>
+        {copy.nav.primary.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+        <li aria-hidden="true" class="nav-divider"></li>
+        <li>
+          <a class="lang-link" href={switchHref} lang={switchLang} hreflang={switchLang}>
+            <Icon name="globe" size={18} />{switchLabel}
+          </a>
+        </li>
+        <li>
+          <a class="btn btn-primary btn-sm" href={copy.nav.cta.href}>
+            {copy.nav.cta.label}<Icon name="arrow-right" size={17} />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

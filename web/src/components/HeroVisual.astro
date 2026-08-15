@@ -1,0 +1,57 @@
+---
+import Icon from './Icon.astro';
+import type { Copy } from '../lib/site';
+interface Props { copy: Copy }
+const { copy } = Astro.props;
+const products = ['shirt', 'shoe', 'bottle'] as const;
+---
+{/*
+  Decorative only. It restates the three obligations that appear as real text
+  immediately below, so it is hidden from assistive technology rather than read
+  out twice. Built in CSS and inline SVG rather than as an image so it scales,
+  needs no translation and costs nothing to download.
+  The shop is deliberately desaturated: it is the thing being inspected, not
+  the thing being sold.
+*/}
+<div class="hero-visual" aria-hidden="true">
+  <div class="browser">
+    <div class="browser-bar">
+      <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
+      <span class="browser-url"></span>
+    </div>
+
+    <div class="shop">
+      <div class="shop-head">
+        <span class="sk sk-w45"></span>
+        <span class="shop-cart"></span>
+      </div>
+
+      <div class="shop-grid">
+        {products.map((p) => (
+          <div class="product">
+            <div class="product-img"><Icon name={p} size={44} /></div>
+            <span class="sk sk-w85"></span>
+            <span class="sk sk-w45 sk-price"></span>
+          </div>
+        ))}
+      </div>
+
+      <div class="shop-foot">
+        <span class="sk sk-w70"></span>
+        <span class="shop-btn"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="floating">
+    {copy.home.obligations.map((o) => (
+      <div class="float-card">
+        <span class="tile tile-accent"><Icon name={o.icon} size={18} /></span>
+        <span>
+          <span class="t">{o.short}</span><br />
+          <span class="s">{o.code}</span>
+        </span>
+      </div>
+    ))}
+  </div>
+</div>

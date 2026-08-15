@@ -1,0 +1,54 @@
+---
+import Icon from './Icon.astro';
+import Wordmark from './Wordmark.astro';
+import type { Copy, Locale } from '../lib/site';
+import { localePath } from '../lib/site';
+import { inline } from '../lib/inline';
+interface Props { copy: Copy; locale: Locale }
+const { copy, locale } = Astro.props;
+const f = copy.footer;
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <Wordmark href={localePath(locale, '/')} label={copy.site.wordmark} />
+        <p set:html={inline(f.blurb)} />
+        <p class="founders" set:html={inline(f.foundersLine)} />
+        <p class="location"><Icon name="pin" size={17} />{f.location}</p>
+      </div>
+
+      {f.columns.map((col) => (
+        <nav class="footer-col" aria-label={col.heading}>
+          <h2>{col.heading}</h2>
+          <ul>
+            {col.links.map((l) => (
+              <li><a href={l.href.startsWith('#') ? l.href : localePath(locale, l.href)} lang={l.lang}>{l.label}</a></li>
+            ))}
+          </ul>
+        </nav>
+      ))}
+
+      <div class="footer-col footer-contact">
+        <h2>{f.contact.heading}</h2>
+        <p class="contact-mail"><Icon name="mail" size={17} /><a href={`mailto:${copy.site.email}`}>{copy.site.email}</a></p>
+        <p class="note">{f.contact.responseNote}</p>
+
+        {copy.site.social.length > 0 && (
+          <ul class="social">
+            {copy.site.social.map((s) => (
+              <li><a href={s.href} aria-label={s.label}><Icon name={s.icon} size={18} /></a></li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <p class="bar-item"><Icon name={f.bar.icon} size={17} />{f.bar.disclaimer}</p>
+      <span class="bar-sep" aria-hidden="true"></span>
+      <p class="bar-item">{f.bar.privacyNote}</p>
+      <p class="copyright" set:html={inline(f.copyright)} />
+    </div>
+  </div>
+</footer>

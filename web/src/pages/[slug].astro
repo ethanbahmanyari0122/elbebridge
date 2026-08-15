@@ -1,0 +1,27 @@
+---
+/**
+ * Every English legal page is generated from src/content/copy/en.json.
+ * Adding a page means adding an object to the `legal` array — no file here changes.
+ */
+import Base from '../layouts/Base.astro';
+import LegalPage from '../components/LegalPage.astro';
+import { loadCopy } from '../lib/site';
+
+export async function getStaticPaths() {
+  const copy = await loadCopy('en');
+  return copy.legal.map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+
+const { page } = Astro.props;
+const copy = await loadCopy('en');
+---
+<Base
+  locale="en"
+  pageKey={page.key}
+  title={`${page.title} — ${copy.site.wordmark}`}
+  description={page.metaDescription}
+  contentLang={page.lang}
+  bodyClass="legal-page"
+>
+  <div class="legal"><LegalPage page={page} /></div>
+</Base>

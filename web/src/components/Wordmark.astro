@@ -1,0 +1,14 @@
+---
+/**
+ * Wordmark with the bridge arc. The arc is decorative — the accessible name of
+ * the link is the word itself.
+ */
+interface Props { href: string; label: string; class?: string }
+const { href, label, class: className } = Astro.props;
+---
+<a class:list={['wordmark', className]} href={href}>
+  <svg class="wordmark-arc" width="46" height="12" viewBox="0 0 46 12" fill="none" aria-hidden="true" focusable="false">
+    <path d="M2 10.2C7.6 4.4 14.6 1.5 23 1.5s15.4 2.9 21 8.7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+  </svg>
+  <span class="wordmark-text">{label}</span>
+</a>

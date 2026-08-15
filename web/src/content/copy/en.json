@@ -1,0 +1,525 @@
+{
+  "locale": "en",
+  "localeName": "English",
+  "htmlLang": "en",
+  "ui": {
+    "skipToContent": "Skip to main content",
+    "primaryNavLabel": "Primary",
+    "legalNavLabel": "Legal",
+    "languageNavLabel": "Language",
+    "switchTo": "Deutsch",
+    "home": "Home"
+  },
+  "site": {
+    "wordmark": "elbebridge",
+    "tagline": "Compliance. Clarity. Confidence.",
+    "eyebrow": "German market compliance",
+    "title": "elbebridge — German compliance checks for brands selling into Germany",
+    "metaDescription": "A fixed-price check of the three German obligations most foreign online brands are missing: accessibility (BFSG), an EU responsible person (GPSR), and packaging registration (LUCID).",
+    "email": "hallo@elbebridge.com",
+    "footerNote": "© 2026 elbebridge, Hamburg. This site sets no cookies and runs no analytics.",
+    "social": []
+  },
+  "nav": {
+    "cta": {
+      "href": "#check",
+      "label": "Get a check"
+    },
+    "primary": [
+      {
+        "href": "#what-we-do",
+        "label": "What we do"
+      },
+      {
+        "href": "#price",
+        "label": "Price"
+      },
+      {
+        "href": "#check",
+        "label": "Get a check"
+      }
+    ],
+    "legal": [
+      {
+        "href": "/impressum",
+        "label": "Impressum",
+        "lang": "de"
+      },
+      {
+        "href": "/privacy",
+        "label": "Privacy policy"
+      },
+      {
+        "href": "/accessibility",
+        "label": "Accessibility statement"
+      }
+    ]
+  },
+  "footer": {
+    "blurb": "Independent compliance checks for foreign brands entering Germany. Clear, fast, and honest about what we can and cannot tell you.",
+    "foundersLine": "Founded by Ethan Bahmanyari and Ornella Buxbaum.",
+    "location": "Hamburg, Germany",
+    "columns": [
+      {
+        "heading": "What we offer",
+        "links": [
+          {
+            "href": "#what-we-do",
+            "label": "What we do"
+          },
+          {
+            "href": "#price",
+            "label": "Price"
+          },
+          {
+            "href": "#check",
+            "label": "Get a check"
+          }
+        ]
+      },
+      {
+        "heading": "The three obligations",
+        "links": [
+          {
+            "href": "#obligations",
+            "label": "Accessibility (BFSG)"
+          },
+          {
+            "href": "#obligations",
+            "label": "EU responsible person (GPSR)"
+          },
+          {
+            "href": "#obligations",
+            "label": "Packaging (LUCID)"
+          }
+        ]
+      },
+      {
+        "heading": "Legal",
+        "links": [
+          {
+            "href": "/impressum",
+            "label": "Impressum",
+            "lang": "de"
+          },
+          {
+            "href": "/privacy",
+            "label": "Privacy policy"
+          },
+          {
+            "href": "/accessibility",
+            "label": "Accessibility statement"
+          }
+        ]
+      }
+    ],
+    "contact": {
+      "heading": "Get in touch",
+      "text": "Questions before ordering? We are happy to help.",
+      "responseNote": "Response within one business day."
+    },
+    "bar": {
+      "icon": "shield",
+      "disclaimer": "Technical and administrative services, not legal advice.",
+      "privacyNote": "No cookies. No analytics. Ever."
+    },
+    "copyright": "© 2026 elbebridge GbR · Hamburg. All rights reserved."
+  },
+  "home": {
+    "headline": "Selling into Germany? Three obligations most foreign brands are ==missing==.",
+    "lede": "If you ship to German consumers, German law applies to you, whether or not you have a company here. Most foreign brands we look at are missing at least two of the three below.",
+    "heroCta": "Get your compliance check",
+    "trust": [
+      "Fixed price",
+      "2 working days",
+      "No commitment"
+    ],
+    "obligationsHeading": "The three",
+    "obligations": [
+      {
+        "icon": "accessibility",
+        "heading": "An accessible online shop",
+        "short": "Accessible online shop",
+        "code": "BFSG",
+        "law": "{de|Barrierefreiheitsstärkungsgesetz} (BFSG) — in force since 28 June 2025",
+        "text": "Your shop, checkout and customer account have to be usable by people with disabilities, measured against the European standard {de|EN 301 549}. You also need a published accessibility statement. Since January 2026 the German market surveillance authority has been running its own checks, not only responding to complaints."
+      },
+      {
+        "icon": "person",
+        "heading": "A responsible person inside the EU",
+        "short": "EU responsible person",
+        "code": "GPSR",
+        "law": "General Product Safety Regulation (GPSR) — applies since 13 December 2024",
+        "text": "You may not sell a product to an EU consumer unless a named person or company inside the EU is responsible for it, and their details appear with the product. No EU responsible person means the product cannot lawfully be placed on the market."
+      },
+      {
+        "icon": "box",
+        "heading": "Packaging registered before your first parcel",
+        "short": "Packaging registered",
+        "code": "LUCID",
+        "law": "{de|Verpackungsgesetz} — LUCID registration, required before you sell",
+        "text": "Every box, filler and label you send into Germany has to be registered in the {de|LUCID} register and licensed with a dual system. Registration is required _before_ the first shipment, and marketplaces are obliged to block sellers who have not done it."
+      }
+    ],
+    "whatWeDoHeading": "What we do",
+    "steps": [
+      {
+        "icon": "search",
+        "lead": "Scan.",
+        "text": "We test your shop against the accessibility standard and check the public record for the other two obligations."
+      },
+      {
+        "icon": "document",
+        "lead": "Findings report.",
+        "text": "Three pages: what applies to you, what we found with the evidence, and what it takes to fix."
+      },
+      {
+        "icon": "wrench",
+        "lead": "Fixed-price remediation.",
+        "text": "If you want us to fix it, you get a price before we start."
+      },
+      {
+        "icon": "chart",
+        "lead": "Quarterly monitoring.",
+        "text": "Optional. Sites drift, and so does the law."
+      }
+    ],
+    "priceHeading": "Price",
+    "priceAmount": "€890",
+    "priceLines": [
+      "For the check and the three-page findings report. Fixed, quoted before we start, invoiced once.",
+      "Remediation and monitoring are priced separately, in the report, before you commit to anything."
+    ],
+    "contact": {
+      "heading": "Get a check",
+      "intro": "Send us your store URL. We reply within two working days with what we found on the public parts of your site.",
+      "buttonLabel": "Email us your store URL",
+      "mailSubject": "Compliance check request",
+      "mailBody": "Store URL:\n\nCompany name (optional):\n\nAnything you already know is missing:\n",
+      "note": "No form, no tracking, no third party in between — your message goes straight to our inbox."
+    },
+    "peopleHeading": "Who we are",
+    "people": [
+      {
+        "name": "Ethan Bahmanyari",
+        "text": "builds the scanning and writes the findings reports."
+      },
+      {
+        "name": "Ornella Buxbaum",
+        "text": "handles the register searches, the provider relationships and everything that has to be argued in German."
+      }
+    ],
+    "peopleNote": "We are based in Hamburg and we are both foreign founders. We learned these three obligations the way you are about to: by having to.",
+    "disclaimer": "We provide technical and administrative services, not legal or tax advice. Our reports describe what the law requires and what we found on your site. They do not tell you whether you are liable, and they are not a substitute for advice from a qualified lawyer."
+  },
+  "legal": [
+    {
+      "key": "impressum",
+      "slug": "impressum",
+      "lang": "de",
+      "title": "Impressum",
+      "metaDescription": "Anbieterkennzeichnung gemäß § 5 DDG für elbebridge, Hamburg.",
+      "intro": "Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz).",
+      "sections": [
+        {
+          "heading": "Diensteanbieter",
+          "blocks": [
+            {
+              "type": "address",
+              "lines": [
+                "elbebridge GbR",
+                "Stormarner Straße 41",
+                "22049 Hamburg",
+                "Deutschland"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Kontakt",
+          "blocks": [
+            {
+              "type": "dl",
+              "items": [
+                {
+                  "term": "E-Mail",
+                  "desc": "[hallo@elbebridge.com](mailto:hallo@elbebridge.com)"
+                },
+                {
+                  "term": "Telefon",
+                  "desc": "[+49 151 20277581](tel:+4915120277581)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Vertretungsberechtigte Personen",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Ethan Bahmanyari, Ornella Buxbaum"
+            }
+          ]
+        },
+        {
+          "heading": "Verantwortlich für den Inhalt",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Ethan Bahmanyari, Anschrift wie oben."
+            }
+          ]
+        },
+        {
+          "heading": "Verbraucherstreitbeilegung",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
+            }
+          ]
+        },
+        {
+          "heading": "Haftung für Inhalte und Links",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Die Inhalte dieser Seiten wurden mit Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich."
+            }
+          ]
+        },
+        {
+          "heading": "Hinweis zu unseren Leistungen",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Wir erbringen technische und administrative Dienstleistungen. Wir erbringen keine Rechts- oder Steuerberatung im Sinne des Rechtsdienstleistungsgesetzes (RDG) und des Steuerberatungsgesetzes (StBerG)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "privacy",
+      "slug": "privacy",
+      "title": "Privacy policy",
+      "metaDescription": "What personal data elbebridge collects, why, on what legal basis, and what rights you have under the GDPR.",
+      "intro": "How we handle personal data under the General Data Protection Regulation (GDPR). Last updated 15 August 2026.",
+      "sections": [
+        {
+          "heading": "1. Who is responsible",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "The controller for the processing described here is:"
+            },
+            {
+              "type": "address",
+              "lines": [
+                "elbebridge GbR",
+                "Stormarner Straße 41",
+                "22049 Hamburg, Germany",
+                "[hallo@elbebridge.com](mailto:hallo@elbebridge.com) · [+49 151 20277581](tel:+4915120277581)"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "2. Cookies and tracking",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "This website sets no cookies, embeds no third-party scripts and runs no analytics. Nothing about your visit is used to profile you or to advertise to you. That is why you are not being asked to accept anything."
+            }
+          ]
+        },
+        {
+          "heading": "3. When you email us",
+          "blocks": [
+            {
+              "type": "dl",
+              "items": [
+                {
+                  "term": "What we collect",
+                  "desc": "Your email address and whatever you choose to put in the message, normally a store URL and a company name."
+                },
+                {
+                  "term": "Why",
+                  "desc": "To run the requested check and reply to you with the result."
+                },
+                {
+                  "term": "Legal basis",
+                  "desc": "Article 6(1)(b) GDPR — steps taken at your request before entering into a contract."
+                },
+                {
+                  "term": "Who else sees it",
+                  "desc": "There is no form and no form provider. Your message goes straight to our mailbox, which is hosted by Google Workspace (Google Ireland Limited) as our processor under a data processing agreement."
+                },
+                {
+                  "term": "How long we keep it",
+                  "desc": "Twelve months after our last contact, unless you become a client, in which case statutory retention periods for business correspondence apply."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "4. When you visit this website",
+          "blocks": [
+            {
+              "type": "dl",
+              "items": [
+                {
+                  "term": "What is collected",
+                  "desc": "This site is hosted on GitHub Pages, operated by GitHub, Inc. Their servers record standard access log data: IP address, date and time, the page requested, and the browser identifier your browser sends. We have no access to those logs and build no profile from them."
+                },
+                {
+                  "term": "Why",
+                  "desc": "To deliver the site and to keep it secure and available."
+                },
+                {
+                  "term": "Legal basis",
+                  "desc": "Article 6(1)(f) GDPR — our legitimate interest in operating a secure website."
+                },
+                {
+                  "term": "How long",
+                  "desc": "Retention is governed by GitHub's own privacy statement, which you can read at [docs.github.com](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "5. What we look at when we scan a website",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Our scan reads publicly available pages of the website you ask us to check. We record company identification only — the legal entity, its registered address and its registration numbers, as published in that site's own legal notice. We do not log in, we do not place orders, we do not access anything behind authentication, and we do not collect details of named individuals. Our scanner respects {de|robots.txt}, identifies itself in its user agent, and makes at most one request per second."
+            }
+          ]
+        },
+        {
+          "heading": "6. Transfers outside the EU",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Two of our processors are reachable from the United States. GitHub, Inc. hosts this website and is certified under the EU-U.S. Data Privacy Framework; it also offers Standard Contractual Clauses. Google Workspace is contracted through Google Ireland Limited, with the same frameworks in place for any onward transfer. We tell you this rather than claiming everything stays in Europe, because it does not."
+            }
+          ]
+        },
+        {
+          "heading": "7. Your rights",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Under the GDPR you have the right to:"
+            },
+            {
+              "type": "ul",
+              "items": [
+                "access the personal data we hold about you (Article 15);",
+                "have inaccurate data corrected (Article 16);",
+                "have your data erased (Article 17);",
+                "restrict how we process it (Article 18);",
+                "receive it in a portable format (Article 20);",
+                "object to processing based on legitimate interest (Article 21)."
+              ]
+            },
+            {
+              "type": "p",
+              "text": "To exercise any of these, write to [hallo@elbebridge.com](mailto:hallo@elbebridge.com). You do not need to give a reason and it costs you nothing."
+            }
+          ]
+        },
+        {
+          "heading": "8. Complaints",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "You can complain to a data protection supervisory authority. The competent authority for us is the {de|Hamburgische Beauftragte für Datenschutz und Informationsfreiheit} (Hamburg Commissioner for Data Protection and Freedom of Information)."
+            }
+          ]
+        },
+        {
+          "heading": "9. Changes",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "If we change how we handle data, we update this page and the date at the top. We keep previous versions on file."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "accessibility",
+      "slug": "accessibility",
+      "title": "Accessibility statement",
+      "metaDescription": "How accessible this website is, how we tested it, and how to tell us if something does not work for you.",
+      "intro": "We ask other companies about their accessibility statement, so here is ours. This statement covers the website at elbebridge.com and was last reviewed on 15 August 2026.",
+      "sections": [
+        {
+          "heading": "How accessible this site is",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "We believe this site conforms to {de|EN 301 549} and the Web Content Accessibility Guidelines 2.2 at level AA. Specifically:"
+            },
+            {
+              "type": "ul",
+              "items": [
+                "every page works with the keyboard alone, and the focus indicator is always visible;",
+                "the site ships no JavaScript at all, so nothing depends on scripts loading;",
+                "text contrast exceeds the required ratio, and nothing is signalled by colour alone;",
+                "text can be resized to 200% without loss of content or horizontal scrolling;",
+                "the page structure uses real headings and landmarks, in order;",
+                "German terms inside English sentences carry their own language attribute, so a screen reader pronounces them correctly."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "How we tested it",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Automated testing with axe-core against the WCAG 2.2 AA and {de|EN 301 549} rule sets — the same scan we run for clients — followed by manual testing: keyboard-only navigation with the mouse unplugged, and a screen reader pass with NVDA."
+            },
+            {
+              "type": "p",
+              "text": "Automated tools detect only a minority of accessibility problems. We say this on our own statement for the same reason we say it in every report we write: a clean automated scan is not a claim of accessibility."
+            }
+          ]
+        },
+        {
+          "heading": "Known limitations",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "None currently recorded. If we become aware of a barrier we cannot fix immediately, we will list it here with a date by which we expect to fix it."
+            }
+          ]
+        },
+        {
+          "heading": "Tell us if something does not work",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "If you find a barrier on this site, email [hallo@elbebridge.com](mailto:hallo@elbebridge.com) and tell us what you were trying to do. We reply within five working days. If you need information from this site in a different format, ask and we will send it."
+            }
+          ]
+        },
+        {
+          "heading": "Enforcement",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "If you are not satisfied with our response, you can contact the German market surveillance authority for the accessibility of products and services ({de|Marktüberwachungsstelle der Länder für die Barrierefreiheit von Produkten und Dienstleistungen})."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

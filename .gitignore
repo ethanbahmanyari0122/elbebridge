@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.astro/
+out/
+.DS_Store
+*.log
+
+# JetBrains project files — local paths and editor state, not shared config
+.idea/

@@ -1,0 +1,127 @@
+---
+import Icon from './Icon.astro';
+import HeroVisual from './HeroVisual.astro';
+import { inline } from '../lib/inline';
+import type { Copy } from '../lib/site';
+interface Props { copy: Copy }
+const { copy } = Astro.props;
+const h = copy.home;
+const c = h.contact;
+
+// Prefilled subject and body: the visitor's mail client opens with the fields
+// we would otherwise have asked for in a form.
+const mailto = `mailto:${copy.site.email}`
+  + `?subject=${encodeURIComponent(c.mailSubject)}`
+  + `&body=${encodeURIComponent(c.mailBody)}`;
+---
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">{copy.site.eyebrow}</p>
+        <h1 set:html={inline(h.headline)} />
+        <p class="lede" set:html={inline(h.lede)} />
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#check">
+            {h.heroCta}<Icon name="arrow-right" size={18} />
+          </a>
+        </div>
+
+        <ul class="trust">
+          {h.trust.map((t) => (
+            <li><Icon name="check" size={17} />{t}</li>
+          ))}
+        </ul>
+      </div>
+
+      <HeroVisual copy={copy} />
+    </div>
+  </div>
+</section>
+
+<section class="band" id="obligations" aria-labelledby="obligations-h">
+  <div class="wrap">
+    <h2 class="section-title" id="obligations-h" set:html={inline(h.obligationsHeading)} />
+    <ul class="cards">
+      {h.obligations.map((o) => (
+        <li>
+          <span class="tile tile-lg"><Icon name={o.icon} size={22} /></span>
+          <h3 set:html={inline(o.heading)} />
+          <span class="law" set:html={inline(o.law)} />
+          <p set:html={inline(o.text)} />
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section class="band band-sand" id="what-we-do" aria-labelledby="what-we-do-h">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <h2 class="section-title" id="what-we-do-h" set:html={inline(h.whatWeDoHeading)} />
+        <ol class="steps">
+          {h.steps.map((s, i) => (
+            <li>
+              <span class="tile"><Icon name={s.icon} size={20} /></span>
+              <span class="step-n">{i + 1}</span>
+              <span class="body">
+                <strong set:html={inline(s.lead)} />
+                <p set:html={inline(s.text)} />
+              </span>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div>
+        <h2 class="section-title" id="price-h" set:html={inline(h.priceHeading)} />
+        <div class="price" id="price">
+          <p class="amount">{h.priceAmount}</p>
+          {h.priceLines.map((line) => <p set:html={inline(line)} />)}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="check" aria-labelledby="check-h">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <h2 class="section-title" id="check-h" set:html={inline(c.heading)} />
+        <p set:html={inline(c.intro)} />
+      </div>
+
+      <div class="contact-card">
+        <a class="btn btn-primary" href={mailto}>
+          <Icon name="mail" size={18} />{c.buttonLabel}
+        </a>
+        <p class="contact-address">{copy.site.email}</p>
+        <p class="contact-note" set:html={inline(c.note)} />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band-sand" id="who-we-are" aria-labelledby="who-we-are-h">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <h2 class="section-title" id="who-we-are-h" set:html={inline(h.peopleHeading)} />
+        <ul class="people">
+          {h.people.map((p) => (
+            <li><span class="name">{p.name}</span> — <span set:html={inline(p.text)} /></li>
+          ))}
+        </ul>
+        <p set:html={inline(h.peopleNote)} />
+      </div>
+
+      <div class="disclaimer">
+        <span class="tile tile-accent"><Icon name="shield" size={20} /></span>
+        <p set:html={inline(h.disclaimer)} />
+      </div>
+    </div>
+  </div>
+</section>

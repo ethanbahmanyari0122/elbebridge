@@ -1,0 +1,65 @@
+---
+/**
+ * Inline SVG icons. No icon library, no CDN request — the privacy policy
+ * promises no third-party requests and we intend to keep it true.
+ * Icons are decorative: every one is aria-hidden and every place they appear
+ * already has a real text label next to it.
+ */
+interface Props { name: string; size?: number; class?: string }
+const { name, size = 20, class: className } = Astro.props;
+const s = { width: size, height: size, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': 1.7, 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'aria-hidden': 'true', focusable: 'false', class: ['icon', className].filter(Boolean).join(' ') } as const;
+---
+{name === 'accessibility' && (
+  <svg {...s}><circle cx="12" cy="4.5" r="1.8" /><path d="M4.5 8.2c2.4.9 4.9 1.3 7.5 1.3s5.1-.4 7.5-1.3" /><path d="M12 9.5v5m0 0-2.6 6m2.6-6 2.6 6" /></svg>
+)}
+{name === 'person' && (
+  <svg {...s}><circle cx="12" cy="8" r="3.6" /><path d="M4.8 20.2a7.2 7.2 0 0 1 14.4 0" /></svg>
+)}
+{name === 'box' && (
+  <svg {...s}><path d="M12 2.8 20.5 7v10L12 21.2 3.5 17V7Z" /><path d="M3.5 7 12 11.4 20.5 7M12 11.4v9.8" /></svg>
+)}
+{name === 'search' && (
+  <svg {...s}><circle cx="10.6" cy="10.6" r="6.4" /><path d="m15.4 15.4 4.4 4.4" /></svg>
+)}
+{name === 'document' && (
+  <svg {...s}><path d="M14 2.9H7.4A1.6 1.6 0 0 0 5.8 4.5v15a1.6 1.6 0 0 0 1.6 1.6h9.2a1.6 1.6 0 0 0 1.6-1.6V7.1Z" /><path d="M14 2.9v4.2h4.2M8.8 12.6h6.4M8.8 16.2h6.4" /></svg>
+)}
+{name === 'wrench' && (
+  <svg {...s}><path d="M15.2 3.4a5.2 5.2 0 0 0-6.1 6.8L3.6 15.7a2 2 0 0 0 2.8 2.8l5.5-5.5a5.2 5.2 0 0 0 6.8-6.1l-3 3-2.5-2.5Z" /></svg>
+)}
+{name === 'chart' && (
+  <svg {...s}><path d="M4.5 20h15" /><path d="M7.5 20v-6.5M12 20V6.5M16.5 20v-9.5" /></svg>
+)}
+{name === 'shield' && (
+  <svg {...s}><path d="M12 2.9 4.8 5.9v5.4c0 4.3 3 8.3 7.2 9.8 4.2-1.5 7.2-5.5 7.2-9.8V5.9Z" /><path d="m9.2 11.9 2 2 3.6-3.6" /></svg>
+)}
+{name === 'check' && (
+  <svg {...s}><circle cx="12" cy="12" r="8.6" /><path d="m8.4 12.2 2.4 2.4 4.8-4.8" /></svg>
+)}
+{name === 'arrow-right' && (
+  <svg {...s}><path d="M4.8 12h14.4M13.4 6.2 19.2 12l-5.8 5.8" /></svg>
+)}
+{name === 'globe' && (
+  <svg {...s}><circle cx="12" cy="12" r="8.4" /><path d="M3.6 12h16.8M12 3.6a13 13 0 0 1 0 16.8 13 13 0 0 1 0-16.8Z" /></svg>
+)}
+{name === 'mail' && (
+  <svg {...s}><rect x="3.4" y="5.4" width="17.2" height="13.2" rx="2" /><path d="m3.9 6.6 8.1 5.7 8.1-5.7" /></svg>
+)}
+{name === 'shirt' && (
+  <svg {...s}><path d="M9 3.4 5 5.2a1.4 1.4 0 0 0-.8 1.6l.7 3 2.1-.5V20a.6.6 0 0 0 .6.6h8.8a.6.6 0 0 0 .6-.6V9.3l2.1.5.7-3a1.4 1.4 0 0 0-.8-1.6l-4-1.8a3 3 0 0 1-6 0Z" /></svg>
+)}
+{name === 'shoe' && (
+  <svg {...s}><path d="M3 16.4V11a.8.8 0 0 1 .8-.8h2.4l1.6 1.5 2.6-2.3 3 2.6 4.4 1.3A3.4 3.4 0 0 1 20.4 16v1.6a.8.8 0 0 1-.8.8H3.8a.8.8 0 0 1-.8-.8Z" /><path d="M3 15.4h17.3" /></svg>
+)}
+{name === 'bottle' && (
+  <svg {...s}><path d="M10 2.8h4v2.4c0 .8.3 1.5.9 2.1l.6.6c.6.6.9 1.4.9 2.2v9.1a1.4 1.4 0 0 1-1.4 1.4H9a1.4 1.4 0 0 1-1.4-1.4v-9.1c0-.8.3-1.6.9-2.2l.6-.6c.6-.6.9-1.3.9-2.1Z" /><path d="M7.6 12.4h8.8" /></svg>
+)}
+{name === 'lock' && (
+  <svg {...s}><rect x="4.6" y="10.2" width="14.8" height="10.2" rx="2" /><path d="M8.2 10.2V7.6a3.8 3.8 0 0 1 7.6 0v2.6" /></svg>
+)}
+{name === 'pin' && (
+  <svg {...s}><path d="M12 21.2s6.4-5.4 6.4-10.2a6.4 6.4 0 1 0-12.8 0C5.6 15.8 12 21.2 12 21.2Z" /><circle cx="12" cy="10.8" r="2.4" /></svg>
+)}
+{name === 'linkedin' && (
+  <svg {...s}><rect x="3.4" y="3.4" width="17.2" height="17.2" rx="2.4" /><path d="M7.6 10.4v6.2M7.6 7.6v.02M11.6 16.6v-6.2M11.6 13.2c0-1.5.9-2.4 2.2-2.4s2.2.9 2.2 2.6v3.2" /></svg>
+)}

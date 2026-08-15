@@ -1,0 +1,22 @@
+{
+  "name": "elbebridge-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "dev:clean": "npm run clean && astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "audit": "node audit.cjs",
+    "contrast": "node scripts/contrast.cjs",
+    "clean": "rm -rf .astro dist"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.0",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/source-serif-4": "^5.3.0",
+    "astro": "^7.2.2"
+  }
+}

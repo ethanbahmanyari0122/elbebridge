@@ -1,0 +1,35 @@
+---
+/**
+ * Renders the block list from a legal page. Adding a block type means adding a
+ * case here and a variant in the schema — never a new page template.
+ */
+import { inline } from '../lib/inline';
+interface Props { blocks: any[] }
+const { blocks } = Astro.props;
+---
+{blocks.map((b) => {
+  if (b.type === 'p') return <p set:html={inline(b.text)} />;
+  if (b.type === 'ul') return <ul>{b.items.map((i: string) => <li set:html={inline(i)} />)}</ul>;
+  if (b.type === 'ol') return <ol>{b.items.map((i: string) => <li set:html={inline(i)} />)}</ol>;
+  if (b.type === 'dl') return (
+    <dl>
+      {b.items.map((i: { term: string; desc: string }) => (
+        <>
+          <dt set:html={inline(i.term)} />
+          <dd set:html={inline(i.desc)} />
+        </>
+      ))}
+    </dl>
+  );
+  if (b.type === 'address') return (
+    <address>
+      {b.lines.map((l: string, idx: number) => (
+        <>
+          <span set:html={inline(l)} />
+          {idx < b.lines.length - 1 && <br />}
+        </>
+      ))}
+    </address>
+  );
+  return null;
+})}
