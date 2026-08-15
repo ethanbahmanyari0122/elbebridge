@@ -206,7 +206,27 @@ function serve() {
     await ctx.close();
   }
 
-  console.log('\n7. Hero artwork and the linked list never both show');
+  console.log('\n7. Each hero checkpoint lands on its own card');
+  for (const url of ['/', '/de/']) {
+    const ctx = await b.newContext({ viewport: { width: 390, height: 844 } });
+    const pg = await ctx.newPage();
+    await pg.goto(BASE + url, { waitUntil: 'networkidle' });
+    const r = await pg.evaluate(() => {
+      const links = [...document.querySelectorAll('.checkpoints a')].map((a) => a.getAttribute('href'));
+      const targets = links.map((h) => {
+        const id = (h || '').split('#')[1];
+        return id ? Boolean(document.getElementById(id)) : false;
+      });
+      return { links, targets, unique: new Set(links).size };
+    });
+    ok(`${url} — three checkpoints, three different targets`, r.unique === 3, r.links.join(' '));
+    ok(`${url} — every checkpoint target exists on the page`, r.targets.every(Boolean), JSON.stringify(r.links));
+    ok(`${url} — targets are the individual cards, not the section`,
+       r.links.every((h) => /#obligation-(bfsg|gpsr|lucid)$/.test(h || '')), r.links.join(' '));
+    await ctx.close();
+  }
+
+  console.log('\n8. Hero artwork and the linked list never both show');
   for (const [url, width, wantArt] of [['/', 1280, true], ['/', 390, false],
                                        ['/de/', 1280, true], ['/de/', 390, false]]) {
     const ctx = await b.newContext({ viewport: { width, height: 900 } });
@@ -227,7 +247,7 @@ function serve() {
     await ctx.close();
   }
 
-  console.log('\n8. The comparison table stacks properly on a phone');
+  console.log('\n9. The comparison table stacks properly on a phone');
   for (const url of ['/', '/de/']) {
     const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
     const pg = await ctx.newPage();
@@ -245,7 +265,7 @@ function serve() {
     await ctx.close();
   }
 
-  console.log('\n9. Nothing spills out of its column, 360–1440px, both languages');
+  console.log('\n10. Nothing spills out of its column, 360–1440px, both languages');
   {
     let spills = 0;
     for (const w of [1440, 1280, 1100, 900, 700, 480, 360]) {
@@ -274,7 +294,7 @@ function serve() {
     ok('no element overflows its column at any width', spills === 0, `${spills} combinations`);
   }
 
-  console.log('\n10. Palette contrast (scripts/contrast.cjs)');
+  console.log('\n11. Palette contrast (scripts/contrast.cjs)');
   {
     const { execFileSync } = require('child_process');
     let out = '';
@@ -286,7 +306,7 @@ function serve() {
        out.split('\n').filter((l) => l.startsWith('✗')).join(' | '));
   }
 
-  console.log('\n11. Cross-page links work from the legal pages too');
+  console.log('\n12. Cross-page links work from the legal pages too');
   for (const p of ['/impressum/', '/de/impressum/']) {
     const ctx = await b.newContext();
     const pg = await ctx.newPage();
@@ -304,17 +324,18 @@ function serve() {
     await ctx.close();
   }
 
-  console.log('\n12. Content is data, not markup');
+  console.log('\n13. Content is data, not markup');
   {
     const src = fs.readFileSync(path.join(__dirname, 'src/components/Home.astro'), 'utf8');
     const en = JSON.parse(fs.readFileSync(path.join(__dirname, 'src/content/copy/en.json'), 'utf8'));
     ok('headline appears in the content file, not in a component',
        en.home.headline.includes('Three obligations') && !src.includes('Three obligations'));
     ok('price lives in the content file', en.home.priceAmount === '€890' && !src.includes('890'));
-    // Ornella asked for the three checkpoints to lead to their explanation.
-    ok('hero checkpoints link to the obligations section',
-       /journey/.test(fs.readFileSync(path.join(__dirname, 'src/components/HeroVisual.astro'), 'utf8'))
-       && fs.readFileSync(path.join(__dirname, 'src/components/HeroVisual.astro'), 'utf8').includes('#obligations'));
+    // Ornella asked for the checkpoints to lead to their explanation — and each
+    // one to its own card, not the top of the section.
+    const hero = fs.readFileSync(path.join(__dirname, 'src/components/HeroVisual.astro'), 'utf8');
+    ok('hero checkpoints link to individual obligation cards',
+       /journey/.test(hero) && hero.includes('#obligation-${code.toLowerCase()}'));
     // Both locales now ship artwork with their own labels baked in; a missing
     // file would silently fall back to the list and nobody would notice.
     for (const loc of ['en', 'de']) {

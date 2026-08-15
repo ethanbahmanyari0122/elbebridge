@@ -4,7 +4,8 @@ import type { Copy, Locale } from '../lib/site';
 import { localePath } from '../lib/site';
 interface Props { copy: Copy; locale: Locale }
 const { copy, locale } = Astro.props;
-const to = localePath(locale, '/#obligations');
+/** Each checkpoint goes to its own card, not to the top of the section. */
+const cardHref = (code: string) => localePath(locale, `/#obligation-${code.toLowerCase()}`);
 const art = copy.home.heroImage;
 ---
 {/*
@@ -41,7 +42,7 @@ const art = copy.home.heroImage;
     <ol class="checkpoints">
       {copy.home.obligations.map((o, i) => (
         <li>
-          <a href={to}>
+          <a href={cardHref(o.code)}>
             <span class="cp-n">{String(i + 1).padStart(2, '0')}</span>
             <span class="cp-icon"><Icon name={o.icon} size={19} /></span>
             <span class="cp-text">

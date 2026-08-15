@@ -183,7 +183,7 @@ section { scroll-margin-top: 2rem; }
 .hero { background: linear-gradient(180deg, var(--paper), var(--white)); border-bottom: 1px solid var(--line); }
 .hero .wrap { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
 .hero-grid { display: grid; gap: clamp(2rem, 5vw, 3.5rem); align-items: center; }
-@media (min-width: 62rem) { .hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); } }
+@media (min-width: 62rem) { .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); } }
 
 .eyebrow {
   display: inline-block; margin: 0 0 1.15rem;
@@ -272,6 +272,9 @@ section { scroll-margin-top: 2rem; }
 .cards { display: grid; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
 @media (min-width: 48rem) { .cards { grid-template-columns: repeat(3, 1fr); } }
 .cards > li {
+  /* Room above the card when arrived at from a hero checkpoint link, so it
+     does not land flush against the top of the viewport. */
+  scroll-margin-top: 1.5rem;
   max-width: none; display: flex; flex-direction: column; gap: .5rem;
   padding: 1.5rem; border: 1px solid var(--line); border-radius: var(--radius-lg);
   background: var(--white); box-shadow: var(--shadow-sm);

@@ -46,7 +46,7 @@ const mailto = `mailto:${copy.site.email}`
     <h2 class="section-title" id="obligations-h" set:html={inline(h.obligationsHeading)} />
     <ul class="cards">
       {h.obligations.map((o) => (
-        <li>
+        <li id={`obligation-${o.code.toLowerCase()}`}>
           <span class="tile tile-lg"><Icon name={o.icon} size={22} /></span>
           <h3 set:html={inline(o.heading)} />
           <span class="law" set:html={inline(o.law)} />
