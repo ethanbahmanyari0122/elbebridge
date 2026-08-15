@@ -16,7 +16,7 @@ const { copy, locale, switchHref, switchLang, switchLabel } = Astro.props;
     <nav class="site-nav" aria-label={copy.ui.primaryNavLabel}>
       <ul>
         {copy.nav.primary.map((item) => (
-          <li><a href={item.href}>{item.label}</a></li>
+          <li><a href={localePath(locale, item.href)}>{item.label}</a></li>
         ))}
         <li aria-hidden="true" class="nav-divider"></li>
         <li>
@@ -25,7 +25,7 @@ const { copy, locale, switchHref, switchLang, switchLabel } = Astro.props;
           </a>
         </li>
         <li>
-          <a class="btn btn-primary btn-sm" href={copy.nav.cta.href}>
+          <a class="btn btn-primary btn-sm" href={localePath(locale, copy.nav.cta.href)}>
             {copy.nav.cta.label}<Icon name="arrow-right" size={17} />
           </a>
         </li>

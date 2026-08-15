@@ -8,6 +8,7 @@ const ROUTES = {
   '/impressum': 'impressum.html',
   '/datenschutz': 'index.html',
   '/barrierefreiheit': 'barrierefreiheit.html',
+  '/terms': 'terms.html',
 };
 
 function serve(dir, port) {

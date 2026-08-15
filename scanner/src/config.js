@@ -13,8 +13,10 @@ module.exports = {
 
   // Timeouts (ms)
   navTimeout: 30000,
+  navRetryTimeout: 45000,    // one slower second attempt before giving up
   axeTimeout: 60000,
-  domainBudget: 120000,      // hard ceiling per domain; exceeded => status "timeout"
+  domainBudget: 210000,      // hard ceiling per domain; exceeded => status "timeout"
+                             // (one real shop legitimately needed 149s)
 
   viewport: { width: 1366, height: 900 },
   locale: 'de-DE',
@@ -25,6 +27,7 @@ module.exports = {
   // WCAG 2.2, so we scan 2.2 AA to avoid a second remediation cycle for clients.
   axeTags: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'EN-301-549'],
 
+  maxIdentityPages: 4,       // successful fetches when hunting for the entity
   maxEvidenceShots: 3,       // element screenshots of worst violations, for report p.2
 
   /**

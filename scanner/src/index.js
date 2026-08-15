@@ -16,6 +16,7 @@ function parseArgs(argv) {
       case '--out': case '-o': a.out = v; if (!argv[i].includes('=')) i++; break;
       case '--limit': a.limit = parseInt(v, 10) || 0; if (!argv[i].includes('=')) i++; break;
       case '--concurrency': case '-c': a.concurrency = Math.max(1, parseInt(v, 10) || 1); if (!argv[i].includes('=')) i++; break;
+      case '--group': case '-g': a.group = v; if (!argv[i].includes('=')) i++; break;
       case '--force': a.force = true; break;
       case '--headed': a.headed = true; break;
       case '--help': case '-h': usage(); process.exit(0);
@@ -33,6 +34,7 @@ elbebridge-scan — BFSG / GPSR / LUCID pre-check over a list of domains
   -i, --input <file>    CSV, one domain per row in column 1   (default domains.csv)
   -o, --out <dir>       output root                            (default out)
   -c, --concurrency <n> domains in parallel                    (default ${cfg.domainConcurrency})
+  -g, --group <name>    only scan one sector group from the CSV
       --limit <n>       only scan the first n domains
       --force           re-scan domains that already have a clean scan.json
       --headed          show the browser (debugging only)
@@ -50,8 +52,11 @@ async function main() {
     process.exit(1);
   }
 
-  let domains = readDomainsCsv(inputPath);
-  if (args.limit) domains = domains.slice(0, args.limit);
+  let entries = readDomainsCsv(inputPath);
+  if (args.group) entries = entries.filter((e) => (e.group || '').toLowerCase() === args.group.toLowerCase());
+  if (args.limit) entries = entries.slice(0, args.limit);
+  const domains = entries.map((e) => e.domain);
+  const metaByDomain = Object.fromEntries(entries.map((e) => [e.domain, e]));
   const outRoot = path.resolve(args.out);
   ensureDir(outRoot);
 
@@ -78,7 +83,7 @@ async function main() {
   const worker = async () => {
     while (cursor < todo.length) {
       const d = todo[cursor++];
-      const res = await withBudget(() => scanDomain(browser, d, outRoot), cfg.domainBudget, d, outRoot);
+      const res = await withBudget((handle) => scanDomain(browser, metaByDomain[d] || d, outRoot, handle), cfg.domainBudget, d, outRoot);
       results.push(res);
     }
   };
@@ -111,20 +116,56 @@ async function main() {
     elapsedSeconds: Math.round(elapsed),
     rows: all.map((r) => ({
       domain: r.domain,
+      group: r.group ?? (metaByDomain[r.domain] || {}).group ?? null,
+      country: r.country ?? (metaByDomain[r.domain] || {}).country ?? null,
+      prospectScore: r.prospectScore ?? null,
+      germanMarket: (r.germanMarket || {}).confidence ?? null,
       status: r.status,
       axeTotal: r.axeTotal ?? null,
       axeCritical: r.axeCritical ?? null,
       hasA11yStatement: r.hasA11yStatement ?? null,
       hasImpressum: r.hasImpressum ?? null,
       hasResponsiblePerson: r.hasResponsiblePerson ?? null,
+      axeReliable: r.axeReliable ?? null,
+      redirectedOffDomain: r.redirectedOffDomain ?? null,
+      finalHost: r.finalHost ?? null,
       legalEntity: r.legalEntity ?? null,
+      identityConfidence: r.identityConfidence ?? null,
       address: r.address ?? null,
       vatId: r.vatId ?? null,
       readyForLucidLookup: r.readyForLucidLookup ?? false,
     })),
   };
+  // Best prospects first, grouped — this is the order Ornella works in.
+  summary.rows.sort((a, b) =>
+    (b.prospectScore ?? -1) - (a.prospectScore ?? -1) || String(a.group).localeCompare(String(b.group)));
+
   writeJson(path.join(outRoot, '_run-summary.json'), summary);
   writeCsv(path.join(outRoot, '_run-summary.csv'), summary.rows);
+
+  // The one job the machines cannot do. Ornella opens this in Sheets, fills the
+  // four empty columns from the public register, and sends it back; the report
+  // generator reads it. Only rows with a name worth searching appear.
+  const lucidRows = all
+    .filter((r) => r.status === 'ok' && r.readyForLucidLookup && !r.redirectedOffDomain)
+    .sort((a, b) => (b.prospectScore ?? -1) - (a.prospectScore ?? -1))
+    .map((r) => ({
+      domain: r.domain,
+      group: r.group ?? null,
+      prospectScore: r.prospectScore ?? null,
+      legalEntity: r.legalEntity ?? null,
+      identityConfidence: r.identityConfidence ?? null,
+      address: r.address ?? null,
+      vatId: r.vatId ?? null,
+      lucidStatus: '',      // registered | not_found | unclear
+      lucidNumber: '',
+      checkedOn: '',
+      note: '',
+    }));
+  writeCsv(path.join(outRoot, '_lucid-worklist.csv'), lucidRows, [
+    'domain', 'group', 'prospectScore', 'legalEntity', 'identityConfidence',
+    'address', 'vatId', 'lucidStatus', 'lucidNumber', 'checkedOn', 'note']);
+  console.log(`Register worklist for Ornella: ${outRoot}/_lucid-worklist.csv (${lucidRows.length} rows)`);
 
   console.log(`\n─────────────────────────────────────────────`);
   console.log(`Scanned ${results.length} this run in ${elapsed.toFixed(0)}s (${(elapsed / Math.max(results.length, 1)).toFixed(1)}s/domain)`);
@@ -132,8 +173,11 @@ async function main() {
   console.log(`Ornellas' worklist: ${outRoot}/_run-summary.csv\n`);
 }
 
-function writeCsv(file, rows) {
-  const cols = ['domain', 'status', 'axeTotal', 'axeCritical', 'hasA11yStatement', 'hasImpressum', 'hasResponsiblePerson', 'legalEntity', 'address', 'vatId', 'readyForLucidLookup'];
+function writeCsv(file, rows, columns) {
+  const cols = columns || ['prospectScore', 'group', 'country', 'domain', 'germanMarket', 'status',
+    'redirectedOffDomain', 'finalHost', 'axeTotal', 'axeCritical', 'axeReliable',
+    'hasA11yStatement', 'hasImpressum', 'hasResponsiblePerson',
+    'legalEntity', 'identityConfidence', 'address', 'vatId', 'readyForLucidLookup'];
   const esc = (v) => {
     const s = v === null || v === undefined ? '' : String(v);
     return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;

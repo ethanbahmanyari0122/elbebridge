@@ -1,50 +1,263 @@
-domain,country,sector,note
-# SEED LIST — UNVERIFIED. Every row needs a 30-second sanity check before it
-# goes into outreach: does it ship to Germany, is it above the BFSG
-# micro-enterprise threshold (10+ staff OR €2m+ turnover), and is it plausibly
-# without an in-house accessibility team? Column 1 is all the scanner reads.
-rains.com,DK,fashion,
-organicbasics.com,DK,fashion,
-nordgreen.com,DK,watches,
-sonofatailor.com,DK,fashion,
-ganni.com,DK,fashion,
-happysocks.com,SE,fashion,
-sandqvist.com,SE,bags,
-nudient.com,SE,accessories,
-dedicatedbrand.com,SE,fashion,
-asket.com,SE,fashion,
-bugaboo.com,NL,juvenile,
-suitsupply.com,NL,fashion,
-fillingpieces.com,NL,footwear,
-charlietemple.nl,NL,eyewear,
-otrium.com,NL,marketplace,
-gymshark.com,UK,activewear,
-castore.com,UK,activewear,
-finisterre.com,UK,fashion,
-passenger-clothing.com,UK,fashion,
-papier.com,UK,stationery,
-wearewild.com,UK,personal care,
-beautypie.com,UK,beauty,
-loungeunderwear.com,UK,fashion,
-snagtights.com,UK,fashion,
-represent.com,UK,fashion,
-sezane.com,FR,fashion,
-leslipfrancais.fr,FR,fashion,
-balibaris.com,FR,fashion,
-asphalte.com,FR,fashion,
-cabaia.fr,FR,accessories,
-bergamotte.com,FR,gifting,
-velasca.com,IT,footwear,
-piquadro.com,IT,bags,
-slowear.com,IT,fashion,
-hoffshoes.com,ES,footwear,
-pompeiibrand.com,ES,footwear,
-scalperscompany.com,ES,fashion,
-twothirds.com,ES,fashion,
-answear.com,PL,marketplace,
-elementy.com,PL,jewellery,
-josefinas.com,PT,footwear,
-allbirds.com,US,footwear,
-ridge.com,US,accessories,
-rothys.com,US,footwear,
-away.com,US,luggage,
+domain,group,country,note
+# ─────────────────────────────────────────────────────────────────────────────
+# CANDIDATE LIST — grouped by sector, because the pitch barely changes inside a
+# group and Ornella builds fluency working one at a time.
+#
+# These are candidates, not verified prospects. Some will be dead, moved, or
+# already compliant. That is fine: the scanner is the filter. On the last run it
+# caught five domains that redirect to a different company or a parking page
+# without anyone looking. Feed it volume; it hands back a short worklist.
+#
+# Column 1 is all the scanner reads. The rest travel through to the worklist so
+# Ornella can sort by group.
+#
+# Sweet spot: 10-200 staff. Below 10 staff AND under €2m turnover the BFSG
+# micro-enterprise exemption applies and there is nothing to sell. Above roughly
+# 200 they usually have someone in-house already.
+#
+# GROUPS AND THE EXTRA LAW THEY DRAG IN
+#   fashion, footwear, accessories, home, gifts  -> your three obligations, clean
+#   beauty       -> plus CPNP cosmetic notification
+#   kids         -> plus toy safety rules where toys are sold
+#   sport        -> clean, but PPE rules if protective gear
+#   tech         -> plus WEEE/ElektroG and battery registration. Bigger job,
+#                   bigger fee, and the reason to keep take-e-way on the call
+#                   list even though they are wrong for packaging.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── fashion ──────────────────────────────────────────────────────────────────
+rains.com,fashion,DK,
+organicbasics.com,fashion,DK,already scanned - 324 critical
+sonofatailor.com,fashion,DK,already scanned
+ganni.com,fashion,DK,bot protection blocked us
+asket.com,fashion,SE,
+dedicatedbrand.com,fashion,SE,German storefront
+happysocks.com,fashion,SE,German storefront
+nudiejeans.com,fashion,SE,
+etonshirts.com,fashion,SE,
+filippa-k.com,fashion,SE,
+samsoe.com,fashion,DK,
+woodwood.com,fashion,DK,
+nn07.com,fashion,DK,
+lesdeux.com,fashion,DK,
+madsnorgaard.com,fashion,DK,
+colorfulstandard.com,fashion,DK,
+baserange.net,fashion,DK,
+scotch-soda.com,fashion,NL,
+kingsofindigo.com,fashion,NL,
+mudjeans.eu,fashion,NL,
+loavies.com,fashion,NL,
+sezane.com,fashion,FR,403 blocked us
+rouje.com,fashion,FR,
+ba-sh.com,fashion,FR,
+asphalte.com,fashion,FR,German storefront
+balibaris.com,fashion,FR,
+leslipfrancais.fr,fashion,FR,
+hopaal.com,fashion,FR,
+1083.fr,fashion,FR,
+officinegenerale.com,fashion,FR,
+percival.co,fashion,UK,
+sunspel.com,fashion,UK,
+communityclothing.co.uk,fashion,UK,
+rapanuiclothing.com,fashion,UK,
+nobodyschild.com,fashion,UK,
+kestin.co,fashion,UK,
+universalworks.co.uk,fashion,UK,
+oliverspencer.co.uk,fashion,UK,
+drakes.com,fashion,UK,
+finisterre.com,fashion,UK,German storefront
+passenger-clothing.com,fashion,UK,
+snagtights.com,fashion,UK,
+loungeunderwear.com,fashion,UK,redirects to lounge.com
+twothirds.com,fashion,ES,German storefront
+scalperscompany.com,fashion,ES,
+buckmason.com,fashion,US,
+marinelayer.com,fashion,US,
+fahertybrand.com,fashion,US,
+kotn.com,fashion,CA,
+frankandoak.com,fashion,CA,
+unboundmerino.com,fashion,CA,
+
+# ── footwear ─────────────────────────────────────────────────────────────────
+velasca.com,footwear,IT,
+hoffshoes.com,footwear,ES,503 blocked us
+pompeiibrand.com,footwear,ES,
+josefinas.com,footwear,PT,
+vagabond.com,footwear,SE,
+eytys.com,footwear,SE,
+novesta.com,footwear,SK,
+veja-store.com,footwear,FR,
+sessile-paris.com,footwear,FR,
+mmoustache.com,footwear,FR,
+cariuma.com,footwear,BR,
+diemme.com,footwear,IT,
+astorflex.it,footwear,IT,
+idltd.eu,footwear,IT,
+blackstonefootwear.com,footwear,NL,
+grenson.com,footwear,UK,
+nps-solovair.com,footwear,UK,
+vivobarefoot.com,footwear,UK,
+crownnorthampton.com,footwear,UK,
+beckettsimonon.com,footwear,US,
+koio.co,footwear,US,
+olivercabell.com,footwear,US,
+atoms.com,footwear,US,
+thousandfell.com,footwear,US,
+
+# ── accessories: bags, jewellery, watches, eyewear ───────────────────────────
+sandqvist.com,accessories,SE,
+nudient.com,accessories,SE,
+nordgreen.com,accessories,DK,53 critical - no entity published
+piquadro.com,accessories,IT,German storefront
+charlietemple.nl,accessories,NL,
+ridge.com,accessories,US,genuinely clean - not a prospect
+danielwellington.com,accessories,SE,
+cluse.com,accessories,NL,
+trendhim.de,accessories,DK,
+bellroy.com,accessories,AU,
+ekster.com,accessories,NL,
+secrid.com,accessories,NL,
+mismo.dk,accessories,DK,
+monos.com,accessories,CA,
+july.com,accessories,AU,
+dbjourney.com,accessories,NO,
+baggu.com,accessories,US,
+cambridgesatchel.com,accessories,UK,
+mejuri.com,accessories,CA,
+missoma.com,accessories,UK,
+monicavinader.com,accessories,UK,
+astridandmiyu.com,accessories,UK,
+analuisa.com,accessories,US,
+aceandtate.com,accessories,NL,
+monclondon.com,accessories,UK,
+izipizi.com,accessories,FR,
+komono.com,accessories,BE,
+
+# ── home: furniture, textiles, kitchen ───────────────────────────────────────
+hay.dk,home,DK,
+muuto.com,home,DK,
+fermliving.com,home,DK,
+audocph.com,home,DK,
+normann-copenhagen.com,home,DK,
+andtradition.com,home,DK,
+bylassen.com,home,DK,
+skagerak.dk,home,DK,
+teklafabrics.com,home,DK,
+bolia.com,home,DK,
+stringfurniture.com,home,SE,
+hem.com,home,SE,
+massproductions.se,home,SE,
+magniberg.com,home,SE,
+nkuku.com,home,UK,
+pigletinbed.com,home,UK,
+bedfolk.com,home,UK,
+soakandsleep.com,home,UK,
+swyfthome.com,home,UK,
+simbasleep.com,home,UK,
+brooklinen.com,home,US,
+parachutehome.com,home,US,
+fromourplace.com,home,US,
+carawayhome.com,home,US,
+materialkitchen.com,home,US,
+alessi.com,home,IT,
+sabre.paris,home,FR,
+opinel.com,home,FR,
+debuyer.com,home,FR,
+
+# ── beauty and personal care (plus CPNP notification) ────────────────────────
+wearewild.com,beauty,UK,
+beautypie.com,beauty,UK,
+typology.com,beauty,FR,
+respire-beauty.com,beauty,FR,
+mercihandy.com,beauty,FR,
+bulldogskincare.com,beauty,UK,
+faithinnature.co.uk,beauty,UK,
+fussy.co.uk,beauty,UK,
+haeckels.co.uk,beauty,UK,
+votarylondon.com,beauty,UK,
+beautykitchen.co.uk,beauty,UK,
+bybi.com,beauty,UK,
+frankbody.com,beauty,AU,
+sandandsky.com,beauty,AU,
+necessaire.com,beauty,US,
+youthtothepeople.com,beauty,US,
+versoskincare.com,beauty,SE,
+labruket.se,beauty,SE,
+sachajuan.com,beauty,SE,
+bjorkandberries.com,beauty,SE,
+meraki.dk,beauty,DK,
+
+# ── sport and outdoor ────────────────────────────────────────────────────────
+gymshark.com,sport,UK,
+castore.com,sport,UK,
+houdinisportswear.com,sport,SE,
+klattermusen.com,sport,SE,
+icebug.com,sport,SE,
+norrona.com,sport,NO,
+devold.com,sport,NO,
+bergans.com,sport,NO,
+reima.com,sport,FI,
+monsroyale.com,sport,NZ,
+karpos.eu,sport,IT,
+rab.equipment,sport,UK,
+montane.com,sport,UK,
+alpkit.com,sport,UK,
+prescasportswear.com,sport,UK,
+lecol.cc,sport,UK,
+tracksmith.com,sport,US,
+janji.com,sport,US,
+banditrunning.com,sport,US,
+ciele.cc,sport,CA,
+maap.cc,sport,AU,
+attaquer.cc,sport,AU,
+pasnormalstudios.com,sport,DK,
+
+# ── kids and baby (plus toy safety where toys are sold) ──────────────────────
+bugaboo.com,kids,NL,German storefront
+stokke.com,kids,NO,
+babybjorn.com,kids,SE,
+liewood.com,kids,DK,
+kongessloejd.com,kids,DK,
+minirodini.com,kids,SE,
+molo.com,kids,DK,
+bobochoses.com,kids,ES,
+tinycottons.com,kids,ES,
+donebydeer.com,kids,DK,
+sebra.dk,kids,DK,
+kidsconcept.com,kids,SE,
+olliella.com,kids,AU,
+connetixtiles.com,kids,AU,
+lovevery.com,kids,US,
+tenderleaftoys.co.uk,kids,UK,
+joolz.com,kids,NL,
+mushie.com,kids,SE,
+
+# ── tech and electronics accessories (plus WEEE and batteries) ───────────────
+teenage.engineering,tech,SE,
+libratone.com,tech,DK,
+sudio.com,tech,SE,
+happyplugs.com,tech,SE,
+nativeunion.com,tech,FR,
+nomadgoods.com,tech,US,
+peakdesign.com,tech,US,
+twelvesouth.com,tech,US,
+mous.co,tech,UK,
+dbrand.com,tech,CA,
+casetify.com,tech,HK,
+pitaka.com,tech,CN,
+fairphone.com,tech,NL,
+
+# ── gifts, stationery, flowers ───────────────────────────────────────────────
+papier.com,gifts,UK,
+bergamotte.com,gifts,FR,redirects to bergamotte.fr
+cabaia.fr,gifts,FR,
+moleskine.com,gifts,IT,
+katieleamon.com,gifts,UK,
+ohhdeer.com,gifts,UK,
+baronfig.com,gifts,US,
+fieldnotesbrand.com,gifts,US,
+appointed.co,gifts,US,
+blackwing602.com,gifts,US,
+bloomandwild.com,gifts,UK,
+freddiesflowers.com,gifts,UK,
+colvin.de,gifts,ES,

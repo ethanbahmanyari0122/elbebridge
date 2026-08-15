@@ -1,0 +1,10 @@
+{
+  "name": "elbebridge-report",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Turns one scan.json into the three-page findings report",
+  "scripts": {
+    "report": "node src/generate.js",
+    "test": "node test/run.js"
+  }
+}

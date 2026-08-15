@@ -17,25 +17,25 @@
     "title": "elbebridge — Prüfung der deutschen Pflichten für ausländische Online-Marken",
     "metaDescription": "Festpreis-Prüfung der drei deutschen Pflichten, die ausländische Online-Marken meist übersehen: Barrierefreiheit (BFSG), verantwortliche Person in der EU (GPSR) und Verpackungsregistrierung (LUCID).",
     "email": "hallo@elbebridge.com",
-    "footerNote": "© 2026 elbebridge, Hamburg. Diese Website setzt keine Cookies und nutzt keine Analyse-Werkzeuge.",
+    "footerNote": "© 2026 elbebridge, Hamburg. Wir tracken Sie nicht: keine Cookies, keine Analyse, keine Skripte Dritter.",
     "social": []
   },
   "nav": {
     "cta": {
-      "href": "#check",
+      "href": "/#check",
       "label": "Prüfung anfragen"
     },
     "primary": [
       {
-        "href": "#what-we-do",
+        "href": "/#what-we-do",
         "label": "Leistungen"
       },
       {
-        "href": "#price",
+        "href": "/#price",
         "label": "Preis"
       },
       {
-        "href": "#check",
+        "href": "/#check",
         "label": "Prüfung anfragen"
       }
     ],
@@ -63,15 +63,15 @@
         "heading": "Unser Angebot",
         "links": [
           {
-            "href": "#what-we-do",
+            "href": "/#what-we-do",
             "label": "Was wir tun"
           },
           {
-            "href": "#price",
+            "href": "/#price",
             "label": "Preis"
           },
           {
-            "href": "#check",
+            "href": "/#check",
             "label": "Prüfung anfragen"
           }
         ]
@@ -80,15 +80,15 @@
         "heading": "Die drei Pflichten",
         "links": [
           {
-            "href": "#obligations",
+            "href": "/#obligations",
             "label": "Barrierefreiheit (BFSG)"
           },
           {
-            "href": "#obligations",
+            "href": "/#obligations",
             "label": "Verantwortliche Person (GPSR)"
           },
           {
-            "href": "#obligations",
+            "href": "/#obligations",
             "label": "Verpackung (LUCID)"
           }
         ]
@@ -119,19 +119,20 @@
     "bar": {
       "icon": "shield",
       "disclaimer": "Technische und administrative Dienstleistungen, keine Rechtsberatung.",
-      "privacyNote": "Keine Cookies. Keine Analyse. Nie."
+      "privacyNote": "Wir tracken Sie nicht. Keine Cookies, keine Analyse."
     },
     "copyright": "© 2026 elbebridge GbR · Hamburg. Alle Rechte vorbehalten."
   },
   "home": {
     "headline": "Sie verkaufen nach Deutschland? Drei Pflichten, die ausländische Marken meist ==übersehen==.",
-    "lede": "Wer an deutsche Verbraucherinnen und Verbraucher liefert, unterliegt deutschem Recht — unabhängig davon, ob Sie hier eine Gesellschaft haben. Bei den meisten ausländischen Marken, die wir prüfen, fehlen mindestens zwei der folgenden drei.",
+    "lede": "Wer an deutsche Verbraucherinnen und Verbraucher liefert, unterliegt bestimmten deutschen Anforderungen — unabhängig davon, ob Sie hier eine Gesellschaft haben. Bei den meisten ausländischen Marken, die wir prüfen, fehlen mindestens zwei der folgenden drei.",
     "heroCta": "Prüfung anfragen",
     "trust": [
       "Festpreis",
-      "2 Werktage",
+      "1 Werktag",
       "Unverbindlich"
     ],
+    "journeyEnd": "Bereit für den Verkauf in Deutschland",
     "obligationsHeading": "Die drei Pflichten",
     "obligations": [
       {
@@ -139,7 +140,7 @@
         "heading": "Ein barrierefreier Onlineshop",
         "short": "Barrierefreier Onlineshop",
         "code": "BFSG",
-        "law": "Barrierefreiheitsstärkungsgesetz (BFSG) — in Kraft seit 28. Juni 2025",
+        "law": "Barrierefreiheitsstärkungsgesetz (BFSG) — gilt seit 28. Juni 2025",
         "text": "Shop, Bestellprozess und Kundenkonto müssen für Menschen mit Behinderungen nutzbar sein, gemessen an der europäischen Norm EN 301 549. Zusätzlich brauchen Sie eine veröffentlichte Erklärung zur Barrierefreiheit. Seit Januar 2026 prüft die Marktüberwachungsstelle aktiv von sich aus und reagiert nicht nur auf Beschwerden."
       },
       {
@@ -164,7 +165,7 @@
       {
         "icon": "search",
         "lead": "Prüfung.",
-        "text": "Wir testen Ihren Shop gegen die Norm zur Barrierefreiheit und prüfen die öffentlichen Register für die beiden anderen Pflichten."
+        "text": "Wir testen Ihre Website gegen die einschlägigen Anforderungen an die Barrierefreiheit und prüfen die öffentlichen Register für die beiden anderen Pflichten."
       },
       {
         "icon": "document",
@@ -174,41 +175,75 @@
       {
         "icon": "wrench",
         "lead": "Behebung zum Festpreis.",
-        "text": "Wenn wir es beheben sollen, erhalten Sie den Preis vorab."
+        "text": "Sie kennen den Preis, bevor wir beginnen."
       },
       {
         "icon": "chart",
         "lead": "Quartalsweise Überwachung.",
-        "text": "Optional. Websites verändern sich, das Recht ebenso."
+        "text": "Optional. Websites ändern sich, die Anforderungen ebenso. Wir prüfen, ob Sie weiterhin auf Kurs sind."
       }
     ],
     "priceHeading": "Preis",
     "priceAmount": "890 €",
     "priceLines": [
       "Für die Prüfung und den dreiseitigen Prüfbericht. Festpreis, vorab genannt, einmalig in Rechnung gestellt.",
-      "Behebung und Überwachung werden separat im Bericht ausgewiesen, bevor Sie sich zu irgendetwas verpflichten."
+      "**Wird vollständig auf die Behebung angerechnet.** Beauftragen Sie uns mit der Behebung, werden die 890 € verrechnet."
     ],
     "contact": {
       "heading": "Prüfung anfragen",
-      "intro": "Senden Sie uns Ihre Shop-Adresse. Wir antworten innerhalb von zwei Werktagen mit dem, was wir auf den öffentlichen Teilen Ihrer Website gefunden haben.",
-      "buttonLabel": "Shop-Adresse per E-Mail senden",
+      "intro": "Senden Sie uns Ihre Website-Adresse. Wir antworten innerhalb eines Werktags mit dem, was wir auf den öffentlichen Teilen gefunden haben.",
+      "buttonLabel": "Website per E-Mail senden",
       "mailSubject": "Anfrage Compliance-Prüfung",
-      "mailBody": "Shop-Adresse:\n\nFirmenname (optional):\n\nWas Ihnen bereits bekannt ist:\n",
+      "mailBody": "Website:\n\nFirmenname (optional):\n\nWas Ihnen bereits bekannt ist:\n",
       "note": "Kein Formular, kein Tracking, kein Dritter dazwischen — Ihre Nachricht geht direkt in unser Postfach."
     },
-    "peopleHeading": "Wer wir sind",
+    "peopleHeading": "Über uns",
     "people": [
-      {
-        "name": "Ornella Buxbaum",
-        "text": "übernimmt die Registerrecherchen, die Kontakte zu den Systembetreibern und alles, was auf Deutsch verhandelt werden muss."
-      },
       {
         "name": "Ethan Bahmanyari",
         "text": "entwickelt die Prüfwerkzeuge und schreibt die Prüfberichte."
+      },
+      {
+        "name": "Ornella Buxbaum",
+        "text": "übernimmt die Registerrecherchen, die Kontakte zu den Systembetreibern und alles, was auf Deutsch verhandelt werden muss."
       }
     ],
-    "peopleNote": "Wir sitzen in Hamburg und sind beide selbst zugewanderte Gründer. Wir haben diese drei Pflichten so gelernt, wie Sie es gleich tun werden: weil wir mussten.",
-    "disclaimer": "Wir erbringen technische und administrative Dienstleistungen, keine Rechts- oder Steuerberatung. Unsere Berichte beschreiben, was das Gesetz verlangt und was wir auf Ihrer Website gefunden haben. Sie treffen keine Aussage darüber, ob Sie haften, und ersetzen keine Beratung durch eine qualifizierte Anwältin oder einen qualifizierten Anwalt."
+    "peopleNote": "Wir sind Ethan und Ornella. Wir haben elbebridge gegründet, damit der Verkauf nach Deutschland weniger kompliziert wird. Wir helfen internationalen Unternehmen zu verstehen, was gefordert ist, zu erkennen, was fehlt, und das Richtige aufzusetzen — ohne sich in der deutschen Bürokratie zu verlieren.",
+    "disclaimer": "elbebridge ist keine Rechts- oder Steuerberatungsgesellschaft und erbringt keine Rechtsberatung. Informationen und Feststellungen auf dieser Website dienen der allgemeinen Information und ersetzen keine Beratung durch eine qualifizierte Anwältin oder einen qualifizierten Anwalt.",
+    "formDisclaimer": "Unsere Prüfung liefert allgemeine Informationen auf Grundlage der von Ihnen genannten Website. Sie stellt keine Rechtsberatung dar und begründet kein Mandatsverhältnis.",
+    "comparison": {
+      "heading": "Warum nicht einfach eine KI fragen?",
+      "intro": "Können Sie — und Sie bekommen eine Antwort. Das hier bekommen Sie nicht.",
+      "colUs": "elbebridge",
+      "colAi": "Eine KI oder ein kostenloser Scanner",
+      "rows": [
+        {
+          "factor": "Barrierefreiheit",
+          "us": "Geprüft mit derselben Technik, danach manuell mit Tastatur und Screenreader — dort zeigen sich die meisten echten Barrieren.",
+          "ai": "Findet nur, was maschinell erkennbar ist, und stellt das als Gesamtbild dar."
+        },
+        {
+          "factor": "Verpackungsregister",
+          "us": "Wir durchsuchen das LUCID-Register unter Ihrer juristischen Person und nennen das Datum der Recherche.",
+          "ai": "Hat auf das Register keinen Zugriff."
+        },
+        {
+          "factor": "Verantwortliche Person in der EU",
+          "us": "Wir sagen Ihnen, ob eine benannt ist, und vermitteln die Benennung.",
+          "ai": "Kann niemanden benennen."
+        },
+        {
+          "factor": "Nachweise",
+          "us": "Das fehlerhafte Element selbst, die verletzte Anforderung und das Datum — ein Dokument für Entwicklung oder Behörde.",
+          "ai": "Eine Liste von Hinweisen ohne Beleg."
+        },
+        {
+          "factor": "Was behauptet wird",
+          "us": "Wir sagen Ihnen nie, dass Sie konform sind. Wir sagen, was gefordert ist und was wir gefunden haben.",
+          "ai": "Erklärt Sie bereitwillig für konform."
+        }
+      ]
+    }
   },
   "legal": [
     {

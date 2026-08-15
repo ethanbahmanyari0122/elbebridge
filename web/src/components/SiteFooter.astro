@@ -23,7 +23,7 @@ const f = copy.footer;
           <h2>{col.heading}</h2>
           <ul>
             {col.links.map((l) => (
-              <li><a href={l.href.startsWith('#') ? l.href : localePath(locale, l.href)} lang={l.lang}>{l.label}</a></li>
+              <li><a href={localePath(locale, l.href)} lang={l.lang}>{l.label}</a></li>
             ))}
           </ul>
         </nav>

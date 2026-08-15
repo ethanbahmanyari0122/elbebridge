@@ -1,9 +1,27 @@
 node_modules/
 dist/
 .astro/
-out/
 .DS_Store
 *.log
-
-# JetBrains project files — local paths and editor state, not shared config
 .idea/
+
+# ── Generated output ─────────────────────────────────────────────────────────
+# Scan results: findings about named companies.
+scanner/out/
+# Generated client reports.
+report/reports/
+# Screenshots — regenerate with `npm run audit`.
+web/preview-*.png
+
+# ── Never commit ─────────────────────────────────────────────────────────────
+# This repository is public so GitHub Pages can serve the website. Everything
+# below names real companies or records commercial contact.
+#
+# Who we have contacted and what they said.
+scanner/pipeline.csv
+# Register findings, per company.
+report/lucid-results.csv
+# Any generated findings report about a real company.
+*-findings-*.pdf
+# ...except the deliberate demo, which is a fictional shop.
+!report/sample-report.pdf

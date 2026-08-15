@@ -17,25 +17,25 @@
     "title": "elbebridge — German compliance checks for brands selling into Germany",
     "metaDescription": "A fixed-price check of the three German obligations most foreign online brands are missing: accessibility (BFSG), an EU responsible person (GPSR), and packaging registration (LUCID).",
     "email": "hallo@elbebridge.com",
-    "footerNote": "© 2026 elbebridge, Hamburg. This site sets no cookies and runs no analytics.",
+    "footerNote": "© 2026 elbebridge, Hamburg. We don't track you: no cookies, no analytics, no third-party scripts.",
     "social": []
   },
   "nav": {
     "cta": {
-      "href": "#check",
+      "href": "/#check",
       "label": "Get a check"
     },
     "primary": [
       {
-        "href": "#what-we-do",
+        "href": "/#what-we-do",
         "label": "What we do"
       },
       {
-        "href": "#price",
+        "href": "/#price",
         "label": "Price"
       },
       {
-        "href": "#check",
+        "href": "/#check",
         "label": "Get a check"
       }
     ],
@@ -57,22 +57,22 @@
   },
   "footer": {
     "blurb": "Independent compliance checks for foreign brands entering Germany. Clear, fast, and honest about what we can and cannot tell you.",
-    "foundersLine": "Founded by Ethan Bahmanyari and Ornella Buxbaum.",
+    "foundersLine": "Founded by Ornella Buxbaum and Ethan Bahmanyari.",
     "location": "Hamburg, Germany",
     "columns": [
       {
         "heading": "What we offer",
         "links": [
           {
-            "href": "#what-we-do",
+            "href": "/#what-we-do",
             "label": "What we do"
           },
           {
-            "href": "#price",
+            "href": "/#price",
             "label": "Price"
           },
           {
-            "href": "#check",
+            "href": "/#check",
             "label": "Get a check"
           }
         ]
@@ -81,15 +81,15 @@
         "heading": "The three obligations",
         "links": [
           {
-            "href": "#obligations",
+            "href": "/#obligations",
             "label": "Accessibility (BFSG)"
           },
           {
-            "href": "#obligations",
+            "href": "/#obligations",
             "label": "EU responsible person (GPSR)"
           },
           {
-            "href": "#obligations",
+            "href": "/#obligations",
             "label": "Packaging (LUCID)"
           }
         ]
@@ -121,19 +121,20 @@
     "bar": {
       "icon": "shield",
       "disclaimer": "Technical and administrative services, not legal advice.",
-      "privacyNote": "No cookies. No analytics. Ever."
+      "privacyNote": "We don't track you. No cookies, no analytics."
     },
     "copyright": "© 2026 elbebridge GbR · Hamburg. All rights reserved."
   },
   "home": {
     "headline": "Selling into Germany? Three obligations most foreign brands are ==missing==.",
-    "lede": "If you ship to German consumers, German law applies to you, whether or not you have a company here. Most foreign brands we look at are missing at least two of the three below.",
+    "lede": "If you ship to German consumers, specific German requirements apply to you — whether or not you have a company here. Most foreign brands we look at are missing at least two of the three below.",
     "heroCta": "Get your compliance check",
     "trust": [
       "Fixed price",
-      "2 working days",
+      "1 business day",
       "No commitment"
     ],
+    "journeyEnd": "Ready to sell in Germany",
     "obligationsHeading": "The three",
     "obligations": [
       {
@@ -141,7 +142,7 @@
         "heading": "An accessible online shop",
         "short": "Accessible online shop",
         "code": "BFSG",
-        "law": "{de|Barrierefreiheitsstärkungsgesetz} (BFSG) — in force since 28 June 2025",
+        "law": "{de|Barrierefreiheitsstärkungsgesetz} (BFSG) — applies since 28 June 2025",
         "text": "Your shop, checkout and customer account have to be usable by people with disabilities, measured against the European standard {de|EN 301 549}. You also need a published accessibility statement. Since January 2026 the German market surveillance authority has been running its own checks, not only responding to complaints."
       },
       {
@@ -166,51 +167,85 @@
       {
         "icon": "search",
         "lead": "Scan.",
-        "text": "We test your shop against the accessibility standard and check the public record for the other two obligations."
+        "text": "We test your website against the relevant accessibility requirements and check the public records for the other two obligations."
       },
       {
         "icon": "document",
         "lead": "Findings report.",
-        "text": "Three pages: what applies to you, what we found with the evidence, and what it takes to fix."
+        "text": "Three pages: what applies to you, what we found and the evidence behind it, and what it takes to fix."
       },
       {
         "icon": "wrench",
         "lead": "Fixed-price remediation.",
-        "text": "If you want us to fix it, you get a price before we start."
+        "text": "You will know the price before we start."
       },
       {
         "icon": "chart",
         "lead": "Quarterly monitoring.",
-        "text": "Optional. Sites drift, and so does the law."
+        "text": "Optional. Websites change and so do the requirements. We check that you are still on track."
       }
     ],
     "priceHeading": "Price",
     "priceAmount": "€890",
     "priceLines": [
       "For the check and the three-page findings report. Fixed, quoted before we start, invoiced once.",
-      "Remediation and monitoring are priced separately, in the report, before you commit to anything."
+      "**Credited in full against remediation.** If you ask us to fix what we find, the €890 comes off the price."
     ],
     "contact": {
       "heading": "Get a check",
-      "intro": "Send us your store URL. We reply within two working days with what we found on the public parts of your site.",
-      "buttonLabel": "Email us your store URL",
+      "intro": "Send us your website address. We reply within one business day with what we found on the public parts of it.",
+      "buttonLabel": "Email us your website",
       "mailSubject": "Compliance check request",
-      "mailBody": "Store URL:\n\nCompany name (optional):\n\nAnything you already know is missing:\n",
+      "mailBody": "Website:\n\nCompany name (optional):\n\nAnything you already know is missing:\n",
       "note": "No form, no tracking, no third party in between — your message goes straight to our inbox."
     },
-    "peopleHeading": "Who we are",
+    "peopleHeading": "About us",
     "people": [
       {
         "name": "Ethan Bahmanyari",
-        "text": "builds the scanning and writes the findings reports."
+        "text": "builds the checking and writes the findings reports."
       },
       {
         "name": "Ornella Buxbaum",
         "text": "handles the register searches, the provider relationships and everything that has to be argued in German."
       }
     ],
-    "peopleNote": "We are based in Hamburg and we are both foreign founders. We learned these three obligations the way you are about to: by having to.",
-    "disclaimer": "We provide technical and administrative services, not legal or tax advice. Our reports describe what the law requires and what we found on your site. They do not tell you whether you are liable, and they are not a substitute for advice from a qualified lawyer."
+    "peopleNote": "We're Ethan and Ornella, and we started elbebridge to make selling in Germany feel less complicated. We help international businesses understand what's required, spot what's missing, and get the right pieces in place without getting lost in German bureaucracy.",
+    "disclaimer": "elbebridge is not a law or a tax firm and does not provide legal advice. Information and findings provided through this website are for general informational purposes and do not replace advice from a qualified legal professional.",
+    "formDisclaimer": "Our check provides general information based on the website you give us. It does not constitute legal advice or create a lawyer-client relationship.",
+    "comparison": {
+      "heading": "Why not just ask an AI?",
+      "intro": "You can, and it will tell you something. Here is what it will not do.",
+      "colUs": "elbebridge",
+      "colAi": "An AI or a free scanner",
+      "rows": [
+        {
+          "factor": "Accessibility findings",
+          "us": "Tested with the same engine, then checked by hand with a keyboard and a screen reader — which is where most real barriers show up.",
+          "ai": "Finds only what a machine can detect, and reports that as the whole picture."
+        },
+        {
+          "factor": "The packaging register",
+          "us": "We search the German {de|LUCID} register under your legal entity and tell you the date we searched.",
+          "ai": "Cannot see the register at all."
+        },
+        {
+          "factor": "EU responsible person",
+          "us": "We tell you whether one is named, and can broker the appointment.",
+          "ai": "Cannot appoint anyone."
+        },
+        {
+          "factor": "Evidence",
+          "us": "The failing element itself, the requirement it breaks, and the date — a document you can hand to a developer or an authority.",
+          "ai": "A list of suggestions with nothing behind them."
+        },
+        {
+          "factor": "What it claims",
+          "us": "We never tell you that you are compliant. We tell you what the requirement is and what we found.",
+          "ai": "Will happily declare you compliant."
+        }
+      ]
+    }
   },
   "legal": [
     {
@@ -342,7 +377,7 @@
               "items": [
                 {
                   "term": "What we collect",
-                  "desc": "Your email address and whatever you choose to put in the message, normally a store URL and a company name."
+                  "desc": "Your email address and whatever you choose to put in the message — normally a store URL and a company name."
                 },
                 {
                   "term": "Why",

@@ -1,57 +1,40 @@
 ---
 import Icon from './Icon.astro';
-import type { Copy } from '../lib/site';
-interface Props { copy: Copy }
-const { copy } = Astro.props;
-const products = ['shirt', 'shoe', 'bottle'] as const;
+import type { Copy, Locale } from '../lib/site';
+import { localePath } from '../lib/site';
+interface Props { copy: Copy; locale: Locale }
+const { copy, locale } = Astro.props;
+const to = localePath(locale, '/#obligations');
 ---
 {/*
-  Decorative only. It restates the three obligations that appear as real text
-  immediately below, so it is hidden from assistive technology rather than read
-  out twice. Built in CSS and inline SVG rather than as an image so it scales,
-  needs no translation and costs nothing to download.
-  The shop is deliberately desaturated: it is the thing being inspected, not
-  the thing being sold.
+  The journey rather than a shop: a parcel crossing into Germany through three
+  checkpoints. Ornella's idea, and a better one — it explains the product in a
+  glance where the previous abstract mock explained nothing.
+
+  Built in markup rather than shipped as an image so it stays sharp, translates
+  with the rest of the page, and weighs nothing. The three checkpoints are real
+  links to the section that explains them, which is what she asked for.
 */}
-<div class="hero-visual" aria-hidden="true">
-  <div class="browser">
-    <div class="browser-bar">
-      <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
-      <span class="browser-url"></span>
-    </div>
-
-    <div class="shop">
-      <div class="shop-head">
-        <span class="sk sk-w45"></span>
-        <span class="shop-cart"></span>
-      </div>
-
-      <div class="shop-grid">
-        {products.map((p) => (
-          <div class="product">
-            <div class="product-img"><Icon name={p} size={44} /></div>
-            <span class="sk sk-w85"></span>
-            <span class="sk sk-w45 sk-price"></span>
-          </div>
-        ))}
-      </div>
-
-      <div class="shop-foot">
-        <span class="sk sk-w70"></span>
-        <span class="shop-btn"></span>
-      </div>
-    </div>
+<div class="journey">
+  <div class="journey-start" aria-hidden="true">
+    <span class="parcel"><Icon name="box" size={26} /></span>
+    <span class="track"></span>
   </div>
 
-  <div class="floating">
-    {copy.home.obligations.map((o) => (
-      <div class="float-card">
-        <span class="tile tile-accent"><Icon name={o.icon} size={18} /></span>
-        <span>
-          <span class="t">{o.short}</span><br />
-          <span class="s">{o.code}</span>
-        </span>
-      </div>
+  <ol class="checkpoints">
+    {copy.home.obligations.map((o, i) => (
+      <li>
+        <a href={to}>
+          <span class="cp-n">{String(i + 1).padStart(2, '0')}</span>
+          <span class="cp-icon"><Icon name={o.icon} size={19} /></span>
+          <span class="cp-text">
+            <span class="cp-code">{o.code}</span>
+            <span class="cp-label">{o.short}</span>
+          </span>
+        </a>
+      </li>
     ))}
-  </div>
+  </ol>
+
+  <p class="journey-end"><Icon name="check" size={18} />{copy.home.journeyEnd}</p>
 </div>

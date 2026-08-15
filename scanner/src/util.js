@@ -22,17 +22,30 @@ function normaliseDomain(raw) {
   return d;
 }
 
+/**
+ * Reads the domain list. Column 1 is the domain; any further columns
+ * (group, country, note) travel through to the worklist so Ornella can work
+ * one sector at a time.
+ */
 function readDomainsCsv(file) {
   const text = fs.readFileSync(file, 'utf8');
   const out = [];
   const seen = new Set();
   for (const line of text.split(/\r?\n/)) {
-    const cell = line.split(',')[0];
+    const cells = line.split(',');
+    const cell = cells[0];
     if (!cell) continue;
     if (/^\s*(domain|website|url|site)\s*$/i.test(cell)) continue;
     if (/^\s*#/.test(cell)) continue;
     const d = normaliseDomain(cell);
-    if (d && !seen.has(d)) { seen.add(d); out.push(d); }
+    if (!d || seen.has(d)) continue;
+    seen.add(d);
+    out.push({
+      domain: d,
+      group: (cells[1] || '').trim() || null,
+      country: (cells[2] || '').trim() || null,
+      note: (cells[3] || '').trim() || null,
+    });
   }
   return out;
 }
@@ -50,15 +63,29 @@ function log(domain, msg) {
 }
 
 /**
- * Hard ceiling around one domain. A page that hangs past every internal timeout
- * must not eat the run, so we race the work against the budget and write a
- * timeout record ourselves if the budget wins.
+ * Hard ceiling around one domain.
+ *
+ * Racing a promise against a timer stops us *waiting*, but the work carries on.
+ * On the first 5-domain live run that produced a domain recorded as `timeout`
+ * in the summary and `ok` in its own scan.json twenty-nine seconds later, after
+ * the summary had already been written — plus a log line printed after the run
+ * had finished. The two files disagreed about the same domain.
+ *
+ * So the timer now cancels: it closes the browser context, which rejects every
+ * in-flight Playwright call, and sets a flag the scan checks before it writes.
  */
 async function withBudget(fn, ms, domain, outRoot) {
   const path = require('path');
+  const handle = { cancelled: false, context: null };
   let timer;
+
   const bail = new Promise((resolve) => {
     timer = setTimeout(() => {
+      handle.cancelled = true;
+
+      // Record and resolve FIRST. Closing a context whose page is mid-flight to
+      // a host that accepts the connection and never answers can itself hang,
+      // and awaiting it here meant the timeout record was never written at all.
       const rec = {
         schemaVersion: 1, domain, status: 'timeout',
         scannedAt: new Date().toISOString(), error: `exceeded ${ms}ms domain budget`,
@@ -66,9 +93,23 @@ async function withBudget(fn, ms, domain, outRoot) {
       writeJson(path.join(outRoot, domain, 'scan.json'), rec);
       log(domain, `TIMEOUT exceeded ${Math.round(ms / 1000)}s budget`);
       resolve(rec);
+
+      // Then tear down in the background, bounded, so a stuck close cannot
+      // hold the run open.
+      if (handle.context) {
+        Promise.race([
+          handle.context.close().catch(() => {}),
+          new Promise((r) => setTimeout(r, 5000)),
+        ]).catch(() => {});
+      }
     }, ms);
   });
-  try { return await Promise.race([fn(), bail]); } finally { clearTimeout(timer); }
+
+  try {
+    return await Promise.race([fn(handle), bail]);
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 module.exports = { sleep, makeThrottle, normaliseDomain, readDomainsCsv, ensureDir, writeJson, log, withBudget };

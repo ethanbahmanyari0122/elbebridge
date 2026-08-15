@@ -4,6 +4,41 @@ BFSG / GPSR / LUCID pre-check over a list of domains. Feeds the three-page
 findings report. It is deliberately a script over a CSV — no database, no queue,
 no dashboard.
 
+## The domain list
+
+`domains.csv` holds 219 candidates in nine sector groups: fashion, footwear,
+accessories, home, beauty, sport, kids, tech, gifts. Column 1 is the domain;
+group, country and note travel through to the worklist.
+
+They are candidates, not verified prospects. Some are dead, moved or already
+compliant — the scanner is the filter and flags those itself. Feed it volume.
+
+Work one group at a time; the pitch barely changes inside a group:
+
+```bash
+node src/index.js --group fashion
+```
+
+Groups that drag in extra law beyond your three obligations: **beauty** (CPNP
+cosmetic notification), **kids** (toy safety), **tech** (WEEE/ElektroG and
+battery registration — a bigger job and a bigger fee, and the reason to keep
+take-e-way on the call list even though they are wrong for packaging).
+
+## Adding candidates
+
+```bash
+node src/intake.js --group home --country DK --source "Ambiente 2026" --file paste.txt
+```
+
+Paste anything — an exhibitor page, a column of URLs, a messy export. It pulls
+the domains out, drops social links, CDNs and asset files, and **refuses to add
+anything already on the list, already scanned, or already in `pipeline.csv`**,
+telling you which and why. Idempotent: run the same paste twice and nothing
+happens. `--dry-run` to look first.
+
+`pipeline.csv` is the contact tracker. Ornella owns it; one row per company
+touched, so nobody gets emailed twice.
+
 ## Run it
 
 ```bash
@@ -42,7 +77,31 @@ out/
 ```
 
 `_run-summary.csv` always reflects the whole list, including domains scanned in
-earlier runs.
+earlier runs, **sorted best prospect first**.
+
+## How a prospect is scored
+
+Two halves, and they multiply rather than add.
+
+**Need** — how much they have got wrong: critical failures (capped), no
+accessibility statement, no EU responsible person, plus small credits for having
+an Impressum (they already know German law applies, so it is an easier
+conversation) and for having produced a legal entity Ornella can search today.
+
+**Reach** — whether German law touches them at all, from `germanMarket`:
+
+| Confidence | Evidence | Multiplier |
+|---|---|---|
+| high | the shop itself is served in German — a `/de` storefront, `lang="de"`, or German UI wording | ×1 |
+| medium | it offers a German route or mentions Germany — `hreflang="de"`, a `/de` link | ×0.55 |
+| low | no sign at all | ×0.1 |
+
+An earlier version added the two together, which ranked a wrecked shop with no
+German presence above a tidy German one. That is backwards: the first is not a
+customer at any price.
+
+A scan that could not complete behind an overlay is discounted by 30%, because
+its violation count is a floor rather than a finding.
 
 ## The five checks
 

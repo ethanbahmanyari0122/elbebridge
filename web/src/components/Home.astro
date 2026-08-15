@@ -3,8 +3,9 @@ import Icon from './Icon.astro';
 import HeroVisual from './HeroVisual.astro';
 import { inline } from '../lib/inline';
 import type { Copy } from '../lib/site';
-interface Props { copy: Copy }
-const { copy } = Astro.props;
+import type { Locale } from '../lib/site';
+interface Props { copy: Copy; locale: Locale }
+const { copy, locale } = Astro.props;
 const h = copy.home;
 const c = h.contact;
 
@@ -35,7 +36,7 @@ const mailto = `mailto:${copy.site.email}`
         </ul>
       </div>
 
-      <HeroVisual copy={copy} />
+      <HeroVisual copy={copy} locale={locale} />
     </div>
   </div>
 </section>
@@ -100,8 +101,34 @@ const mailto = `mailto:${copy.site.email}`
         </a>
         <p class="contact-address">{copy.site.email}</p>
         <p class="contact-note" set:html={inline(c.note)} />
+        <p class="contact-legal" set:html={inline(h.formDisclaimer)} />
       </div>
     </div>
+  </div>
+</section>
+
+<section class="band" id="why-us" aria-labelledby="why-us-h">
+  <div class="wrap">
+    <h2 class="section-title" id="why-us-h" set:html={inline(h.comparison.heading)} />
+    <p class="prose" set:html={inline(h.comparison.intro)} />
+    <table class="compare">
+      <thead>
+        <tr>
+          <th scope="col"><span class="vh">Aspect</span></th>
+          <th scope="col" class="col-us">{h.comparison.colUs}</th>
+          <th scope="col">{h.comparison.colAi}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {h.comparison.rows.map((r) => (
+          <tr>
+            <th scope="row" set:html={inline(r.factor)} />
+            <td class="col-us"><Icon name="check" size={15} /><span set:html={inline(r.us)} /></td>
+            <td class="col-ai"><span set:html={inline(r.ai)} /></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   </div>
 </section>
 
@@ -110,12 +137,17 @@ const mailto = `mailto:${copy.site.email}`
     <div class="split">
       <div>
         <h2 class="section-title" id="who-we-are-h" set:html={inline(h.peopleHeading)} />
+        <p class="about" set:html={inline(h.peopleNote)} />
         <ul class="people">
           {h.people.map((p) => (
-            <li><span class="name">{p.name}</span> — <span set:html={inline(p.text)} /></li>
+            <li>
+              {p.photo
+                ? <img class="portrait" src={p.photo} alt={`${p.name}, co-founder of elbebridge`} width="72" height="72" />
+                : <span class="portrait portrait-empty" aria-hidden="true"></span>}
+              <span><span class="name">{p.name}</span> — <span set:html={inline(p.text)} /></span>
+            </li>
           ))}
         </ul>
-        <p set:html={inline(h.peopleNote)} />
       </div>
 
       <div class="disclaimer">

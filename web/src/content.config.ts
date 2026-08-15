@@ -84,6 +84,7 @@ const copy = defineCollection({
       lede: richText,
       heroCta: z.string(),
       trust: z.array(z.string()).min(1),
+      journeyEnd: richText,
       obligationsHeading: richText,
       obligations: z.array(z.object({
         icon: iconName,
@@ -112,10 +113,24 @@ const copy = defineCollection({
         mailBody: z.string(),
         note: richText,
       }),
+      /** Answers the objection Ornella flagged: "why not just use AI?" */
+      comparison: z.object({
+        heading: richText,
+        intro: richText,
+        colUs: z.string(),
+        colAi: z.string(),
+        rows: z.array(z.object({
+          factor: richText,
+          us: richText,
+          ai: richText,
+        })).min(1),
+      }),
       peopleHeading: richText,
-      people: z.array(z.object({ name: z.string(), text: richText })).min(1),
       peopleNote: richText,
+      /** Space for portraits; the layout holds even while they are absent. */
+      people: z.array(z.object({ name: z.string(), text: richText, photo: z.string().optional() })).min(1),
       disclaimer: richText,
+      formDisclaimer: richText,
     }),
 
     nav: z.object({

@@ -184,8 +184,10 @@ function serve() {
     ok(`${p} — contact button exists and is a mailto`, r && r.href.startsWith('mailto:hallo@elbebridge.com'), JSON.stringify(r && r.href.slice(0, 60)));
     ok(`${p} — subject is prefilled in the page language`,
        r && decodeURIComponent(r.href).includes(subject), decodeURIComponent((r && r.href) || '').slice(0, 120));
-    ok(`${p} — body asks for the store URL`,
-       r && /Store URL|Shop-Adresse/.test(decodeURIComponent(r.href)));
+    // Ornella's point: half the list are brands, not shops, so we ask for a
+    // website rather than a store URL.
+    ok(`${p} — body asks for their website`,
+       r && /Website:/.test(decodeURIComponent(r.href)), decodeURIComponent((r && r.href) || '').slice(0, 90));
     ok(`${p} — button has a visible text label`, r && r.text.length > 5, r && r.text);
     await ctx.close();
   }
@@ -231,13 +233,51 @@ function serve() {
        out.split('\n').filter((l) => l.startsWith('✗')).join(' | '));
   }
 
-  console.log('\n9. Content is data, not markup');
+  console.log('\n9. Cross-page links work from the legal pages too');
+  for (const p of ['/impressum/', '/de/impressum/']) {
+    const ctx = await b.newContext();
+    const pg = await ctx.newPage();
+    await pg.goto(BASE + p, { waitUntil: 'domcontentloaded' });
+    const bad = await pg.evaluate(() =>
+      [...document.querySelectorAll('header a, footer a')]
+        .map((a) => a.getAttribute('href'))
+        .filter((h) => h && h.startsWith('#') && h !== '#main'));
+    ok(`${p} — no dead in-page anchors in header or footer`, bad.length === 0, bad.join(' '));
+
+    const home = await pg.evaluate(() =>
+      [...document.querySelectorAll('header a, footer a')].map((a) => a.getAttribute('href')));
+    ok(`${p} — section links point back at the home page`,
+       home.some((h) => /^\/(de\/)?#what-we-do$/.test(h || '')), home.filter((h) => (h || '').includes('#')).join(' '));
+    await ctx.close();
+  }
+
+  console.log('\n10. Content is data, not markup');
   {
     const src = fs.readFileSync(path.join(__dirname, 'src/components/Home.astro'), 'utf8');
     const en = JSON.parse(fs.readFileSync(path.join(__dirname, 'src/content/copy/en.json'), 'utf8'));
     ok('headline appears in the content file, not in a component',
        en.home.headline.includes('Three obligations') && !src.includes('Three obligations'));
     ok('price lives in the content file', en.home.priceAmount === '€890' && !src.includes('890'));
+    // Ornella asked for the three checkpoints to lead to their explanation.
+    ok('hero checkpoints link to the obligations section',
+       /journey/.test(fs.readFileSync(path.join(__dirname, 'src/components/HeroVisual.astro'), 'utf8'))
+       && fs.readFileSync(path.join(__dirname, 'src/components/HeroVisual.astro'), 'utf8').includes('#obligations'));
+    ok('the AI comparison lives in content, not markup',
+       Array.isArray(en.home.comparison.rows) && en.home.comparison.rows.length >= 4
+       && !src.includes('Why not just ask an AI'));
+    ok('the price is credited against remediation',
+       en.home.priceLines.some((l) => /credited in full/i.test(l)), JSON.stringify(en.home.priceLines));
+    // Promising two days in one place and one in another is just a bug.
+    for (const loc of ['en', 'de']) {
+      const c = JSON.parse(fs.readFileSync(path.join(__dirname, `src/content/copy/${loc}.json`), 'utf8'));
+      const blob = JSON.stringify(c);
+      const twos = /two working days|2 working days|zwei Werktagen|2 Werktage/i.test(blob);
+      ok(`${loc} — response time promised consistently as one day`, !twos,
+        (c.home.trust || []).join(' / '));
+    }
+    ok('marketing copy avoids stating the law at people',
+       !/German law applies to you/i.test(JSON.stringify(en)), 'lede');
+
     ok('the accent word is content, not markup',
        /==[^=]+==/.test(en.home.headline) && !src.includes('missing'));
     ok('icons are chosen in content, not hard-coded',
@@ -277,7 +317,15 @@ function serve() {
     ok('privacy policy names the real host and does not claim EU-only',
        JSON.stringify(priv).includes('GitHub') && !JSON.stringify(priv).includes('stays inside the EU'));
     ok('every footer link points somewhere real',
-       en.footer.columns.every((c) => c.links.every((l) => /^(#|\/|https:|mailto:)/.test(l.href))));
+       en.footer.columns.every((c) => c.links.every((l) => /^(\/|https:|mailto:)/.test(l.href))));
+    // A bare "#section" only works on the page that has that section. From
+    // /impressum/ it does nothing at all.
+    for (const loc of ['en', 'de']) {
+      const c = JSON.parse(fs.readFileSync(path.join(__dirname, `src/content/copy/${loc}.json`), 'utf8'));
+      const bare = [...c.nav.primary, c.nav.cta, ...c.footer.columns.flatMap((x) => x.links)]
+        .filter((l) => l.href.startsWith('#'));
+      ok(`${loc} — no nav or footer link is a bare fragment`, bare.length === 0, JSON.stringify(bare));
+    }
     ok('both locales expose the same legal page keys',
        JSON.stringify(en.legal.map((p) => p.key).sort()) ===
        JSON.stringify(JSON.parse(fs.readFileSync(path.join(__dirname, 'src/content/copy/de.json'), 'utf8')).legal.map((p) => p.key).sort()));
