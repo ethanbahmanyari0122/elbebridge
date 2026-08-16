@@ -1,7 +1,7 @@
 ---
 import Icon from './Icon.astro';
 import HeroVisual from './HeroVisual.astro';
-import { inline } from '../lib/inline';
+import { inline, paragraphs } from '../lib/inline';
 import type { Copy } from '../lib/site';
 import type { Locale } from '../lib/site';
 interface Props { copy: Copy; locale: Locale }
@@ -21,7 +21,7 @@ const mailto = `mailto:${copy.site.email}`
       <div>
         <p class="eyebrow">{copy.site.eyebrow}</p>
         <h1 set:html={inline(h.headline)} />
-        <p class="lede" set:html={inline(h.lede)} />
+        {paragraphs(h.lede).map((t) => <p class="lede" set:html={inline(t)} />)}
 
         <div class="hero-actions">
           <a class="btn btn-primary" href="#check">
@@ -50,7 +50,7 @@ const mailto = `mailto:${copy.site.email}`
           <span class="tile tile-lg"><Icon name={o.icon} size={22} /></span>
           <h3 set:html={inline(o.heading)} />
           <span class="law" set:html={inline(o.law)} />
-          <p set:html={inline(o.text)} />
+          {paragraphs(o.text).map((t) => <p set:html={inline(t)} />)}
         </li>
       ))}
     </ul>
@@ -110,7 +110,7 @@ const mailto = `mailto:${copy.site.email}`
 <section class="band" id="why-us" aria-labelledby="why-us-h">
   <div class="wrap">
     <h2 class="section-title" id="why-us-h" set:html={inline(h.comparison.heading)} />
-    <p class="prose" set:html={inline(h.comparison.intro)} />
+    {paragraphs(h.comparison.intro).map((t) => <p class="prose" set:html={inline(t)} />)}
     <table class="compare">
       <thead>
         <tr>
@@ -123,8 +123,16 @@ const mailto = `mailto:${copy.site.email}`
         {h.comparison.rows.map((r) => (
           <tr>
             <th scope="row" set:html={inline(r.factor)} />
-            <td class="col-us"><Icon name="check" size={15} /><span set:html={inline(r.us)} /></td>
-            <td class="col-ai"><span set:html={inline(r.ai)} /></td>
+            <td class="col-us mark" data-label={h.comparison.colUs}>
+              {r.us
+                ? <Fragment><Icon name="check" size={17} /><span class="vh">{h.comparison.colUs}: {h.comparison.yes}</span></Fragment>
+                : <Fragment><span class="dash" aria-hidden="true">—</span><span class="vh">{h.comparison.colUs}: {h.comparison.no}</span></Fragment>}
+            </td>
+            <td class="col-ai mark" data-label={h.comparison.colAi}>
+              {r.ai
+                ? <Fragment><Icon name="check" size={17} /><span class="vh">{h.comparison.colAi}: {h.comparison.yes}</span></Fragment>
+                : <Fragment><span class="dash" aria-hidden="true">—</span><span class="vh">{h.comparison.colAi}: {h.comparison.no}</span></Fragment>}
+            </td>
           </tr>
         ))}
       </tbody>

@@ -66,6 +66,7 @@ const copy = defineCollection({
 
     site: z.object({
       wordmark: z.string(),
+      logotype: z.string(),
       eyebrow: z.string(),
       title: richText,
       metaDescription: z.string().min(20).max(300),
@@ -130,10 +131,15 @@ const copy = defineCollection({
         intro: richText,
         colUs: z.string(),
         colAi: z.string(),
+        // Spoken alternatives for the tick and the dash. A symbol on its own
+        // fails WCAG 1.4.1, and we are not shipping that on a page that sells
+        // accessibility.
+        yes: z.string(),
+        no: z.string(),
         rows: z.array(z.object({
           factor: richText,
-          us: richText,
-          ai: richText,
+          us: z.boolean(),
+          ai: z.boolean(),
         })).min(1),
       }),
       peopleHeading: richText,

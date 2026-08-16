@@ -12,6 +12,7 @@
   },
   "site": {
     "wordmark": "Elbebridge",
+    "logotype": "elbebridge",
     "tagline": "Klarheit. Sicherheit. Vertrauen.",
     "eyebrow": "Deutsche Marktpflichten",
     "title": "Elbebridge — Prüfung der deutschen Pflichten für ausländische Online-Marken",
@@ -79,16 +80,16 @@
         "heading": "Die drei Pflichten",
         "links": [
           {
-            "href": "/#obligations",
-            "label": "Barrierefreiheit (BFSG)"
+            "href": "/#obligation-bfsg",
+            "label": "Barrierefreier Onlineshop (BFSG)"
           },
           {
-            "href": "/#obligations",
-            "label": "Verantwortliche Person (GPSR)"
+            "href": "/#obligation-gpsr",
+            "label": "Verantwortliche Person EU (GPSR)"
           },
           {
-            "href": "/#obligations",
-            "label": "Verpackung (LUCID)"
+            "href": "/#obligation-lucid",
+            "label": "Registrierte Verpackung (LUCID)"
           }
         ]
       },
@@ -123,8 +124,8 @@
     "copyright": "© 2026 Elbebridge GbR · Hamburg. Alle Rechte vorbehalten."
   },
   "home": {
-    "headline": "Sie verkaufen nach Deutschland? Drei Pflichten, die ausländische Marken meist ==übersehen==.",
-    "lede": "Wer an deutsche Verbraucherinnen und Verbraucher liefert, unterliegt bestimmten deutschen Anforderungen — unabhängig davon, ob Sie hier eine Gesellschaft haben. Bei den meisten ausländischen Marken, die wir prüfen, fehlen mindestens zwei der folgenden drei.",
+    "headline": "Sie verkaufen nach Deutschland? 3 zentrale Anforderungen, die Sie vielleicht ==übersehen== haben.",
+    "lede": "Der B2C-Versand nach Deutschland kann einschüchternd wirken. Es gibt viel Bürokratie zu bewältigen, und schnell ist etwas übersehen.\n\nGenau hier kommt Elbebridge ins Spiel. Wir helfen Ihnen durch die deutschen Anforderungen und bringen Ihren Versand sauber und unkompliziert auf.",
     "heroCta": "Prüfung anfragen",
     "trust": [
       "Festpreis",
@@ -137,31 +138,31 @@
       "width": 1240,
       "height": 990
     },
-    "obligationsHeading": "Die drei Pflichten",
+    "obligationsHeading": "Die Drei",
     "obligations": [
       {
         "icon": "accessibility",
-        "heading": "Ein barrierefreier Onlineshop",
+        "heading": "Barrierefreier Onlineshop",
         "short": "Barrierefreier Onlineshop",
         "code": "BFSG",
-        "law": "Barrierefreiheitsstärkungsgesetz (BFSG) — gilt seit 28. Juni 2025",
-        "text": "Shop, Bestellprozess und Kundenkonto müssen für Menschen mit Behinderungen nutzbar sein, gemessen an der europäischen Norm EN 301 549. Zusätzlich brauchen Sie eine veröffentlichte Erklärung zur Barrierefreiheit. Seit Januar 2026 prüft die Marktüberwachungsstelle aktiv von sich aus und reagiert nicht nur auf Beschwerden."
+        "law": "Barrierefreiheitsstärkungsgesetz (BFSG)",
+        "text": "Ihr Shop, Ihr Checkout und Ihr Kundenkonto müssen für Menschen mit Behinderungen zugänglich sein, mit einer veröffentlichten Erklärung zur Barrierefreiheit. Grundlage ist {en|EN 301 549}, der europäische Standard für barrierefreie digitale Produkte und Dienstleistungen.\n\nDie deutschen Behörden prüfen inzwischen aktiv und reagieren nicht mehr nur auf Beschwerden."
       },
       {
         "icon": "person",
-        "heading": "Eine verantwortliche Person in der EU",
+        "heading": "Verantwortliche Person in der EU",
         "short": "Verantwortliche Person EU",
         "code": "GPSR",
-        "law": "Produktsicherheitsverordnung (GPSR) — anwendbar seit 13. Dezember 2024",
-        "text": "Ein Produkt darf nur dann an Verbraucher in der EU verkauft werden, wenn eine benannte Person oder ein Unternehmen in der EU dafür verantwortlich ist und deren Angaben beim Produkt erscheinen. Ohne verantwortliche Person in der EU darf das Produkt nicht auf dem Markt bereitgestellt werden."
+        "law": "Produktsicherheitsverordnung (GPSR)",
+        "text": "Sie brauchen eine benannte Person oder ein Unternehmen mit Sitz in der EU, die für Ihre Produkte verantwortlich ist, mit Kontaktdaten beim Produkt.\n\nOhne sie dürfen Sie das Produkt in der EU nicht verkaufen."
       },
       {
         "icon": "box",
-        "heading": "Verpackungen registriert vor dem ersten Paket",
-        "short": "Verpackung registriert",
+        "heading": "Registrierte Verpackung",
+        "short": "Registrierte Verpackung",
         "code": "LUCID",
-        "law": "Verpackungsgesetz — LUCID-Registrierung, erforderlich vor dem Verkauf",
-        "text": "Jeder Karton, jedes Füllmaterial und jedes Etikett, das nach Deutschland geht, muss im LUCID-Register registriert und bei einem dualen System lizenziert sein. Die Registrierung ist _vor_ der ersten Lieferung erforderlich, und Marktplätze sind verpflichtet, nicht registrierte Händler zu sperren."
+        "law": "Verpackungsgesetz — LUCID-Registrierung",
+        "text": "Jede Verpackung, die Sie an Kundinnen und Kunden in Deutschland senden, muss im Verpackungsregister LUCID registriert und bei einem dualen System lizenziert sein. Die Registrierung muss _vor_ der ersten Sendung abgeschlossen sein.\n\nKeine Registrierung? Marktplätze können Sie vom Verkauf ausschließen."
       }
     ],
     "whatWeDoHeading": "Was wir tun",
@@ -169,74 +170,91 @@
       {
         "icon": "search",
         "lead": "Prüfung.",
-        "text": "Wir testen Ihre Website gegen die einschlägigen Anforderungen an die Barrierefreiheit und prüfen die öffentlichen Register für die beiden anderen Pflichten."
+        "text": "Wir prüfen Ihre Website gegen die einschlägigen Anforderungen an die Barrierefreiheit und verifizieren die beiden anderen Pflichten über öffentliche Register."
       },
       {
         "icon": "document",
         "lead": "Prüfbericht.",
-        "text": "Drei Seiten: was für Sie gilt, was wir gefunden haben samt Nachweis, und was die Behebung erfordert."
+        "text": "Ein dreiseitiger Bericht: was für Sie gilt, was wir gefunden haben, die Nachweise dazu und was behoben werden muss."
       },
       {
         "icon": "wrench",
         "lead": "Behebung zum Festpreis.",
-        "text": "Sie kennen den Preis, bevor wir beginnen."
+        "text": "Sie kennen den Preis vorab."
       },
       {
         "icon": "chart",
         "lead": "Quartalsweise Überwachung.",
-        "text": "Optional. Websites ändern sich, die Anforderungen ebenso. Wir prüfen, ob Sie weiterhin auf Kurs sind."
+        "text": "Optional. Websites ändern sich, die Anforderungen ebenso. Wir schauen quartalsweise nach, damit Sie auf Kurs bleiben."
       }
     ],
     "priceHeading": "Preis",
     "priceAmount": "890 €",
     "priceLines": [
-      "Für die Prüfung und den dreiseitigen Prüfbericht. Festpreis, vorab genannt, einmalig in Rechnung gestellt.",
-      "**Wird vollständig auf die Behebung angerechnet.** Beauftragen Sie uns mit der Behebung, werden die 890 € verrechnet."
+      "Für die Prüfung und den dreiseitigen Prüfbericht. Festpreis von 890 €, vorab genannt und einmalig in Rechnung gestellt.",
+      "**Übernehmen wir die Behebung, wird der Betrag angerechnet.**"
     ],
     "contact": {
       "heading": "Prüfung anfragen",
-      "intro": "Senden Sie uns Ihre Website-Adresse. Wir antworten innerhalb eines Werktags mit dem, was wir auf den öffentlichen Teilen gefunden haben.",
+      "intro": "Senden Sie uns Ihre Website-Adresse. Wir melden uns innerhalb eines Werktags mit dem, was wir auf den öffentlichen Teilen Ihrer Seite gefunden haben.",
       "buttonLabel": "Website per E-Mail senden",
       "mailSubject": "Anfrage Compliance-Prüfung",
       "mailBody": "Website:\n\nFirmenname (optional):\n\nWas Ihnen bereits bekannt ist:\n",
-      "note": "Kein Formular, kein Tracking, kein Dritter dazwischen — Ihre Nachricht geht direkt in unser Postfach."
+      "note": "Keine Formulare. Kein Tracking. Keine Dritten.\n\nIhre Nachricht geht direkt in unser Postfach."
     },
     "peopleHeading": "Über uns",
     "peopleNote": "Wir haben Elbebridge gegründet, damit der Verkauf nach Deutschland weniger kompliziert wird. Wir helfen internationalen Unternehmen zu verstehen, was gefordert ist, zu erkennen, was fehlt, und das Richtige aufzusetzen — ohne sich in der deutschen Bürokratie zu verlieren.",
     "disclaimer": "Elbebridge ist keine Rechts- oder Steuerberatungsgesellschaft und erbringt keine Rechtsberatung. Informationen und Feststellungen auf dieser Website dienen der allgemeinen Information und ersetzen keine Beratung durch eine qualifizierte Anwältin oder einen qualifizierten Anwalt.",
     "formDisclaimer": "Unsere Prüfung liefert allgemeine Informationen auf Grundlage der von Ihnen genannten Website. Sie stellt keine Rechtsberatung dar und begründet kein Mandatsverhältnis.",
     "comparison": {
-      "heading": "Warum nicht einfach eine KI fragen?",
-      "intro": "Können Sie — und Sie bekommen eine Antwort. Das hier bekommen Sie nicht.",
+      "heading": "Wir gehen über die automatische Prüfung hinaus.",
+      "intro": "Eine KI kann Ihnen sagen, was die Anforderungen besagen, und mögliche Probleme benennen.\n\nElbebridge geht weiter: Wir prüfen Ihre tatsächliche Situation, sichern die Nachweise und sagen Ihnen genau, was Aufmerksamkeit braucht.",
       "colUs": "Elbebridge",
-      "colAi": "Eine KI oder ein kostenloser Scanner",
+      "colAi": "KI / kostenloser Scanner",
       "rows": [
         {
-          "factor": "Barrierefreiheit",
-          "us": "Geprüft mit derselben Technik, danach manuell mit Tastatur und Screenreader — dort zeigen sich die meisten echten Barrieren.",
-          "ai": "Findet nur, was maschinell erkennbar ist, und stellt das als Gesamtbild dar."
+          "factor": "Prüft die Barrierefreiheit",
+          "us": true,
+          "ai": true
         },
         {
-          "factor": "Verpackungsregister",
-          "us": "Wir durchsuchen das LUCID-Register unter Ihrer juristischen Person und nennen das Datum der Recherche.",
-          "ai": "Hat auf das Register keinen Zugriff."
+          "factor": "Prüfung durch Fachleute",
+          "us": true,
+          "ai": false
         },
         {
-          "factor": "Verantwortliche Person in der EU",
-          "us": "Wir sagen Ihnen, ob eine benannt ist, und vermitteln die Benennung.",
-          "ai": "Kann niemanden benennen."
+          "factor": "Prüft das LUCID-Register",
+          "us": true,
+          "ai": false
         },
         {
-          "factor": "Nachweise",
-          "us": "Das fehlerhafte Element selbst, die verletzte Anforderung und das Datum — ein Dokument für Entwicklung oder Behörde.",
-          "ai": "Eine Liste von Hinweisen ohne Beleg."
+          "factor": "Prüft auf eine verantwortliche Person in der EU",
+          "us": true,
+          "ai": false
         },
         {
-          "factor": "Was behauptet wird",
-          "us": "Wir sagen Ihnen nie, dass Sie konform sind. Wir sagen, was gefordert ist und was wir gefunden haben.",
-          "ai": "Erklärt Sie bereitwillig für konform."
+          "factor": "Kann bei der Benennung einer verantwortlichen Person helfen",
+          "us": true,
+          "ai": false
+        },
+        {
+          "factor": "Liefert Nachweise zu jedem Befund",
+          "us": true,
+          "ai": false
+        },
+        {
+          "factor": "Sagt Ihnen genau, was zu beheben ist",
+          "us": true,
+          "ai": true
+        },
+        {
+          "factor": "Anforderung, Befunde und Nachweise in einem Dokument",
+          "us": true,
+          "ai": false
         }
-      ]
+      ],
+      "yes": "Ja",
+      "no": "Nein"
     }
   },
   "legal": [

@@ -338,12 +338,19 @@ section { scroll-margin-top: 2rem; }
 .compare th, .compare td { text-align: left; vertical-align: top; padding: .8rem .9rem; font-size: .95rem; }
 .compare thead th { font-size: .8rem; letter-spacing: .05em; text-transform: uppercase;
   color: var(--ink-muted); border-bottom: 1px solid var(--line); }
-.compare tbody th { font-weight: 700; width: 22%; border-bottom: 1px solid var(--line); }
+.compare tbody th { font-weight: 700; width: 56%; border-bottom: 1px solid var(--line); }
 .compare tbody td { border-bottom: 1px solid var(--line); }
 .compare .col-us { background: var(--accent-tint); }
 .compare thead .col-us { color: var(--accent); font-weight: 800; }
 .compare tbody .col-us { display: table-cell; }
-.compare tbody .col-us .icon { color: var(--ok); float: left; margin: .18rem .4rem 0 0; }
+/* The cells hold a single mark now, so centre it under its column heading
+   instead of floating it beside prose that is no longer there. */
+.compare tbody .mark { text-align: center; }
+/* `.icon` is display:block globally, so text-align could not centre it —
+   the ticks sat left while the dashes centred. */
+.compare tbody .mark .icon { color: var(--ok); display: inline-block; }
+.compare tbody .dash { color: var(--ink-muted); }
+.compare thead th:not(:first-child) { text-align: center; }
 .compare .col-ai { color: var(--ink-muted); }
 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 @media (max-width: 46rem) {
@@ -359,6 +366,10 @@ section { scroll-margin-top: 2rem; }
   .compare tbody th { border: none; padding-bottom: .1rem; }
   .compare tbody td { border: none; padding-top: .25rem; }
   .compare tbody .col-us { background: none; }
+  /* Stacking the table hides the column headings, and a bare tick under a
+     bare dash says nothing. Name the column on each row instead. */
+  .compare tbody .mark { text-align: left; display: flex; gap: .45rem; align-items: center; }
+  .compare tbody .mark::before { content: attr(data-label) ":"; color: var(--ink-muted); font-size: .9rem; }
 }
 
 /* ---- About + portraits --------------------------------------------------- */

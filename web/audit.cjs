@@ -328,8 +328,14 @@ function serve() {
   {
     const src = fs.readFileSync(path.join(__dirname, 'src/components/Home.astro'), 'utf8');
     const en = JSON.parse(fs.readFileSync(path.join(__dirname, 'src/content/copy/en.json'), 'utf8'));
+    // Assert the rule, not the wording. This check used to hard-code the
+    // headline text, so editing the headline "failed" the audit even though
+    // nothing was wrong — the check itself was the thing out of date.
+    const words = en.home.headline.replace(/[=*_]/g, '').split(/\s+/).filter(Boolean);
+    const windows = words.map((_, i) => words.slice(i, i + 3).join(' ')).filter((w) => w.split(' ').length === 3);
+    const leaked = windows.find((w) => src.includes(w));
     ok('headline appears in the content file, not in a component',
-       en.home.headline.includes('Three obligations') && !src.includes('Three obligations'));
+       words.length >= 4 && src.includes('h.headline') && !leaked, leaked || '');
     ok('price lives in the content file', en.home.priceAmount === '€890' && !src.includes('890'));
     // Ornella asked for the checkpoints to lead to their explanation — and each
     // one to its own card, not the top of the section.
@@ -352,9 +358,15 @@ function serve() {
     // The brand is written Elbebridge in prose; lowercase survives only inside
     // email addresses and domains.
     for (const loc of ['en', 'de']) {
-      const raw = fs.readFileSync(path.join(__dirname, `src/content/copy/${loc}.json`), 'utf8');
+      const parsed = JSON.parse(fs.readFileSync(path.join(__dirname, `src/content/copy/${loc}.json`), 'utf8'));
+      // The logotype is deliberately lowercase — it is lettering, not prose.
+      const { logotype, ...restSite } = parsed.site;
+      const raw = JSON.stringify({ ...parsed, site: restSite });
       const bad = raw.match(/(?<![\w@./-])elbebridge(?![\w.@-]*(?:\.com|\.de|@))/g);
       ok(`${loc} — brand written "Elbebridge" outside addresses`, !bad, (bad || []).slice(0, 3).join(' '));
+      ok(`${loc} — the logo is lowercase, the written brand is not`,
+         parsed.site.logotype === 'elbebridge' && parsed.site.wordmark === 'Elbebridge',
+         `${parsed.site.logotype} / ${parsed.site.wordmark}`);
     }
     ok('founder names are not on the marketing pages',
        !/Bahmanyari|Buxbaum/.test(JSON.stringify(en.home)) && !/Bahmanyari|Buxbaum/.test(JSON.stringify(en.footer)),
@@ -364,8 +376,14 @@ function serve() {
     ok('both representatives still named in the Impressum',
        /Bahmanyari/.test(JSON.stringify(impressumPage)) && /Buxbaum/.test(JSON.stringify(impressumPage)));
 
-    ok('the price is credited against remediation',
-       en.home.priceLines.some((l) => /credited in full/i.test(l)), JSON.stringify(en.home.priceLines));
+    // The credit is the bridge from the report to paid work. Wording may
+    // change; the promise may not quietly disappear.
+    const CREDIT = /credited|comes off|angerechnet/i;
+    for (const loc of ['en', 'de']) {
+      const c = JSON.parse(fs.readFileSync(path.join(__dirname, `src/content/copy/${loc}.json`), 'utf8'));
+      ok(`${loc} — the price is credited against remediation`,
+         c.home.priceLines.some((l) => CREDIT.test(l)), JSON.stringify(c.home.priceLines));
+    }
     // Promising two days in one place and one in another is just a bug.
     for (const loc of ['en', 'de']) {
       const c = JSON.parse(fs.readFileSync(path.join(__dirname, `src/content/copy/${loc}.json`), 'utf8'));

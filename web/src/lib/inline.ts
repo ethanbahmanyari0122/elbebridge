@@ -10,6 +10,9 @@
  *   _italic_                      → <em>
  *   {de|Wort}                     → <span lang="de">Wort</span>
  *   ==word==                      → <span class="accent">word</span>
+ *
+ * A blank line separates paragraphs. Use paragraphs() to split, then inline()
+ * on each piece — see below.
  */
 
 const ESCAPES: Record<string, string> = {
@@ -43,4 +46,16 @@ export function inline(text: string): string {
   out = out.replace(/(^|[\s(])_([^_]+)_/g, '$1<em>$2</em>');
 
   return out;
+}
+
+/**
+ * Split a content string into paragraphs on blank lines.
+ *
+ * Copy is authored as one string per idea, but some of those ideas need two
+ * paragraphs — a statement and then its consequence. Rendering them as one
+ * block ran the two together; rendering \n as <br> would have faked a
+ * paragraph without being one, which a screen reader reads straight through.
+ */
+export function paragraphs(text: string): string[] {
+  return String(text).split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean);
 }
