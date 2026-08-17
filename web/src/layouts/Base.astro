@@ -36,6 +36,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <meta name="google-site-verification" content="cEJsPXoVcfVdXMmS8gIEsjqTZD233QUa-mHkhkvfEhg" />
   <link rel="canonical" href={canonical.href} />
   {alts.map((a) => (
     <link rel="alternate" hreflang={a.locale} href={new URL(a.href, Astro.site).href} />
