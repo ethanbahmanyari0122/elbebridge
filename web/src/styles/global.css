@@ -288,6 +288,46 @@ section { scroll-margin-top: 2rem; }
 .cards .law { font-size: .86rem; color: var(--ink-muted); }
 .cards p { margin: .35rem 0 0; max-width: none; font-size: .97rem; }
 
+/* ---- Evidence panels ------------------------------------------------------ */
+/* The report's visual language, on screen: the failing element in a fixed frame
+   on white, then the count, the rule, and the clause it breaks. Status carries a
+   shape and a word as well as a colour, exactly as the printed pill does — this
+   is a page about accessibility and colour alone is WCAG 1.4.1. */
+.ev-grid { display: grid; gap: 1.25rem; list-style: none; margin: 1.5rem 0 0; padding: 0; }
+@media (min-width: 52rem) { .ev-grid { grid-template-columns: repeat(3, 1fr); } }
+.ev-grid > li { max-width: none; min-width: 0; display: flex; }
+
+.ev-panel {
+  margin: 0; display: flex; flex-direction: column; width: 100%;
+  border: 1px solid var(--line); border-radius: var(--radius-lg);
+  background: var(--white); box-shadow: var(--shadow-sm); overflow: hidden;
+}
+/* Element crops arrive in every aspect ratio there is — an 82px icon button and
+   a 984px line of text came out of the same scan. A fixed frame with the image
+   contained inside it is the only thing that holds a row of them together. */
+.ev-shot { height: 9rem; background: var(--white); border-bottom: 1px solid var(--line); padding: .75rem; }
+.ev-shot img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
+.ev-panel figcaption { padding: 1.1rem 1.25rem 1.25rem; display: flex; flex-direction: column; gap: .35rem; }
+.ev-meta { display: flex; align-items: center; gap: .6rem; margin: 0; max-width: none; }
+.ev-count {
+  font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700;
+  line-height: 1; font-variant-numeric: tabular-nums;
+}
+.ev-pill {
+  display: inline-flex; align-items: center; gap: .3rem;
+  font-size: .74rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+  padding: .15rem .45rem; border: 1.5px solid currentColor; border-radius: 3px;
+}
+.ev-pill::before { font-size: .8em; }
+.ev-critical { color: var(--error); }
+.ev-critical::before { content: "\25B2"; }
+.ev-serious { color: var(--focus); }
+.ev-serious::before { content: "\25C6"; }
+.ev-panel h3 { margin: 0; font-size: 1.05rem; }
+.ev-text { margin: 0; font-size: .93rem; color: var(--ink-muted); max-width: none; }
+.ev-clause { margin: .2rem 0 0; font-size: .82rem; color: var(--ink-muted); max-width: none; }
+.ev-note { margin-top: 1.5rem; font-size: .93rem; color: var(--ink-muted); }
+
 /* ---- Two-column bands ---------------------------------------------------- */
 .split { display: grid; gap: clamp(2rem, 4vw, 3rem); align-items: start; }
 @media (min-width: 60rem) { .split { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); } }

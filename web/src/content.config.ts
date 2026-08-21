@@ -108,6 +108,29 @@ const copy = defineCollection({
         law: richText,
         text: richText,
       })).min(1),
+      /**
+       * Three findings as the report shows them. The crops come from
+       * elbebridge-ops/report/sample-evidence, captured by the same scan that
+       * produces the sample report — so a finding on this page and a finding in
+       * that PDF can never disagree. The wording is copied from the report's
+       * own rule catalogue for the same reason.
+       */
+      evidenceHeading: richText,
+      evidenceIntro: richText,
+      evidence: z.array(z.object({
+        src: z.string(),
+        width: z.number(),
+        height: z.number(),
+        count: z.string(),
+        impact: z.enum(['critical', 'serious']),
+        impactLabel: z.string(),   // spoken; the colour is never the only signal
+        heading: richText,
+        text: richText,
+        clause: z.string(),
+        page: z.string(),
+      })).min(1),
+      evidenceNote: richText,
+
       whatWeDoHeading: richText,
       steps: z.array(z.object({ icon: iconName, lead: richText, text: richText })).min(1),
       priceHeading: richText,

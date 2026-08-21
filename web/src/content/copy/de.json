@@ -173,6 +173,47 @@
         "text": "Jede Verpackung, die Sie an Kundinnen und Kunden in Deutschland senden, muss im Verpackungsregister LUCID registriert und bei einem dualen System lizenziert sein. Die Registrierung muss _vor_ der ersten Sendung abgeschlossen sein.\n\nKeine Registrierung? Marktplätze können Sie vom Verkauf ausschließen."
       }
     ],
+    "evidenceHeading": "So sieht ein Befund aus",
+    "evidenceIntro": "Drei Befunde aus einer echten Prüfung, dargestellt wie im Bericht: das fehlerhafte Element selbst, die verletzte Anforderung und die Anzahl der Fundstellen. Der Shop heißt **Nordlicht Home** — wir haben ihn erfunden, auf dieser Seite stehen also keine echten Befunde.",
+    "evidence": [
+      {
+        "src": "/evidence/image-alt.png",
+        "width": 610,
+        "height": 610,
+        "count": "5",
+        "impact": "critical",
+        "impactLabel": "Kritisch",
+        "heading": "Bilder ohne Alternativtext",
+        "text": "Bilder ohne alt-Attribut — der Katalog ist mit einem Screenreader nicht nutzbar.",
+        "clause": "{de|EN 301 549} §9.1.1.1",
+        "page": "Startseite"
+      },
+      {
+        "src": "/evidence/button-name.png",
+        "width": 82,
+        "height": 80,
+        "count": "2",
+        "impact": "critical",
+        "impactLabel": "Kritisch",
+        "heading": "Schaltflächen ohne zugänglichen Namen",
+        "text": "Schaltflächen, die nur als „Schaltfläche“ angesagt werden — meist dort, wo ein Icon den Text ersetzt hat.",
+        "clause": "{de|EN 301 549} §9.4.1.2",
+        "page": "Startseite"
+      },
+      {
+        "src": "/evidence/color-contrast.png",
+        "width": 984,
+        "height": 80,
+        "count": "2",
+        "impact": "serious",
+        "impactLabel": "Schwerwiegend",
+        "heading": "Textkontrast unter dem geforderten Wert",
+        "text": "Text unter dem Mindestkontrast von 4,5:1 — in der Regel wenige Farbwerte, die sich über die ganze Website wiederholen.",
+        "clause": "{de|EN 301 549} §9.1.4.3",
+        "page": "Startseite"
+      }
+    ],
+    "evidenceNote": "Automatisierte Tests finden nur einen Teil der Barrieren. Diese Zahlen sind das, was eine Maschine belegen kann — eine Untergrenze, keine Gesamtzahl. [Den vollständigen Bericht ansehen](/de/beispielbericht).",
     "whatWeDoHeading": "Was wir tun",
     "steps": [
       {

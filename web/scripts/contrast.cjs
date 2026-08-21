@@ -24,6 +24,8 @@ const tests = [
   ['footer white on navy', P.white, P.navy],
   ['focus ring on white', P.focus, P.white], ['focus ring on sand', P.focus, P.sand], ['focus ring on paper', P.focus, P.paper],
   ['error text', P.error, P.white], ['error on paper', P.error, P.paper],
+  ['critical pill on white', P.error, P.white], ['critical pill on paper', P.error, P.paper],
+  ['serious pill on white', P.focus, P.white], ['serious pill on paper', P.focus, P.paper],
   ['card border vs white (3:1 UI)', P.cardBorder, P.white],
 ];
 let bad = 0;

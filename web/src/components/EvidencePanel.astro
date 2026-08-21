@@ -1,0 +1,53 @@
+---
+/**
+ * One finding, as the report shows it: the failing element itself, what the
+ * rule is, how many instances were counted, and the clause it breaks.
+ *
+ * The visual language is the report's — a bordered status pill carrying a shape
+ * and a word, never colour alone, and the crop contained in a fixed frame on
+ * white because element screenshots come in every aspect ratio there is.
+ *
+ * The image is decorative: everything in it is stated as real text beside it,
+ * and a screenshot of a broken button has no alternative text that would help.
+ */
+import { inline } from '../lib/inline';
+
+interface Item {
+  src: string;
+  width: number;
+  height: number;
+  count: string;
+  impact: 'critical' | 'serious';
+  impactLabel: string;
+  heading: string;
+  text: string;
+  clause: string;
+  page: string;
+}
+interface Props { item: Item }
+const { item } = Astro.props;
+---
+<figure class="ev-panel">
+  <div class="ev-shot">
+    <img
+      src={item.src}
+      width={item.width}
+      height={item.height}
+      alt=""
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <figcaption>
+    <p class="ev-meta">
+      <span class="ev-count">{item.count}</span>
+      <span class:list={['ev-pill', `ev-${item.impact}`]}>{item.impactLabel}</span>
+    </p>
+    <h3 set:html={inline(item.heading)} />
+    <p class="ev-text" set:html={inline(item.text)} />
+    {/* The clause carries {de|…} so a screen reader pronounces "EN 301 549"
+        as German rather than English (WCAG 3.1.2), so it has to go through the
+        inline formatter like every other content string. */}
+    <p class="ev-clause"><span set:html={inline(item.clause)} /> · {item.page}</p>
+  </figcaption>
+</figure>

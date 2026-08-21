@@ -175,6 +175,47 @@
         "text": "Any packaging you send to customers in Germany needs to be registered with the {de|LUCID} Packaging Register and licensed through a dual system. Registration must be completed _before_ your first shipment.\n\nNo registration? Marketplaces can block you from selling."
       }
     ],
+    "evidenceHeading": "What a finding looks like",
+    "evidenceIntro": "Three findings from a real scan, shown the way the report shows them: the failing element itself, the rule it breaks, and how many instances we counted. The shop is **Nordlicht Home** — we invented it, so nobody’s real findings are on this page.",
+    "evidence": [
+      {
+        "src": "/evidence/image-alt.png",
+        "width": 610,
+        "height": 610,
+        "count": "5",
+        "impact": "critical",
+        "impactLabel": "Critical",
+        "heading": "Images without alternative text",
+        "text": "Images with no alt attribute, so the catalogue is unusable with a screen reader.",
+        "clause": "{de|EN 301 549} §9.1.1.1",
+        "page": "homepage"
+      },
+      {
+        "src": "/evidence/button-name.png",
+        "width": 82,
+        "height": 80,
+        "count": "2",
+        "impact": "critical",
+        "impactLabel": "Critical",
+        "heading": "Buttons with no accessible name",
+        "text": "Buttons announced only as \"button\", usually where an icon replaced the text.",
+        "clause": "{de|EN 301 549} §9.4.1.2",
+        "page": "homepage"
+      },
+      {
+        "src": "/evidence/color-contrast.png",
+        "width": 984,
+        "height": 80,
+        "count": "2",
+        "impact": "serious",
+        "impactLabel": "Serious",
+        "heading": "Text contrast below the required ratio",
+        "text": "Text below the 4.5:1 contrast minimum, normally a few palette values repeated site-wide.",
+        "clause": "{de|EN 301 549} §9.1.4.3",
+        "page": "homepage"
+      }
+    ],
+    "evidenceNote": "Automated testing finds a minority of accessibility barriers. These counts are what a machine can prove; they are a floor, not a total. [See the whole report](/sample-report).",
     "whatWeDoHeading": "What we do",
     "steps": [
       {
