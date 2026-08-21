@@ -19,6 +19,7 @@ const tests = [
   ['link', P.accent, P.white], ['link on paper', P.accent, P.paper], ['link on sand', P.accent, P.sand],
   ['link hover', P.accentHover, P.white],
   ['white on navy button', P.white, P.navy], ['white on navy hover', P.white, P.navyHover],
+  ['secondary button label', P.navy, P.white], ['secondary button hover', P.navy, P.paper],
   ['footer link on navy', P.accentOnNavy, P.navy], ['footer muted on navy', P.mutedOnNavy, P.navy],
   ['footer white on navy', P.white, P.navy],
   ['focus ring on white', P.focus, P.white], ['focus ring on sand', P.focus, P.sand], ['focus ring on paper', P.focus, P.paper],

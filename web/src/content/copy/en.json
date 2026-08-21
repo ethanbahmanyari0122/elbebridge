@@ -68,6 +68,10 @@
             "label": "What we do"
           },
           {
+            "href": "/sample-report",
+            "label": "Sample report"
+          },
+          {
             "href": "/#price",
             "label": "Price"
           },
@@ -129,6 +133,10 @@
     "headline": "Selling into Germany? 3 critical requirements you may have ==missed==.",
     "lede": "Shipping B2C to Germany can feel intimidating. There's a lot of bureaucracy to navigate, and it's easy to get something wrong.\n\nThat's where Elbebridge comes in. We help you navigate German requirements and get your shipping set-up right and hassle free.",
     "heroCta": "Get your compliance check",
+    "heroCtaSecondary": {
+      "href": "/sample-report",
+      "label": "See a sample report"
+    },
     "trust": [
       "Fixed price",
       "1 business day",
@@ -177,7 +185,7 @@
       {
         "icon": "document",
         "lead": "Findings report.",
-        "text": "A three-page report covering what applies to you, what we found, the evidence behind it, and what needs to be fixed."
+        "text": "A three-page report covering what applies to you, what we found, the evidence behind it, and what needs to be fixed. [See a sample report](/sample-report)."
       },
       {
         "icon": "wrench",
@@ -258,6 +266,37 @@
       "yes": "Yes",
       "no": "No"
     }
+  },
+  "sample": {
+    "slug": "sample-report",
+    "title": "See a sample report",
+    "metaDescription": "The three-page findings report Elbebridge delivers, in full: what each German obligation requires, what we found on the site, the evidence behind every finding, and what it takes to fix.",
+    "intro": "This is the document you get for €890. It was produced by the same scanner and the same report generator a client’s report goes through — run against **Nordlicht Home**, a shop we invented for the purpose.\n\nWe never publish a real company’s findings. Yours would look like this, with your pages in the screenshots.",
+    "fileHref": "/sample-report.pdf",
+    "downloadLabel": "Open the sample report",
+    "fileMeta": "PDF · 3 pages",
+    "pagesHeading": "What is in it",
+    "pages": [
+      {
+        "n": "01",
+        "heading": "Summary",
+        "text": "The three obligations side by side, each with a status and one sentence saying what we found. Your legal entity as we read it from your own legal pages, the pages we tested, and the rule set we tested against."
+      },
+      {
+        "n": "02",
+        "heading": "The evidence",
+        "text": "For each obligation: what the law requires, what we found on your site, and the specific proof. Accessibility findings carry a cropped screenshot of the failing element on your own page, the {de|EN 301 549} clause it breaks, and how many instances we counted."
+      },
+      {
+        "n": "03",
+        "heading": "What it takes to fix",
+        "text": "Every rule group in priority order with an effort estimate, so you can hand it to a developer and get a quote — from us or from anyone else."
+      }
+    ],
+    "note": "Automated testing finds a minority of accessibility barriers. The report says so on its own evidence page, because a clean automated scan is not a claim of accessibility and we will not print it as one.",
+    "ctaHeading": "Get one for your site",
+    "ctaText": "Send us your website address. We reply within one business day with what we found on the public parts of it.",
+    "ctaLabel": "Get a Check"
   },
   "legal": [
     {

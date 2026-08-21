@@ -25,6 +25,7 @@ export function localePath(locale: Locale, path: string): string {
  */
 export const PAGE_SLUGS: Record<string, Record<Locale, string>> = {
   home: { en: '/', de: '/' },
+  sample: { en: '/sample-report', de: '/beispielbericht' },
   impressum: { en: '/impressum', de: '/impressum' },
   privacy: { en: '/privacy', de: '/datenschutz' },
   accessibility: { en: '/accessibility', de: '/barrierefreiheit' },

@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import SampleReport from '../../components/SampleReport.astro';
+import { loadCopy } from '../../lib/site';
+const copy = await loadCopy('de');
+---
+<Base
+  locale="de"
+  pageKey="sample"
+  title={`${copy.sample.title} — ${copy.site.wordmark}`}
+  description={copy.sample.metaDescription}
+  bodyClass="legal-page"
+>
+  <div class="legal"><SampleReport copy={copy} locale="de" /></div>
+</Base>

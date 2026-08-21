@@ -2,8 +2,8 @@
 import Icon from './Icon.astro';
 import HeroVisual from './HeroVisual.astro';
 import { inline, paragraphs } from '../lib/inline';
-import type { Copy } from '../lib/site';
-import type { Locale } from '../lib/site';
+import type { Copy, Locale } from '../lib/site';
+import { localePath } from '../lib/site';
 interface Props { copy: Copy; locale: Locale }
 const { copy, locale } = Astro.props;
 const h = copy.home;
@@ -26,6 +26,11 @@ const mailto = `mailto:${copy.site.email}`
         <div class="hero-actions">
           <a class="btn btn-primary" href="#check">
             {h.heroCta}<Icon name="arrow-right" size={18} />
+          </a>
+          {/* Evidence before commitment: the sample is the only claim on this
+              page a visitor can check for themselves. */}
+          <a class="btn btn-secondary" href={localePath(locale, h.heroCtaSecondary.href)}>
+            <Icon name="document" size={18} />{h.heroCtaSecondary.label}
           </a>
         </div>
 

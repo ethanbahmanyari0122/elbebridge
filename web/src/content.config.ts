@@ -84,6 +84,8 @@ const copy = defineCollection({
       headline: richText,
       lede: richText,
       heroCta: z.string(),
+      /** The quiet second action. Evidence before commitment. */
+      heroCtaSecondary: z.object({ href: z.string(), label: z.string() }),
       trust: z.array(z.string()).min(1),
       journeyEnd: richText,
       /**
@@ -178,6 +180,32 @@ const copy = defineCollection({
         privacyNote: z.string(),
       }),
       copyright: richText,
+    }),
+
+    /**
+     * The one report we publish. Nordlicht Home is a shop we invented; the PDF
+     * is produced by the real scanner and the real report generator, from
+     * elbebridge-ops/report/tools/make-sample.js. A real client's findings are
+     * never published here.
+     */
+    sample: z.object({
+      slug: z.string(),
+      title: richText,
+      metaDescription: z.string().min(20).max(300),
+      intro: richText,
+      fileHref: z.string(),
+      fileMeta: z.string(),
+      downloadLabel: z.string(),
+      pagesHeading: richText,
+      pages: z.array(z.object({
+        n: z.string(),
+        heading: richText,
+        text: richText,
+      })).min(1),
+      note: richText,
+      ctaHeading: richText,
+      ctaText: richText,
+      ctaLabel: z.string(),
     }),
 
     legal: z.array(legalPage).min(1),

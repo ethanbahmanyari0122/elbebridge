@@ -67,6 +67,10 @@
             "label": "Was wir tun"
           },
           {
+            "href": "/beispielbericht",
+            "label": "Beispielbericht"
+          },
+          {
             "href": "/#price",
             "label": "Preis"
           },
@@ -127,6 +131,10 @@
     "headline": "Sie verkaufen nach Deutschland? 3 zentrale Anforderungen, die Sie vielleicht ==übersehen== haben.",
     "lede": "Der B2C-Versand nach Deutschland kann einschüchternd wirken. Es gibt viel Bürokratie zu bewältigen, und schnell ist etwas übersehen.\n\nGenau hier kommt Elbebridge ins Spiel. Wir helfen Ihnen durch die deutschen Anforderungen und bringen Ihren Versand sauber und unkompliziert auf.",
     "heroCta": "Prüfung anfragen",
+    "heroCtaSecondary": {
+      "href": "/beispielbericht",
+      "label": "Beispielbericht ansehen"
+    },
     "trust": [
       "Festpreis",
       "1 Werktag",
@@ -175,7 +183,7 @@
       {
         "icon": "document",
         "lead": "Prüfbericht.",
-        "text": "Ein dreiseitiger Bericht: was für Sie gilt, was wir gefunden haben, die Nachweise dazu und was behoben werden muss."
+        "text": "Ein dreiseitiger Bericht: was für Sie gilt, was wir gefunden haben, die Nachweise dazu und was behoben werden muss. [Beispielbericht ansehen](/de/beispielbericht)."
       },
       {
         "icon": "wrench",
@@ -256,6 +264,37 @@
       "yes": "Ja",
       "no": "Nein"
     }
+  },
+  "sample": {
+    "slug": "beispielbericht",
+    "title": "Beispielbericht ansehen",
+    "metaDescription": "Der dreiseitige Prüfbericht von Elbebridge, vollständig: was jede deutsche Pflicht verlangt, was wir auf der Website gefunden haben, die Nachweise zu jedem Befund und der Aufwand für die Behebung.",
+    "intro": "Das ist das Dokument, das Sie für 890 € erhalten. Erstellt wurde es mit demselben Scanner und demselben Berichtsgenerator wie jeder Kundenbericht — geprüft wurde **Nordlicht Home**, ein von uns erfundener Shop.\n\nBefunde echter Unternehmen veröffentlichen wir nie. Ihr Bericht sähe genauso aus, mit Ihren Seiten in den Screenshots.",
+    "fileHref": "/sample-report.pdf",
+    "downloadLabel": "Beispielbericht öffnen",
+    "fileMeta": "PDF · 3 Seiten · auf Englisch",
+    "pagesHeading": "Was drinsteht",
+    "pages": [
+      {
+        "n": "01",
+        "heading": "Überblick",
+        "text": "Die drei Pflichten nebeneinander, jeweils mit Status und einem Satz zum Befund. Dazu Ihre Rechtsform, wie wir sie auf Ihren eigenen Rechtsseiten gelesen haben, die geprüften Seiten und das zugrunde gelegte Regelwerk."
+      },
+      {
+        "n": "02",
+        "heading": "Die Nachweise",
+        "text": "Je Pflicht: was das Gesetz verlangt, was wir auf Ihrer Website gefunden haben, und der konkrete Nachweis. Befunde zur Barrierefreiheit enthalten einen Bildausschnitt des fehlerhaften Elements auf Ihrer eigenen Seite, die verletzte {de|EN 301 549}-Anforderung und die Anzahl der Fundstellen."
+      },
+      {
+        "n": "03",
+        "heading": "Was die Behebung erfordert",
+        "text": "Alle Regelgruppen in Reihenfolge der Dringlichkeit, mit Aufwandsschätzung — damit Sie den Bericht an eine Entwicklerin geben und ein Angebot einholen können, bei uns oder anderswo."
+      }
+    ],
+    "note": "Automatisierte Tests finden nur einen Teil der Barrieren. Das steht so im Bericht selbst, denn ein sauberer automatischer Scan ist keine Aussage über Barrierefreiheit — und wir drucken ihn nicht als eine.",
+    "ctaHeading": "Einen Bericht für Ihre Website",
+    "ctaText": "Schicken Sie uns Ihre Website-Adresse. Wir melden uns innerhalb eines Werktags mit dem, was wir auf den öffentlichen Teilen gefunden haben.",
+    "ctaLabel": "Prüfung anfragen"
   },
   "legal": [
     {

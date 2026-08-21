@@ -147,6 +147,11 @@ body {
 .btn-primary { color: #fff; background: var(--navy); border-color: var(--navy); }
 .btn-primary:hover { color: #fff; background: var(--navy-hover); border-color: var(--navy-hover); }
 .btn-primary .icon { color: currentColor; }
+/* The quiet second action. Outlined rather than filled, so it reads as an
+   alternative to the primary button and not a competitor to it. */
+.btn-secondary { color: var(--navy); background: var(--white); border-color: var(--line-strong); }
+.btn-secondary:hover { color: var(--navy); border-color: var(--navy); background: var(--paper); }
+.btn-secondary .icon { color: var(--accent); }
 .btn-sm { min-height: 2.5rem; padding: .5rem 1.1rem; font-size: .95rem; }
 
 /* ---- Typography --------------------------------------------------------- */
@@ -375,6 +380,27 @@ section { scroll-margin-top: 2rem; }
 /* ---- About + portraits --------------------------------------------------- */
 .about { max-width: var(--prose); }
 .contact-legal { margin: .6rem 0 0; font-size: .85rem; color: var(--ink-muted); }
+
+/* ---- Sample report page --------------------------------------------------- */
+/* Reuses the legal page shell for width and rhythm; only the parts that have no
+   equivalent there are defined here. */
+.sample-head .lede { font-size: 1.08rem; color: var(--ink-muted); max-width: var(--prose); }
+.sample-head .hero-actions { margin-top: 1.6rem; margin-bottom: .5rem; }
+.file-meta { font-size: .88rem; color: var(--ink-muted); margin: 0 0 .5rem; }
+.band-plain { padding-top: 2.5rem; }
+.sample-pages { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.35rem; }
+.sample-pages > li {
+  max-width: none; display: grid; grid-template-columns: auto minmax(0, 1fr);
+  gap: .9rem; align-items: start;
+}
+.sample-pages .body { max-width: var(--prose); }
+.sample-pages .body p { margin: .1rem 0 0; font-size: .97rem; color: var(--ink-muted); }
+.sample-pages .body strong { color: var(--ink); }
+.sample-pages .cp-n { padding-top: .15rem; }
+/* Named for its page, not its role. A bare `.note` collided with the footer's
+   own .note, which sits on navy and inherits --muted-on-navy — the generic rule
+   repainted it dark grey on dark blue and failed contrast on all ten pages. */
+.sample-note { font-size: .93rem; color: var(--ink-muted); margin-top: 1.5rem; }
 
 /* ---- Legal pages ---------------------------------------------------------- */
 .legal { padding-block: clamp(2rem, 5vw, 3.25rem); }

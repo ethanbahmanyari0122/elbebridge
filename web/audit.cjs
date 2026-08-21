@@ -31,8 +31,8 @@ const BASE = `http://127.0.0.1:${PORT}`;
 const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'EN-301-549'];
 
 const PAGES = [
-  '/', '/impressum/', '/privacy/', '/accessibility/',
-  '/de/', '/de/impressum/', '/de/datenschutz/', '/de/barrierefreiheit/',
+  '/', '/impressum/', '/privacy/', '/accessibility/', '/sample-report/',
+  '/de/', '/de/impressum/', '/de/datenschutz/', '/de/barrierefreiheit/', '/de/beispielbericht/',
 ];
 
 let pass = 0, fail = 0;
