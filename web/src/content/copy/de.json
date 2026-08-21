@@ -128,8 +128,8 @@
     "copyright": "© 2026 Elbebridge GbR · Hamburg. Alle Rechte vorbehalten."
   },
   "home": {
-    "headline": "Sie verkaufen nach Deutschland? 3 zentrale Anforderungen, die Sie vielleicht ==übersehen== haben.",
-    "lede": "Der B2C-Versand nach Deutschland kann einschüchternd wirken. Es gibt viel Bürokratie zu bewältigen, und schnell ist etwas übersehen.\n\nGenau hier kommt Elbebridge ins Spiel. Wir helfen Ihnen durch die deutschen Anforderungen und bringen Ihren Versand sauber und unkompliziert auf.",
+    "headline": "Sie verkaufen nach Deutschland? Drei Pflichten gelten bereits. Wir zeigen Ihnen die ==Nachweise==.",
+    "lede": "Wenn Sie an deutsche Verbraucher versenden, gelten diese Pflichten für Sie — ob Sie hier eine Gesellschaft haben oder nicht: Barrierefreiheit seit dem 28. Juni 2025, Produktsicherheit seit dem 13. Dezember 2024 und Verpackung seit vor Ihrem ersten Paket.\n\nWir prüfen alle drei an Ihrer tatsächlichen Website und schicken Ihnen einen dreiseitigen Bericht mit den Nachweisen zu jedem Befund.",
     "heroCta": "Prüfung anfragen",
     "heroCtaSecondary": {
       "href": "/beispielbericht",
@@ -153,24 +153,24 @@
         "heading": "Barrierefreier Onlineshop",
         "short": "Barrierefreier Onlineshop",
         "code": "BFSG",
-        "law": "Barrierefreiheitsstärkungsgesetz (BFSG)",
-        "text": "Ihr Shop, Ihr Checkout und Ihr Kundenkonto müssen für Menschen mit Behinderungen zugänglich sein, mit einer veröffentlichten Erklärung zur Barrierefreiheit. Grundlage ist {en|EN 301 549}, der europäische Standard für barrierefreie digitale Produkte und Dienstleistungen.\n\nDie deutschen Behörden prüfen inzwischen aktiv und reagieren nicht mehr nur auf Beschwerden."
+        "law": "{de|Barrierefreiheitsstärkungsgesetz} (BFSG) — gilt seit dem 28. Juni 2025",
+        "text": "Shop, Kasse und Kundenkonto müssen für Menschen mit Behinderungen nutzbar sein, gemessen an {de|EN 301 549}, und Sie brauchen eine veröffentlichte Erklärung zur Barrierefreiheit. Ausgenommen sind Unternehmen unter 10 Beschäftigten und unter 2 Mio. € Jahresumsatz.\n\nSeit Januar 2026 prüft die deutsche Marktüberwachung von sich aus und reagiert nicht nur auf Beschwerden."
       },
       {
         "icon": "person",
         "heading": "Verantwortliche Person in der EU",
         "short": "Verantwortliche Person EU",
         "code": "GPSR",
-        "law": "Produktsicherheitsverordnung (GPSR)",
-        "text": "Sie brauchen eine benannte Person oder ein Unternehmen mit Sitz in der EU, die für Ihre Produkte verantwortlich ist, mit Kontaktdaten beim Produkt.\n\nOhne sie dürfen Sie das Produkt in der EU nicht verkaufen."
+        "law": "General Product Safety Regulation (GPSR) — gilt seit dem 13. Dezember 2024",
+        "text": "Ein Produkt darf nur dann an Verbraucher in der EU verkauft werden, wenn eine benannte Person oder Gesellschaft in der EU dafür verantwortlich ist und ihre Angaben beim Produktangebot stehen.\n\nOhne sie darf das Produkt nicht in Verkehr gebracht werden."
       },
       {
         "icon": "box",
         "heading": "Registrierte Verpackung",
         "short": "Registrierte Verpackung",
         "code": "LUCID",
-        "law": "Verpackungsgesetz — LUCID-Registrierung",
-        "text": "Jede Verpackung, die Sie an Kundinnen und Kunden in Deutschland senden, muss im Verpackungsregister LUCID registriert und bei einem dualen System lizenziert sein. Die Registrierung muss _vor_ der ersten Sendung abgeschlossen sein.\n\nKeine Registrierung? Marktplätze können Sie vom Verkauf ausschließen."
+        "law": "{de|Verpackungsgesetz} — {de|LUCID}-Registrierung, erforderlich vor der ersten Sendung",
+        "text": "Jeder Karton, jedes Füllmaterial und jedes Etikett, das Sie nach Deutschland schicken, muss im {de|LUCID}-Register registriert und bei einem dualen System lizenziert sein. Die Registrierung muss _vor_ der ersten Sendung erfolgen.\n\nMarktplätze sind verpflichtet, nicht registrierte Verkäufer zu sperren."
       }
     ],
     "evidenceHeading": "So sieht ein Befund aus",
@@ -229,81 +229,65 @@
       {
         "icon": "wrench",
         "lead": "Behebung zum Festpreis.",
-        "text": "Sie kennen den Preis vorab."
+        "text": "Ein Festpreisangebot für die Behebung, kalkuliert aus den Befunden, bevor die Arbeit beginnt."
       },
       {
         "icon": "chart",
         "lead": "Quartalsweise Überwachung.",
-        "text": "Optional. Websites ändern sich, die Anforderungen ebenso. Wir schauen quartalsweise nach, damit Sie auf Kurs bleiben."
+        "text": "Optional. Websites ändern sich, die Anforderungen auch. 290 € pro Quartal für eine erneute Prüfung und einen aktualisierten Bericht."
       }
     ],
     "priceHeading": "Preis",
     "priceAmount": "890 €",
     "priceLines": [
-      "Für die Prüfung und den dreiseitigen Prüfbericht. Festpreis von 890 €, vorab genannt und einmalig in Rechnung gestellt.",
-      "**Übernehmen wir die Behebung, wird der Betrag angerechnet.**"
+      "Für die Prüfung und den dreiseitigen Prüfbericht. Vorab genannt, einmalig in Rechnung gestellt.",
+      "**Wird vollständig angerechnet, wenn Sie die Behebung beauftragen.**",
+      "Die Behebung ist ein Festpreisangebot, kalkuliert aus den Befunden. Die quartalsweise Überwachung kostet, wenn Sie sie möchten, 290 € pro Quartal."
     ],
     "contact": {
       "heading": "Prüfung anfragen",
-      "intro": "Senden Sie uns Ihre Website-Adresse. Wir melden uns innerhalb eines Werktags mit dem, was wir auf den öffentlichen Teilen Ihrer Seite gefunden haben.",
-      "buttonLabel": "Website per E-Mail senden",
+      "intro": "Schicken Sie uns Ihre Website-Adresse. Wir antworten innerhalb eines Werktags mit dem, was wir auf den öffentlichen Teilen gefunden haben.",
+      "buttonLabel": "Prüfung anfragen",
       "mailSubject": "Anfrage Compliance-Prüfung",
       "mailBody": "Website:\n\nFirmenname (optional):\n\nWas Ihnen bereits bekannt ist:\n",
-      "note": "Keine Formulare. Kein Tracking. Keine Dritten.\n\nIhre Nachricht geht direkt in unser Postfach."
+      "note": "Damit öffnet sich Ihr E-Mail-Programm mit den Angaben, die wir brauchen.\n\nKein Formular, kein Tracking, kein Dritter dazwischen — Ihre Nachricht geht direkt in unser Postfach."
     },
     "peopleHeading": "Über uns",
     "peopleNote": "Wir haben Elbebridge gegründet, damit der Verkauf nach Deutschland weniger kompliziert wird. Wir helfen internationalen Unternehmen zu verstehen, was gefordert ist, zu erkennen, was fehlt, und das Richtige aufzusetzen — ohne sich in der deutschen Bürokratie zu verlieren.",
     "disclaimer": "Elbebridge ist keine Rechts- oder Steuerberatungsgesellschaft und erbringt keine Rechtsberatung. Informationen und Feststellungen auf dieser Website dienen der allgemeinen Information und ersetzen keine Beratung durch eine qualifizierte Anwältin oder einen qualifizierten Anwalt.",
     "formDisclaimer": "Unsere Prüfung liefert allgemeine Informationen auf Grundlage der von Ihnen genannten Website. Sie stellt keine Rechtsberatung dar und begründet kein Mandatsverhältnis.",
     "comparison": {
-      "heading": "Wir gehen über die automatische Prüfung hinaus.",
-      "intro": "Eine KI kann Ihnen sagen, was die Anforderungen besagen, und mögliche Probleme benennen.\n\nElbebridge geht weiter: Wir prüfen Ihre tatsächliche Situation, sichern die Nachweise und sagen Ihnen genau, was Aufmerksamkeit braucht.",
+      "heading": "Warum nicht einfach eine KI fragen?",
+      "intro": "Können Sie, und sie wird Ihnen etwas sagen. Das hier wird sie nicht tun.",
       "colUs": "Elbebridge",
-      "colAi": "KI / kostenloser Scanner",
+      "colAi": "Eine KI oder ein kostenloser Scanner",
       "rows": [
         {
-          "factor": "Prüft die Barrierefreiheit",
-          "us": true,
-          "ai": true
+          "factor": "Befunde zur Barrierefreiheit",
+          "us": "Geprüft mit axe-core gegen WCAG 2.2 AA und {de|EN 301 549}, danach von Hand mit Tastatur und Screenreader — dort zeigen sich die meisten echten Barrieren.",
+          "ai": "Findet nur, was eine Maschine erkennen kann, und stellt das als das ganze Bild dar."
         },
         {
-          "factor": "Prüfung durch Fachleute",
-          "us": true,
-          "ai": false
+          "factor": "Das Verpackungsregister",
+          "us": "Wir durchsuchen das {de|LUCID}-Register unter Ihrer Rechtsform und nennen Ihnen das Datum der Suche.",
+          "ai": "Kann das Register überhaupt nicht einsehen."
         },
         {
-          "factor": "Prüft das LUCID-Register",
-          "us": true,
-          "ai": false
+          "factor": "Verantwortliche Person in der EU",
+          "us": "Wir sehen auf den Seiten nach, auf denen die Angaben stehen müssen — auf einer Produktseite, nicht auf einer Kategorieseite — und sagen Ihnen, was dort stand.",
+          "ai": "Liest die Anforderung. Öffnet Ihre Produktseiten nicht."
         },
         {
-          "factor": "Prüft auf eine verantwortliche Person in der EU",
-          "us": true,
-          "ai": false
+          "factor": "Nachweise",
+          "us": "Ein Bildausschnitt des fehlerhaften Elements auf Ihrer eigenen Seite, die verletzte Anforderung und das Datum — ein Dokument, das Sie einer Entwicklerin oder einer Behörde vorlegen können.",
+          "ai": "Eine Liste von Vorschlägen, hinter denen nichts steht."
         },
         {
-          "factor": "Kann bei der Benennung einer verantwortlichen Person helfen",
-          "us": true,
-          "ai": false
-        },
-        {
-          "factor": "Liefert Nachweise zu jedem Befund",
-          "us": true,
-          "ai": false
-        },
-        {
-          "factor": "Sagt Ihnen genau, was zu beheben ist",
-          "us": true,
-          "ai": true
-        },
-        {
-          "factor": "Anforderung, Befunde und Nachweise in einem Dokument",
-          "us": true,
-          "ai": false
+          "factor": "Was behauptet wird",
+          "us": "Wir sagen Ihnen nie, dass Sie konform sind. Wir sagen Ihnen, was die Anforderung ist und was wir gefunden haben. Der Berichtsgenerator weigert sich, das Wort zu drucken.",
+          "ai": "Erklärt Sie bereitwillig für konform."
         }
-      ],
-      "yes": "Ja",
-      "no": "Nein"
+      ]
     }
   },
   "sample": {

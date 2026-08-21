@@ -308,17 +308,20 @@ section { scroll-margin-top: 2rem; }
 .ev-shot { height: 9rem; background: var(--white); border-bottom: 1px solid var(--line); padding: .75rem; }
 .ev-shot img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
 .ev-panel figcaption { padding: 1.1rem 1.25rem 1.25rem; display: flex; flex-direction: column; gap: .35rem; }
-.ev-meta { display: flex; align-items: center; gap: .6rem; margin: 0; max-width: none; }
+.ev-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .6rem; margin: 0; max-width: none; }
 .ev-count {
   font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700;
   line-height: 1; font-variant-numeric: tabular-nums;
 }
+/* inline-block, not inline-flex: a flex container turns the label into one
+   unbreakable item, and "Schwerwiegend" at 200% text was wider than the panel
+   it sits in. WCAG 1.4.10, and axe cannot see it. */
 .ev-pill {
-  display: inline-flex; align-items: center; gap: .3rem;
+  display: inline-block; max-width: 100%; overflow-wrap: anywhere;
   font-size: .74rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
-  padding: .15rem .45rem; border: 1.5px solid currentColor; border-radius: 3px;
+  line-height: 1.35; padding: .15rem .45rem; border: 1.5px solid currentColor; border-radius: 3px;
 }
-.ev-pill::before { font-size: .8em; }
+.ev-pill::before { font-size: .8em; margin-right: .3rem; }
 .ev-critical { color: var(--error); }
 .ev-critical::before { content: "\25B2"; }
 .ev-serious { color: var(--focus); }
@@ -383,20 +386,19 @@ section { scroll-margin-top: 2rem; }
 .compare th, .compare td { text-align: left; vertical-align: top; padding: .8rem .9rem; font-size: .95rem; }
 .compare thead th { font-size: .8rem; letter-spacing: .05em; text-transform: uppercase;
   color: var(--ink-muted); border-bottom: 1px solid var(--line); }
-.compare tbody th { font-weight: 700; width: 56%; border-bottom: 1px solid var(--line); }
+.compare tbody th { font-weight: 700; width: 22%; border-bottom: 1px solid var(--line); }
 .compare tbody td { border-bottom: 1px solid var(--line); }
 .compare .col-us { background: var(--accent-tint); }
 .compare thead .col-us { color: var(--accent); font-weight: 800; }
 .compare tbody .col-us { display: table-cell; }
-/* The cells hold a single mark now, so centre it under its column heading
-   instead of floating it beside prose that is no longer there. */
-.compare tbody .mark { text-align: center; }
-/* `.icon` is display:block globally, so text-align could not centre it —
-   the ticks sat left while the dashes centred. */
-.compare tbody .mark .icon { color: var(--ok); display: inline-block; }
-.compare tbody .dash { color: var(--ink-muted); }
-.compare thead th:not(:first-child) { text-align: center; }
+/* The tick floats beside the sentence rather than sitting above it, so a row
+   reads as one statement with a mark against it. */
+.compare tbody .col-us .icon { color: var(--ok); float: left; margin: .18rem .4rem 0 0; }
 .compare .col-ai { color: var(--ink-muted); }
+/* `overflow-wrap: break-word` breaks a word visually but still reports the
+   whole word as the min-content width; `anywhere` shrinks min-content too,
+   which is what actually fixes reflow. Berichtsgenerator was the word. */
+.compare th, .compare td { overflow-wrap: anywhere; }
 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 @media (max-width: 46rem) {
   /* Each selector must match the specificity of the desktop rule it overrides.
@@ -408,13 +410,19 @@ section { scroll-margin-top: 2rem; }
   .compare tbody th { hyphens: manual; }
   .compare thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
   .compare tbody tr { border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: .75rem; padding: .3rem 0; }
-  .compare tbody th { border: none; padding-bottom: .1rem; }
-  .compare tbody td { border: none; padding-top: .25rem; }
+  /* Stacked, the cells no longer sit in columns, so the horizontal padding
+     that separated those columns is only eating the 320px we have. */
+  .compare tbody th { border: none; padding: 0 .5rem .1rem; }
+  .compare tbody td { border: none; padding: .25rem .5rem .6rem; }
   .compare tbody .col-us { background: none; }
-  /* Stacking the table hides the column headings, and a bare tick under a
-     bare dash says nothing. Name the column on each row instead. */
-  .compare tbody .mark { text-align: left; display: flex; gap: .45rem; align-items: center; }
-  .compare tbody .mark::before { content: attr(data-label) ":"; color: var(--ink-muted); font-size: .9rem; }
+  /* Stacking the table hides the column headings, so each cell names its own
+     column instead — otherwise two sentences sit under one row header with
+     nothing to say which is which. */
+  .compare tbody td::before {
+    content: attr(data-label) ": "; display: block;
+    color: var(--ink-muted); font-size: .82rem; font-weight: 700;
+    letter-spacing: .04em; text-transform: uppercase; margin-bottom: .15rem;
+  }
 }
 
 /* ---- About + portraits --------------------------------------------------- */

@@ -156,15 +156,17 @@ const copy = defineCollection({
         intro: richText,
         colUs: z.string(),
         colAi: z.string(),
-        // Spoken alternatives for the tick and the dash. A symbol on its own
-        // fails WCAG 1.4.1, and we are not shipping that on a page that sells
-        // accessibility.
-        yes: z.string(),
-        no: z.string(),
+        /*
+         * Prose, not ticks. A tick-box table is a claim anyone can copy and
+         * nobody can check — on the one table whose whole job is to be
+         * checkable. Each cell states a specific thing we do, or a specific
+         * thing an automated tool cannot do, and every one of them is
+         * observable in what we send you.
+         */
         rows: z.array(z.object({
           factor: richText,
-          us: z.boolean(),
-          ai: z.boolean(),
+          us: richText,
+          ai: richText,
         })).min(1),
       }),
       peopleHeading: richText,

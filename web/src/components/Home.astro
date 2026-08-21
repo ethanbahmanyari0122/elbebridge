@@ -146,15 +146,11 @@ const mailto = `mailto:${copy.site.email}`
         {h.comparison.rows.map((r) => (
           <tr>
             <th scope="row" set:html={inline(r.factor)} />
-            <td class="col-us mark" data-label={h.comparison.colUs}>
-              {r.us
-                ? <Fragment><Icon name="check" size={17} /><span class="vh">{h.comparison.colUs}: {h.comparison.yes}</span></Fragment>
-                : <Fragment><span class="dash" aria-hidden="true">—</span><span class="vh">{h.comparison.colUs}: {h.comparison.no}</span></Fragment>}
+            <td class="col-us" data-label={h.comparison.colUs}>
+              <Icon name="check" size={15} /><span set:html={inline(r.us)} />
             </td>
-            <td class="col-ai mark" data-label={h.comparison.colAi}>
-              {r.ai
-                ? <Fragment><Icon name="check" size={17} /><span class="vh">{h.comparison.colAi}: {h.comparison.yes}</span></Fragment>
-                : <Fragment><span class="dash" aria-hidden="true">—</span><span class="vh">{h.comparison.colAi}: {h.comparison.no}</span></Fragment>}
+            <td class="col-ai" data-label={h.comparison.colAi}>
+              <span set:html={inline(r.ai)} />
             </td>
           </tr>
         ))}

@@ -130,9 +130,9 @@
     "copyright": "© 2026 Elbebridge GbR · Hamburg. All rights reserved."
   },
   "home": {
-    "headline": "Selling into Germany? 3 critical requirements you may have ==missed==.",
-    "lede": "Shipping B2C to Germany can feel intimidating. There's a lot of bureaucracy to navigate, and it's easy to get something wrong.\n\nThat's where Elbebridge comes in. We help you navigate German requirements and get your shipping set-up right and hassle free.",
-    "heroCta": "Get your compliance check",
+    "headline": "Selling into Germany? Three obligations already apply. We show you the ==evidence==.",
+    "lede": "If you ship to German consumers these obligations apply to you, whether or not you have a company here — accessibility since 28 June 2025, product safety since 13 December 2024, and packaging since before your first parcel.\n\nWe check all three against your actual website and send a three-page report with the evidence behind every finding.",
+    "heroCta": "Get a Check",
     "heroCtaSecondary": {
       "href": "/sample-report",
       "label": "See a sample report"
@@ -155,24 +155,24 @@
         "heading": "Accessible Online Shop",
         "short": "Accessible Online Shop",
         "code": "BFSG",
-        "law": "{de|Barrierefreiheitsstärkungsgesetz} (BFSG)",
-        "text": "Your shop, checkout and customer account need to be accessible to people with disabilities, with a published accessibility statement. The requirements are based on {de|EN 301 549}, the European standard for accessible digital products and services.\n\nGerman authorities are now actively checking compliance, not just responding to complaints."
+        "law": "{de|Barrierefreiheitsstärkungsgesetz} (BFSG) — applies since 28 June 2025",
+        "text": "Your shop, checkout and customer account have to be usable by people with disabilities, measured against {de|EN 301 549}, and you need a published accessibility statement. The exemption is under 10 staff and under €2m turnover.\n\nSince January 2026 the German market surveillance authority has been running its own checks, not only responding to complaints."
       },
       {
         "icon": "person",
         "heading": "EU Responsible Person",
         "short": "EU Responsible Person",
         "code": "GPSR",
-        "law": "General Product Safety Regulation (GPSR)",
-        "text": "You need a named person or company based in the EU to be responsible for your products, with their details shown alongside the product.\n\nWithout one, you can't legally sell the product in the EU."
+        "law": "General Product Safety Regulation (GPSR) — applies since 13 December 2024",
+        "text": "A product may only be sold to an EU consumer if a named person or company inside the EU is responsible for it, and their details appear with the product offer.\n\nWithout one, the product cannot lawfully be placed on the market."
       },
       {
         "icon": "box",
         "heading": "Registered Packaging",
         "short": "Registered Packaging",
         "code": "LUCID",
-        "law": "{de|Verpackungsgesetz} — LUCID registration",
-        "text": "Any packaging you send to customers in Germany needs to be registered with the {de|LUCID} Packaging Register and licensed through a dual system. Registration must be completed _before_ your first shipment.\n\nNo registration? Marketplaces can block you from selling."
+        "law": "{de|Verpackungsgesetz} — {de|LUCID} registration, required before your first shipment",
+        "text": "Every box, filler and label you send into Germany has to be registered in the {de|LUCID} register and licensed with a dual system. Registration is required _before_ the first shipment.\n\nMarketplaces are obliged to block sellers who have not done it."
       }
     ],
     "evidenceHeading": "What a finding looks like",
@@ -231,81 +231,65 @@
       {
         "icon": "wrench",
         "lead": "Fixed-price remediation.",
-        "text": "You will know the price in advance."
+        "text": "A fixed quote for the fixes, priced from the findings, before any work starts."
       },
       {
         "icon": "chart",
         "lead": "Quarterly monitoring.",
-        "text": "Optional. Websites change, and so do requirements. We check in every quarter to make sure you stay on track."
+        "text": "Optional. Websites change and so do the requirements. €290 per quarter for a re-scan and a refreshed report."
       }
     ],
     "priceHeading": "Price",
     "priceAmount": "€890",
     "priceLines": [
-      "The check and the three-page findings report. Fixed at €890, quoted before we start and invoiced once.",
-      "**If we fix it for you, the €890 comes off the price.**"
+      "For the check and the three-page findings report. Quoted before we start, invoiced once.",
+      "**Fully credited if you proceed with remediation.**",
+      "Remediation is a fixed quote priced from the findings. Quarterly monitoring, if you want it, is €290 per quarter."
     ],
     "contact": {
       "heading": "Get a Check",
-      "intro": "Send us your website address. We will get back to you within one business day with what we found on the public parts of your site.",
-      "buttonLabel": "Email us your website",
+      "intro": "Send us your website address. We reply within one business day with what we found on the public parts of it.",
+      "buttonLabel": "Get a Check",
       "mailSubject": "Compliance check request",
       "mailBody": "Website:\n\nCompany name (optional):\n\nAnything you already know is missing:\n",
-      "note": "No forms. No tracking. No third parties.\n\nYour message goes straight to our inbox."
+      "note": "This opens your email client with the details we need.\n\nNo form, no tracking, no third party in between — your message goes straight to our inbox."
     },
     "peopleHeading": "About us",
     "peopleNote": "We started Elbebridge to make selling in Germany feel less complicated. We help international businesses understand what's required, spot what's missing, and get the right pieces in place without getting lost in German bureaucracy.",
     "disclaimer": "Elbebridge is not a law or a tax firm and does not provide legal advice. Information and findings provided through this website are for general informational purposes and do not replace advice from a qualified legal professional.",
     "formDisclaimer": "Our check provides general information based on the website you provide. It does not constitute legal advice or create a lawyer-client relationship.",
     "comparison": {
-      "heading": "We go beyond the automatic check.",
-      "intro": "AI can tell you what the requirements say and can flag potential issues.\n\nElbebridge goes further: we check your actual situation, verify the evidence, and tell you exactly what needs attention.",
+      "heading": "Why not just ask an AI?",
+      "intro": "You can, and it will tell you something. Here is what it will not do.",
       "colUs": "Elbebridge",
-      "colAi": "AI / Free Scanner",
+      "colAi": "An AI or a free scanner",
       "rows": [
         {
-          "factor": "Tests accessibility",
-          "us": true,
-          "ai": true
+          "factor": "Accessibility findings",
+          "us": "Tested with axe-core against WCAG 2.2 AA and {de|EN 301 549}, then checked by hand with a keyboard and a screen reader — which is where most real barriers show up.",
+          "ai": "Finds only what a machine can detect, and reports that as the whole picture."
         },
         {
-          "factor": "Expert check",
-          "us": true,
-          "ai": false
+          "factor": "The packaging register",
+          "us": "We search the German {de|LUCID} register under your legal entity and tell you the date we searched.",
+          "ai": "Cannot see the register at all."
         },
         {
-          "factor": "Checks the {de|LUCID} register",
-          "us": true,
-          "ai": false
+          "factor": "EU responsible person",
+          "us": "We look on the pages the details have to appear on — including a product page, not a category listing — and tell you what was there.",
+          "ai": "Reads the requirement. Does not open your product pages."
         },
         {
-          "factor": "Checks for an EU Responsible Person",
-          "us": true,
-          "ai": false
+          "factor": "Evidence",
+          "us": "A screenshot of the failing element on your own page, the clause it breaks, and the date — a document you can hand to a developer or an authority.",
+          "ai": "A list of suggestions with nothing behind them."
         },
         {
-          "factor": "Can help appoint an EU Responsible Person",
-          "us": true,
-          "ai": false
-        },
-        {
-          "factor": "Provides evidence for each finding",
-          "us": true,
-          "ai": false
-        },
-        {
-          "factor": "Tells you exactly what needs fixing",
-          "us": true,
-          "ai": true
-        },
-        {
-          "factor": "The requirement, the findings and the evidence together",
-          "us": true,
-          "ai": false
+          "factor": "What it claims",
+          "us": "We never tell you that you are compliant. We tell you what the requirement is and what we found. The report generator refuses to print the word.",
+          "ai": "Will happily declare you compliant."
         }
-      ],
-      "yes": "Yes",
-      "no": "No"
+      ]
     }
   },
   "sample": {
