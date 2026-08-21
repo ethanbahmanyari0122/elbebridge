@@ -37,7 +37,7 @@ const section = z.object({
 
 const legalPage = z.object({
   /** Shared identity across locales, so /privacy and /datenschutz can be paired. */
-  key: z.enum(['impressum', 'privacy', 'accessibility']),
+  key: z.enum(['impressum', 'privacy', 'accessibility', 'scanner']),
   slug: z.string(),
   lang: z.enum(['en', 'de']).optional(),   // page language if it differs from the locale
   title: richText,
@@ -54,6 +54,8 @@ const copy = defineCollection({
     locale: z.enum(['en', 'de']),
     localeName: z.string(),
     htmlLang: z.string(),
+    /** BCP-47 with a region, which is what Open Graph wants: en_GB, de_DE. */
+    ogLocale: z.string(),
 
     ui: z.object({
       skipToContent: z.string(),
@@ -73,6 +75,31 @@ const copy = defineCollection({
       email: z.string().email(),
       /** Sits beside the wordmark in the header. */
       tagline: z.string(),
+      /**
+       * The card a link unfurls to in an email client, Slack or LinkedIn —
+       * which, for a business acquired entirely through pasted links, is the
+       * first thing most prospects ever see of us.
+       */
+      socialImage: z.object({
+        src: z.string(),
+        width: z.number(),
+        height: z.number(),
+        alt: z.string(),
+      }),
+      /**
+       * The company, as structured data. Kept here rather than built into a
+       * component so the Impressum and the JSON-LD cannot drift apart, and so
+       * a search engine and an AI answer read the same address we publish.
+       */
+      organisation: z.object({
+        legalName: z.string(),
+        streetAddress: z.string(),
+        postalCode: z.string(),
+        addressLocality: z.string(),
+        addressCountry: z.string(),
+        areaServed: z.string(),
+        description: z.string().min(20).max(300),
+      }),
       social: z.array(z.object({
         label: z.string(),          // real accessible name — icons are decorative
         href: z.string(),

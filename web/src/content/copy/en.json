@@ -2,6 +2,7 @@
   "locale": "en",
   "localeName": "English",
   "htmlLang": "en",
+  "ogLocale": "en_GB",
   "ui": {
     "skipToContent": "Skip to main content",
     "primaryNavLabel": "Primary",
@@ -14,6 +15,21 @@
     "wordmark": "Elbebridge",
     "logotype": "elbebridge",
     "tagline": "Compliance. Clarity. Confidence.",
+    "socialImage": {
+      "src": "/og-en.png",
+      "width": 1200,
+      "height": 630,
+      "alt": "Elbebridge — three German obligations, checked against your website. BFSG, GPSR, LUCID."
+    },
+    "organisation": {
+      "legalName": "Elbebridge GbR",
+      "streetAddress": "Stormarner Straße 41",
+      "postalCode": "22049",
+      "addressLocality": "Hamburg",
+      "addressCountry": "DE",
+      "areaServed": "DE",
+      "description": "Fixed-price checks of the three German obligations most foreign online brands are missing: accessibility (BFSG), an EU responsible person (GPSR), and packaging registration (LUCID)."
+    },
     "eyebrow": "German market compliance",
     "title": "Elbebridge — German compliance checks for brands selling into Germany",
     "metaDescription": "A fixed-price check of the three German obligations most foreign online brands are missing: accessibility (BFSG), an EU responsible person (GPSR), and packaging registration (LUCID).",
@@ -113,6 +129,10 @@
           {
             "href": "/accessibility",
             "label": "Accessibility statement"
+          },
+          {
+            "href": "/scanner",
+            "label": "About our crawler"
           }
         ]
       }
@@ -506,7 +526,7 @@
           "blocks": [
             {
               "type": "p",
-              "text": "Our scan reads publicly available pages of the website you ask us to check. We record company identification only — the legal entity, its registered address and its registration numbers, as published in that site's own legal notice. We do not log in, we do not place orders, we do not access anything behind authentication, and we do not collect details of named individuals. Our scanner respects {de|robots.txt}, identifies itself in its user agent, and makes at most one request per second."
+              "text": "Our scan reads publicly available pages of the website you ask us to check. We record company identification only — the legal entity, its registered address and its registration numbers, as published in that site's own legal notice. We do not log in, we do not place orders, we do not access anything behind authentication, and we do not collect details of named individuals. Our scanner respects robots.txt, identifies itself in its user agent, and makes at most one request per second."
             }
           ]
         },
@@ -627,6 +647,103 @@
             {
               "type": "p",
               "text": "If you are not satisfied with our response, you can contact the German market surveillance authority for the accessibility of products and services ({de|Marktüberwachungsstelle der Länder für die Barrierefreiheit von Produkten und Dienstleistungen})."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "scanner",
+      "slug": "scanner",
+      "title": "About our crawler",
+      "metaDescription": "ElbeBridgeComplianceBot: who runs it, what it requests, how to recognise it in your logs, and how to block it if you would rather we did not look.",
+      "intro": "Our user agent points at this page, so that anyone who finds it in their logs can tell in one click who we are and what we were doing.",
+      "sections": [
+        {
+          "heading": "Who runs it",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Elbebridge GbR, Hamburg. We check public websites against three German market obligations and sell the findings to the site owner. Write to [hallo@elbebridge.com](mailto:hallo@elbebridge.com) with any question about a request you have seen."
+            }
+          ]
+        },
+        {
+          "heading": "How to recognise it",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "The crawler identifies itself, always, with a contactable address:"
+            },
+            {
+              "type": "p",
+              "text": "`Mozilla/5.0 (compatible; ElbeBridgeComplianceBot/1.0; +https://elbebridge.com/scanner)`"
+            },
+            {
+              "type": "p",
+              "text": "It is a real browser engine rather than a plain HTTP client, because an online shop that renders its catalogue in the browser cannot be checked any other way."
+            }
+          ]
+        },
+        {
+          "heading": "What it requests",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "A handful of pages per site, once:"
+            },
+            {
+              "type": "ul",
+              "items": [
+                "your robots.txt, before anything else;",
+                "your home page;",
+                "one product page, reached from the home page or from a category listing;",
+                "the pages that carry your company details — {de|Impressum}, legal notice, terms, privacy or about;",
+                "your accessibility statement, if one is linked."
+              ]
+            },
+            {
+              "type": "p",
+              "text": "It never submits a form, never signs in, never adds to a basket, and never places an order."
+            }
+          ]
+        },
+        {
+          "heading": "How often, and how fast",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "One request per second to any one host, at most, with no more than a handful of hosts in flight at a time. A whole site is usually finished inside a minute. We do not re-scan a site we have already read unless something has changed or the owner asks us to."
+            }
+          ]
+        },
+        {
+          "heading": "How to block it",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "We read robots.txt on every request and honour it. To keep us out entirely, add these two lines:"
+            },
+            {
+              "type": "p",
+              "text": "`User-agent: ElbeBridgeComplianceBot`"
+            },
+            {
+              "type": "p",
+              "text": "`Disallow: /`"
+            },
+            {
+              "type": "p",
+              "text": "A disallowed site is recorded as skipped and nothing further is requested. If you would rather tell us directly, email us and we will remove the domain from the list."
+            }
+          ]
+        },
+        {
+          "heading": "What we keep",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "What a visitor to your site could see: the page text we read, a screenshot of the pages we tested, the accessibility findings, and the company details you publish. We do not collect personal data about your customers, and we do not sell what we find to anyone but you. See our [privacy policy](/privacy) for the detail."
             }
           ]
         }

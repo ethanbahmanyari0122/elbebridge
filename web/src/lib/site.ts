@@ -29,6 +29,7 @@ export const PAGE_SLUGS: Record<string, Record<Locale, string>> = {
   impressum: { en: '/impressum', de: '/impressum' },
   privacy: { en: '/privacy', de: '/datenschutz' },
   accessibility: { en: '/accessibility', de: '/barrierefreiheit' },
+  scanner: { en: '/scanner', de: '/scanner' },
 };
 
 export function alternates(key: string): { locale: Locale; href: string }[] {

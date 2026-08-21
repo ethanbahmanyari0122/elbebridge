@@ -59,6 +59,7 @@ engine. `src/pages/[slug].astro` generates the routes; you never add a page file
 | `**bold**` / `_italic_` | `<strong>` / `<em>` |
 | `==missing==` | accent-coloured span — the highlight word in the headline |
 | `{de\|Verpackungsgesetz}` | `<span lang="de">…</span>` |
+| `` `User-agent: …` `` | `<code>…</code>` |
 
 That last one matters: a German word inside an English sentence needs its own
 `lang` attribute or a screen reader pronounces it as English. It is WCAG 3.1.2,

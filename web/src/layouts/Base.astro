@@ -28,6 +28,50 @@ const otherCopy = await loadCopy(other);
 const alts = alternates(pageKey);
 const switchHref = alts.find((a) => a.locale === other)?.href ?? localePath(other, '/');
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const social = new URL(copy.site.socialImage.src, Astro.site);
+
+/**
+ * Organisation and website, as structured data. Every value comes from the
+ * content file, so this and the Impressum cannot drift apart — and a search
+ * engine or an AI answering "who checks BFSG compliance in Germany" reads the
+ * same address we publish.
+ *
+ * ProfessionalService rather than LocalBusiness: nobody visits us, and claiming
+ * a storefront we do not have would be the same kind of overstatement the
+ * report generator refuses to print.
+ */
+const org = copy.site.organisation;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ProfessionalService',
+      '@id': new URL('/#organisation', Astro.site).href,
+      name: copy.site.wordmark,
+      legalName: org.legalName,
+      url: Astro.site!.href,
+      email: copy.site.email,
+      description: org.description,
+      image: social.href,
+      areaServed: org.areaServed,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: org.streetAddress,
+        postalCode: org.postalCode,
+        addressLocality: org.addressLocality,
+        addressCountry: org.addressCountry,
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': new URL('/#website', Astro.site).href,
+      url: Astro.site!.href,
+      name: copy.site.wordmark,
+      inLanguage: copy.htmlLang,
+      publisher: { '@id': new URL('/#organisation', Astro.site).href },
+    },
+  ],
+};
 ---
 <!DOCTYPE html>
 <html lang={contentLang ?? copy.htmlLang}>
@@ -42,6 +86,40 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <link rel="alternate" hreflang={a.locale} href={new URL(a.href, Astro.site).href} />
   ))}
   <link rel="alternate" hreflang="x-default" href={new URL(alts.find((a) => a.locale === 'en')?.href ?? '/', Astro.site).href} />
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/favicon-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="/favicon-192.png" />
+  <meta name="theme-color" content="#10233f" />
+
+  {/*
+    A business acquired entirely through pasted links needs its links to unfurl.
+    Before this, an email or a LinkedIn message showed a bare domain and nothing
+    else — the cheapest conversion loss on the site.
+  */}
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content={copy.site.wordmark} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical.href} />
+  <meta property="og:image" content={social.href} />
+  <meta property="og:image:width" content={String(copy.site.socialImage.width)} />
+  <meta property="og:image:height" content={String(copy.site.socialImage.height)} />
+  <meta property="og:image:alt" content={copy.site.socialImage.alt} />
+  <meta property="og:locale" content={copy.ogLocale} />
+  <meta property="og:locale:alternate" content={otherCopy.ogLocale} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={social.href} />
+  <meta name="twitter:image:alt" content={copy.site.socialImage.alt} />
+
+  {/* Static JSON, no script executed — the zero-JavaScript promise still holds. */}
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')}
+    is:inline
+  />
 </head>
 <body class={bodyClass}>
   <a class="skip-link" href="#main">{copy.ui.skipToContent}</a>

@@ -31,8 +31,8 @@ const BASE = `http://127.0.0.1:${PORT}`;
 const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'EN-301-549'];
 
 const PAGES = [
-  '/', '/impressum/', '/privacy/', '/accessibility/', '/sample-report/',
-  '/de/', '/de/impressum/', '/de/datenschutz/', '/de/barrierefreiheit/', '/de/beispielbericht/',
+  '/', '/impressum/', '/privacy/', '/accessibility/', '/sample-report/', '/scanner/',
+  '/de/', '/de/impressum/', '/de/datenschutz/', '/de/barrierefreiheit/', '/de/beispielbericht/', '/de/scanner/',
 ];
 
 let pass = 0, fail = 0;
@@ -173,7 +173,16 @@ function serve() {
 
     for (const p of ['/', '/de/']) {
       const html = fs.readFileSync(path.join(DIST, p, 'index.html'), 'utf8');
-      ok(`${p} — no <script> tag at all`, !/<script/i.test(html));
+      // Structured data is a <script> tag the browser never executes: it has no
+      // src, and a type the parser hands to the structured-data reader rather
+      // than to the JavaScript engine. That is the only kind allowed here, and
+      // it is checked rather than trusted — "no <script> at all" was the easier
+      // assertion to make and the wrong one to keep once JSON-LD was needed.
+      const tags = [...html.matchAll(/<script\b([^>]*)>/gi)].map((m) => m[1]);
+      const executable = tags.filter((attrs) => !/type=["']application\/ld\+json["']/i.test(attrs));
+      ok(`${p} — no executable <script> tag`, executable.length === 0, executable.join(' | '));
+      ok(`${p} — structured data loads nothing`, !tags.some((attrs) => /\bsrc=/i.test(attrs)),
+         tags.filter((attrs) => /\bsrc=/i.test(attrs)).join(' | '));
     }
 
     for (const p of ['/', '/de/']) {

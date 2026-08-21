@@ -35,6 +35,19 @@ jobs:
         working-directory: web
         run: npm run build
 
+      # The README has claimed three times over that the audit fails the build.
+      # It did not: it ran only when somebody remembered to run it. For a
+      # company that sells accessibility audits, an accessibility regression
+      # reaching production because a check was manual is the worst available
+      # headline, so the check is now the gate it was always described as.
+      - name: Install the browser the audit needs
+        working-directory: web
+        run: npx playwright install --with-deps chromium
+
+      - name: Audit
+        working-directory: web
+        run: npm run audit
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: web/dist

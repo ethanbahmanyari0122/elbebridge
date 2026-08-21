@@ -35,6 +35,11 @@ export function inline(text: string): string {
     return `<a href="${escapeHtml(clean)}">${label}</a>`;
   });
 
+  // `code` — a user agent string, a robots.txt line. Applied before the
+  // emphasis rules below, so an underscore inside a code span is not read as
+  // the start of an italic.
+  out = out.replace(/`([^`]+)`/g, '<code>$1</code>');
+
   // {de|Wort} — inline language change, required by WCAG 3.1.2
   out = out.replace(/\{([a-z]{2}(?:-[A-Z]{2})?)\|([^}]+)\}/g, '<span lang="$1">$2</span>');
 

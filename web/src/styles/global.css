@@ -460,6 +460,15 @@ section { scroll-margin-top: 2rem; }
 .legal dd { margin: 0; overflow-wrap: anywhere; }
 .legal address { font-style: normal; }
 .legal ul { padding-left: 1.15rem; }
+/* A user agent string and a robots.txt line have to be copied exactly, so they
+   are set apart from the prose around them. overflow-wrap: anywhere because the
+   user agent string is one 78-character token and the reflow check runs at
+   320px with text at 200%. */
+.legal code, .prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .88em; background: var(--sand); border: 1px solid var(--line);
+  border-radius: 4px; padding: .1em .35em; overflow-wrap: anywhere;
+}
 
 /* ---- Footer -------------------------------------------------------------- */
 .site-footer {

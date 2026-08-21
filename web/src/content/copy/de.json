@@ -2,6 +2,7 @@
   "locale": "de",
   "localeName": "Deutsch",
   "htmlLang": "de",
+  "ogLocale": "de_DE",
   "ui": {
     "skipToContent": "Zum Inhalt springen",
     "primaryNavLabel": "Hauptnavigation",
@@ -14,6 +15,21 @@
     "wordmark": "Elbebridge",
     "logotype": "elbebridge",
     "tagline": "Klarheit. Sicherheit. Vertrauen.",
+    "socialImage": {
+      "src": "/og-de.png",
+      "width": 1200,
+      "height": 630,
+      "alt": "Elbebridge — drei deutsche Pflichten, geprüft an Ihrer Website. BFSG, GPSR, LUCID."
+    },
+    "organisation": {
+      "legalName": "Elbebridge GbR",
+      "streetAddress": "Stormarner Straße 41",
+      "postalCode": "22049",
+      "addressLocality": "Hamburg",
+      "addressCountry": "DE",
+      "areaServed": "DE",
+      "description": "Festpreis-Prüfung der drei deutschen Pflichten, die ausländische Online-Marken meist übersehen: Barrierefreiheit (BFSG), verantwortliche Person in der EU (GPSR) und Verpackungsregistrierung (LUCID)."
+    },
     "eyebrow": "Deutsche Marktpflichten",
     "title": "Elbebridge — Prüfung der deutschen Pflichten für ausländische Online-Marken",
     "metaDescription": "Festpreis-Prüfung der drei deutschen Pflichten, die ausländische Online-Marken meist übersehen: Barrierefreiheit (BFSG), verantwortliche Person in der EU (GPSR) und Verpackungsregistrierung (LUCID).",
@@ -111,6 +127,10 @@
           {
             "href": "/barrierefreiheit",
             "label": "Erklärung zur Barrierefreiheit"
+          },
+          {
+            "href": "/scanner",
+            "label": "Über unseren Crawler"
           }
         ]
       }
@@ -624,6 +644,103 @@
             {
               "type": "p",
               "text": "Sind Sie mit unserer Antwort nicht zufrieden, können Sie sich an die Marktüberwachungsstelle der Länder für die Barrierefreiheit von Produkten und Dienstleistungen wenden."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "scanner",
+      "slug": "scanner",
+      "title": "Über unseren Crawler",
+      "metaDescription": "ElbeBridgeComplianceBot: wer ihn betreibt, welche Seiten er abruft, wie Sie ihn in Ihren Logs erkennen und wie Sie ihn aussperren, wenn Sie das möchten.",
+      "intro": "Unser User-Agent verweist auf diese Seite, damit jeder, der ihn in seinen Logs findet, mit einem Klick sieht, wer wir sind und was wir getan haben.",
+      "sections": [
+        {
+          "heading": "Wer ihn betreibt",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Elbebridge GbR, Hamburg. Wir prüfen öffentliche Websites auf drei deutsche Marktpflichten und verkaufen die Befunde an den Website-Betreiber. Fragen zu einem Zugriff, den Sie gesehen haben, gerne an [hallo@elbebridge.com](mailto:hallo@elbebridge.com)."
+            }
+          ]
+        },
+        {
+          "heading": "Woran Sie ihn erkennen",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Der Crawler weist sich immer aus, mit einer erreichbaren Adresse:"
+            },
+            {
+              "type": "p",
+              "text": "`Mozilla/5.0 (compatible; ElbeBridgeComplianceBot/1.0; +https://elbebridge.com/scanner)`"
+            },
+            {
+              "type": "p",
+              "text": "Er nutzt eine echte Browser-Engine und keinen einfachen HTTP-Client, weil ein Shop, der seinen Katalog erst im Browser aufbaut, anders nicht prüfbar ist."
+            }
+          ]
+        },
+        {
+          "heading": "Welche Seiten er abruft",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Einige wenige Seiten pro Website, einmalig:"
+            },
+            {
+              "type": "ul",
+              "items": [
+                "Ihre robots.txt, vor allem anderen;",
+                "Ihre Startseite;",
+                "eine Produktseite, erreicht über die Startseite oder eine Kategorieseite;",
+                "die Seiten mit Ihren Unternehmensangaben — Impressum, Rechtliches, AGB, Datenschutz oder Über uns;",
+                "Ihre Erklärung zur Barrierefreiheit, sofern verlinkt."
+              ]
+            },
+            {
+              "type": "p",
+              "text": "Er sendet nie ein Formular ab, meldet sich nie an, legt nichts in den Warenkorb und bestellt nichts."
+            }
+          ]
+        },
+        {
+          "heading": "Wie oft und wie schnell",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Höchstens eine Anfrage pro Sekunde an einen Host, und nur wenige Hosts gleichzeitig. Eine ganze Website ist meist in unter einer Minute fertig. Wir prüfen eine Website nicht erneut, solange sich nichts geändert hat oder der Betreiber uns darum bittet."
+            }
+          ]
+        },
+        {
+          "heading": "Wie Sie ihn aussperren",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Wir lesen die robots.txt bei jedem Zugriff und beachten sie. Um uns vollständig auszuschließen, ergänzen Sie diese zwei Zeilen:"
+            },
+            {
+              "type": "p",
+              "text": "`User-agent: ElbeBridgeComplianceBot`"
+            },
+            {
+              "type": "p",
+              "text": "`Disallow: /`"
+            },
+            {
+              "type": "p",
+              "text": "Eine gesperrte Website wird als übersprungen vermerkt, weitere Zugriffe erfolgen nicht. Wenn Sie es uns lieber direkt sagen: schreiben Sie uns, wir nehmen die Domain aus der Liste."
+            }
+          ]
+        },
+        {
+          "heading": "Was wir speichern",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Was auch eine Besucherin Ihrer Website sehen könnte: den Text der gelesenen Seiten, einen Screenshot der geprüften Seiten, die Befunde zur Barrierefreiheit und die von Ihnen veröffentlichten Unternehmensangaben. Wir erheben keine personenbezogenen Daten Ihrer Kundinnen und Kunden und geben Befunde an niemanden außer Sie weiter. Einzelheiten in unserer [Datenschutzerklärung](/de/datenschutz)."
             }
           ]
         }
