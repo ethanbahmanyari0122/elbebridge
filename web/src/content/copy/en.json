@@ -28,11 +28,11 @@
       "addressLocality": "Hamburg",
       "addressCountry": "DE",
       "areaServed": "DE",
-      "description": "Fixed-price checks of the three German obligations most foreign online brands are missing: accessibility (BFSG), an EU responsible person (GPSR), and packaging registration (LUCID)."
+      "description": "Fixed-price checks of three German obligations foreign online brands routinely get wrong: accessibility (BFSG), the product information Article 19 GPSR requires on every offer, and packaging registration (LUCID)."
     },
     "eyebrow": "German market compliance",
     "title": "Elbebridge — German compliance checks for brands selling into Germany",
-    "metaDescription": "A fixed-price check of the three German obligations most foreign online brands are missing: accessibility (BFSG), an EU responsible person (GPSR), and packaging registration (LUCID).",
+    "metaDescription": "A fixed-price check of three German obligations foreign online brands routinely get wrong: accessibility (BFSG), the product information Article 19 GPSR requires on every offer, and packaging registration (LUCID).",
     "email": "hallo@elbebridge.com",
     "footerNote": "© 2026 Elbebridge, Hamburg. We don't track you: no cookies, no analytics, no third-party scripts.",
     "social": []
@@ -106,7 +106,7 @@
           },
           {
             "href": "/#obligation-gpsr",
-            "label": "EU Responsible Person (GPSR)"
+            "label": "GPSR Product-Offer Information"
           },
           {
             "href": "/#obligation-lucid",
@@ -180,11 +180,11 @@
       },
       {
         "icon": "person",
-        "heading": "EU Responsible Person",
-        "short": "EU Responsible Person",
+        "heading": "GPSR Product-Offer Information",
+        "short": "Product info on the offer",
         "code": "GPSR",
-        "law": "General Product Safety Regulation (GPSR) — applies since 13 December 2024",
-        "text": "A product may only be sold to an EU consumer if a named person or company inside the EU is responsible for it, and their details appear with the product offer.\n\nWithout one, the product cannot lawfully be placed on the market."
+        "law": "General Product Safety Regulation (EU) 2023/988, Article 19 — applies since 13 December 2024",
+        "text": "Every online offer has to show the manufacturer's name, postal address and electronic address.\n\nOnly where the manufacturer is not established in the EU must the offer additionally name the responsible person in the Union — an EU manufacturer is that operator itself."
       },
       {
         "icon": "box",
@@ -295,7 +295,7 @@
           "ai": "Cannot see the register at all."
         },
         {
-          "factor": "EU responsible person",
+          "factor": "GPSR product-offer information",
           "us": "We look on the pages the details have to appear on — including a product page, not a category listing — and tell you what was there.",
           "ai": "Reads the requirement. Does not open your product pages."
         },

@@ -28,11 +28,11 @@
       "addressLocality": "Hamburg",
       "addressCountry": "DE",
       "areaServed": "DE",
-      "description": "Festpreis-Prüfung der drei deutschen Pflichten, die ausländische Online-Marken meist übersehen: Barrierefreiheit (BFSG), verantwortliche Person in der EU (GPSR) und Verpackungsregistrierung (LUCID)."
+      "description": "Festpreis-Prüfung von drei deutschen Pflichten, bei denen ausländische Online-Marken regelmäßig danebenliegen: Barrierefreiheit (BFSG), die Produktangaben, die Artikel 19 GPSR in jedem Angebot verlangt, und Verpackungsregistrierung (LUCID)."
     },
     "eyebrow": "Deutsche Marktpflichten",
     "title": "Elbebridge — Prüfung der deutschen Pflichten für ausländische Online-Marken",
-    "metaDescription": "Festpreis-Prüfung der drei deutschen Pflichten, die ausländische Online-Marken meist übersehen: Barrierefreiheit (BFSG), verantwortliche Person in der EU (GPSR) und Verpackungsregistrierung (LUCID).",
+    "metaDescription": "Festpreis-Prüfung von drei deutschen Pflichten, bei denen ausländische Online-Marken regelmäßig danebenliegen: Barrierefreiheit (BFSG), die Produktangaben, die Artikel 19 GPSR in jedem Angebot verlangt, und Verpackungsregistrierung (LUCID).",
     "email": "hallo@elbebridge.com",
     "footerNote": "© 2026 Elbebridge, Hamburg. Wir tracken Sie nicht: keine Cookies, keine Analyse, keine Skripte Dritter.",
     "social": []
@@ -105,7 +105,7 @@
           },
           {
             "href": "/#obligation-gpsr",
-            "label": "Verantwortliche Person EU (GPSR)"
+            "label": "GPSR-Produktangaben im Angebot"
           },
           {
             "href": "/#obligation-lucid",
@@ -178,11 +178,11 @@
       },
       {
         "icon": "person",
-        "heading": "Verantwortliche Person in der EU",
-        "short": "Verantwortliche Person EU",
+        "heading": "GPSR-Produktangaben im Angebot",
+        "short": "Produktangaben im Angebot",
         "code": "GPSR",
-        "law": "General Product Safety Regulation (GPSR) — gilt seit dem 13. Dezember 2024",
-        "text": "Ein Produkt darf nur dann an Verbraucher in der EU verkauft werden, wenn eine benannte Person oder Gesellschaft in der EU dafür verantwortlich ist und ihre Angaben beim Produktangebot stehen.\n\nOhne sie darf das Produkt nicht in Verkehr gebracht werden."
+        "law": "Verordnung (EU) 2023/988 über die allgemeine Produktsicherheit, Artikel 19 — gilt seit dem 13. Dezember 2024",
+        "text": "Jedes Online-Angebot muss Name, Postanschrift und elektronische Adresse des Herstellers zeigen.\n\nNur wenn der Hersteller nicht in der EU niedergelassen ist, muss das Angebot zusätzlich die verantwortliche Person in der Union benennen — ein Hersteller in der EU ist dieser Wirtschaftsakteur selbst."
       },
       {
         "icon": "box",
@@ -293,7 +293,7 @@
           "ai": "Kann das Register überhaupt nicht einsehen."
         },
         {
-          "factor": "Verantwortliche Person in der EU",
+          "factor": "GPSR-Produktangaben im Angebot",
           "us": "Wir sehen auf den Seiten nach, auf denen die Angaben stehen müssen — auf einer Produktseite, nicht auf einer Kategorieseite — und sagen Ihnen, was dort stand.",
           "ai": "Liest die Anforderung. Öffnet Ihre Produktseiten nicht."
         },
