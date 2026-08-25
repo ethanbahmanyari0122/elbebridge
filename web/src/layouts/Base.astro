@@ -70,6 +70,22 @@ const jsonLd = {
       inLanguage: copy.htmlLang,
       publisher: { '@id': new URL('/#organisation', Astro.site).href },
     },
+    {
+      '@type': 'Service',
+      '@id': new URL('/#audit', Astro.site).href,
+      name: 'German Market Compliance Audit',
+      serviceType: 'German ecommerce compliance audit',
+      description: copy.site.metaDescription,
+      provider: { '@id': new URL('/#organisation', Astro.site).href },
+      areaServed: { '@type': 'Country', name: 'Germany' },
+      url: new URL('/#audit', Astro.site).href,
+      offers: {
+        '@type': 'Offer',
+        price: '890',
+        priceCurrency: 'EUR',
+        description: locale === 'de' ? 'Fester Einführungspreis; Umfang wird vor Arbeitsbeginn bestätigt.' : 'Fixed launch price; scope is confirmed before work starts.',
+      },
+    },
   ],
 };
 ---
@@ -87,10 +103,10 @@ const jsonLd = {
   ))}
   <link rel="alternate" hreflang="x-default" href={new URL(alts.find((a) => a.locale === 'en')?.href ?? '/', Astro.site).href} />
 
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="alternate icon" href="/favicon-192.png" sizes="192x192" />
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/favicon-192.png" />
-  <meta name="theme-color" content="#10233f" />
+  <meta name="theme-color" content="#071a31" />
 
   {/*
     A business acquired entirely through pasted links needs its links to unfurl.
@@ -103,6 +119,7 @@ const jsonLd = {
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonical.href} />
   <meta property="og:image" content={social.href} />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content={String(copy.site.socialImage.width)} />
   <meta property="og:image:height" content={String(copy.site.socialImage.height)} />
   <meta property="og:image:alt" content={copy.site.socialImage.alt} />

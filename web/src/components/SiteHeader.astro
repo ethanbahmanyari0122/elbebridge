@@ -16,7 +16,7 @@ const { copy, locale, switchHref, switchLang, switchLabel } = Astro.props;
     <nav class="site-nav" aria-label={copy.ui.primaryNavLabel}>
       <ul>
         {copy.nav.primary.map((item) => (
-          <li><a href={localePath(locale, item.href)}>{item.label}</a></li>
+          <li class="nav-primary-item"><a href={localePath(locale, item.href)}>{item.label}</a></li>
         ))}
         <li aria-hidden="true" class="nav-divider"></li>
         <li>

@@ -1,176 +1,255 @@
 ---
 import Icon from './Icon.astro';
-import HeroVisual from './HeroVisual.astro';
-import EvidencePanel from './EvidencePanel.astro';
 import { inline, paragraphs } from '../lib/inline';
 import type { Copy, Locale } from '../lib/site';
-import { localePath } from '../lib/site';
-interface Props { copy: Copy; locale: Locale }
-const { copy, locale } = Astro.props;
-const h = copy.home;
-const c = h.contact;
 
-// Prefilled subject and body: the visitor's mail client opens with the fields
-// we would otherwise have asked for in a form.
+interface Props { copy: Copy; locale: Locale }
+const { copy } = Astro.props;
+const h = copy.home;
+const v = h.v5;
+const c = h.contact;
 const mailto = `mailto:${copy.site.email}`
   + `?subject=${encodeURIComponent(c.mailSubject)}`
   + `&body=${encodeURIComponent(c.mailBody)}`;
 ---
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div>
-        <p class="eyebrow">{copy.site.eyebrow}</p>
-        <h1 set:html={inline(h.headline)} />
-        {paragraphs(h.lede).map((t) => <p class="lede" set:html={inline(t)} />)}
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#check">
-            {h.heroCta}<Icon name="arrow-right" size={18} />
-          </a>
-          {/* Evidence before commitment: the sample is the only claim on this
-              page a visitor can check for themselves. */}
-          <a class="btn btn-secondary" href={localePath(locale, h.heroCtaSecondary.href)}>
-            <Icon name="document" size={18} />{h.heroCtaSecondary.label}
-          </a>
-        </div>
+<section class="hero hero-v5">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">{copy.site.eyebrow}</p>
+      <h1 set:html={inline(h.headline)} />
+      {paragraphs(h.lede).map((text) => <p class="lede" set:html={inline(text)} />)}
 
-        <ul class="trust">
-          {h.trust.map((t) => (
-            <li><Icon name="check" size={17} />{t}</li>
-          ))}
-        </ul>
+      <div class="value-line" aria-label={v.valueLine.join(' ')}>
+        {v.valueLine.map((item, index) => (
+          <span><strong>{item}</strong>{index < v.valueLine.length - 1 && <i aria-hidden="true">/</i>}</span>
+        ))}
       </div>
 
-      <HeroVisual copy={copy} locale={locale} />
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#audit">
+          {h.heroCta}<Icon name="arrow-right" size={18} />
+        </a>
+        <a class="btn btn-secondary" href="#what-we-check">{h.heroCtaSecondary.label}</a>
+      </div>
+
+      <ul class="trust">
+        {h.trust.map((item) => <li><Icon name="check" size={17} />{item}</li>)}
+      </ul>
     </div>
+
+    <aside class="audit-preview" aria-label={v.heroPanel.title}>
+      <div class="audit-preview-top">
+        <div>
+          <p class="audit-kicker">{v.heroPanel.eyebrow}</p>
+          <h2 set:html={inline(v.heroPanel.title)} />
+        </div>
+        <span class="review-chip"><span class="review-dot" aria-hidden="true"></span><span class="review-chip-label">{v.heroPanel.status}</span></span>
+      </div>
+      <p class="audit-intro" set:html={inline(v.heroPanel.intro)} />
+      <ul class="audit-checks">
+        {v.heroPanel.checks.map((check, index) => (
+          <li>
+            <span class="audit-check-n">{String(index + 1).padStart(2, '0')}</span>
+            <span>{check.label}</span>
+            <strong>{check.status}</strong>
+          </li>
+        ))}
+      </ul>
+      <p class="audit-preview-footer"><Icon name="shield" size={18} /><span set:html={inline(v.heroPanel.footer)} /></p>
+    </aside>
   </div>
 </section>
 
-<section class="band" id="obligations" aria-labelledby="obligations-h">
+<section class="band" id="what-we-check" aria-labelledby="what-we-check-h">
   <div class="wrap">
-    <h2 class="section-title" id="obligations-h" set:html={inline(h.obligationsHeading)} />
-    <ul class="cards">
-      {h.obligations.map((o) => (
-        <li id={`obligation-${o.code.toLowerCase()}`}>
-          <span class="tile tile-lg"><Icon name={o.icon} size={22} /></span>
-          <h3 set:html={inline(o.heading)} />
-          <span class="law" set:html={inline(o.law)} />
-          {paragraphs(o.text).map((t) => <p set:html={inline(t)} />)}
+    <div class="section-head">
+      <p class="section-kicker">{copy.site.eyebrow}</p>
+      <h2 id="what-we-check-h" set:html={inline(v.workstreamsHeading)} />
+      <p set:html={inline(v.workstreamsIntro)} />
+    </div>
+
+    <ol class="workstream-grid">
+      {v.workstreams.map((item) => (
+        <li id={item.id}>
+          <div class="workstream-top">
+            <span class="workstream-number">{item.number}</span>
+            <span class="tile tile-accent"><Icon name={item.icon} size={21} /></span>
+          </div>
+          <p class="card-kicker">{item.kicker}</p>
+          <h3 set:html={inline(item.heading)} />
+          <p class="workstream-intro" set:html={inline(item.intro)} />
+          <ul class="feature-list">
+            {item.bullets.map((bullet) => <li><Icon name="check" size={16} /><span set:html={inline(bullet)} /></li>)}
+          </ul>
+          {item.note && <p class="workstream-note" set:html={inline(item.note)} />}
+        </li>
+      ))}
+    </ol>
+
+  </div>
+</section>
+
+<section class="band process-band" id="process" aria-labelledby="process-h">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-kicker">{v.sectionLabels.process}</p>
+      <h2 id="process-h" set:html={inline(v.processHeading)} />
+      <p set:html={inline(v.processIntro)} />
+    </div>
+    <ul class="deliverable-grid" aria-label={v.deliverablesHeading}>
+      {v.deliverables.map((item) => (
+        <li>
+          <span class="tile tile-accent"><Icon name={item.icon} size={19} /></span>
+          <p class="deliverable-label" set:html={inline(item.label)} />
+          <p set:html={inline(item.text)} />
+        </li>
+      ))}
+    </ul>
+    <h3 class="process-subheading" set:html={inline(v.deliverablesHeading)} />
+    <ol class="process-grid">
+      {v.process.map((item) => (
+        <li>
+          <span class="process-number">{item.number}</span>
+          <span class="tile"><Icon name={item.icon} size={20} /></span>
+          <h3 set:html={inline(item.heading)} />
+          <p set:html={inline(item.text)} />
+        </li>
+      ))}
+    </ol>
+    <blockquote class="trust-quote"><Icon name="shield" size={23} /><p set:html={inline(v.processTrust)} /></blockquote>
+  </div>
+</section>
+
+<section class="band band-tint" id="who" aria-labelledby="who-h">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-kicker">{v.sectionLabels.audiences}</p>
+      <h2 id="who-h" set:html={inline(v.audiencesHeading)} />
+      <p set:html={inline(v.audiencesIntro)} />
+    </div>
+    <ul class="audience-grid">
+      {v.audiences.map((item) => (
+        <li>
+          <p class="card-kicker">{item.kicker}</p>
+          <h3 set:html={inline(item.heading)} />
+          <p set:html={inline(item.text)} />
+        </li>
+      ))}
+    </ul>
+    <p class="audience-cta"><Icon name="search" size={20} /><span set:html={inline(v.audiencesCta)} /></p>
+  </div>
+</section>
+
+<section class="band band-navy" id="findings" aria-labelledby="findings-h">
+  <div class="wrap">
+    <div class="section-head section-head-light">
+      <p class="section-kicker">{v.sectionLabels.findings}</p>
+      <h2 id="findings-h" set:html={inline(v.findingsHeading)} />
+      <p set:html={inline(v.findingsIntro)} />
+    </div>
+    <div class="report-preview-head">
+      <div class="report-brand">
+        <img src="/elbebridge-mark.jpg" alt="" width="46" height="46" />
+        <div>
+          <strong>ElbeBridge</strong>
+          <span>{v.findingsClient}</span>
+        </div>
+      </div>
+      <span class="report-example-badge">{v.findingsBadge}</span>
+    </div>
+    <ul class="finding-grid">
+      {v.findings.map((item) => (
+        <li>
+          <div class="finding-top">
+            <span class="finding-code">{item.code}</span>
+            <span class:list={['priority-pill', `priority-${item.priorityTone}`]}>{item.priority}</span>
+          </div>
+          <p class="finding-category">{item.category}</p>
+          <dl>
+            <div><dt>{v.findingLabels.issue}</dt><dd set:html={inline(item.issue)} /></div>
+            <div><dt>{v.findingLabels.evidence}</dt><dd set:html={inline(item.evidence)} /></div>
+            <div><dt>{v.findingLabels.why}</dt><dd set:html={inline(item.why)} /></div>
+            <div><dt>{v.findingLabels.change}</dt><dd set:html={inline(item.change)} /></div>
+            <div><dt>{v.findingLabels.help}</dt><dd set:html={inline(item.help)} /></div>
+          </dl>
         </li>
       ))}
     </ul>
   </div>
 </section>
 
-{/*
-  Evidence, before the process and before the price. The three obligations above
-  are the law in the abstract; these are three findings from a real scan of a
-  shop we invented, shown the way the report shows them. It is the only claim on
-  this page a visitor can check without talking to us.
-*/}
-<section class="band band-sand" id="evidence" aria-labelledby="evidence-h">
+<section class="band" id="why" aria-labelledby="why-h">
   <div class="wrap">
-    <h2 class="section-title" id="evidence-h" set:html={inline(h.evidenceHeading)} />
-    <p class="prose" set:html={inline(h.evidenceIntro)} />
-    <ul class="ev-grid">
-      {h.evidence.map((item) => <li><EvidencePanel item={item} /></li>)}
+    <div class="section-head">
+      <p class="section-kicker">{v.sectionLabels.why}</p>
+      <h2 id="why-h" set:html={inline(v.whyHeading)} />
+      <p set:html={inline(v.whyIntro)} />
+    </div>
+    <ul class="advantage-grid">
+      {v.advantages.map((item) => (
+        <li>
+          <span class="tile tile-accent"><Icon name={item.icon} size={20} /></span>
+          <div><h3 set:html={inline(item.heading)} /><p set:html={inline(item.text)} /></div>
+        </li>
+      ))}
     </ul>
-    <p class="prose ev-note" set:html={inline(h.evidenceNote)} />
   </div>
 </section>
 
-<section class="band" id="what-we-do" aria-labelledby="what-we-do-h">
-  <div class="wrap">
-    <div class="split">
-      <div>
-        <h2 class="section-title" id="what-we-do-h" set:html={inline(h.whatWeDoHeading)} />
-        <ol class="steps">
-          {h.steps.map((s, i) => (
-            <li>
-              <span class="tile"><Icon name={s.icon} size={20} /></span>
-              <span class="step-n">{i + 1}</span>
-              <span class="body">
-                <strong set:html={inline(s.lead)} />
-                <p set:html={inline(s.text)} />
-              </span>
-            </li>
-          ))}
-        </ol>
-      </div>
-
-      <div>
-        <h2 class="section-title" id="price-h" set:html={inline(h.priceHeading)} />
-        <div class="price" id="price">
-          <p class="amount">{h.priceAmount}</p>
-          {h.priceLines.map((line) => <p set:html={inline(line)} />)}
-        </div>
+<section class="band band-tint" id="audit" aria-labelledby="price-h">
+  <div class="wrap price-v5">
+    <div class="price-copy">
+      <p class="section-kicker">{v.price.eyebrow}</p>
+      <h2 id="price-h" set:html={inline(v.price.title)} />
+      <div class="price-lockup"><strong>{v.price.amount}</strong><span>{v.price.amountNote}</span></div>
+      <p class="price-intro" set:html={inline(v.price.intro)} />
+      <a class="btn btn-primary" href={mailto}>{v.price.cta}<Icon name="arrow-right" size={18} /></a>
+      <p class="price-contact">{copy.site.email}</p>
+    </div>
+    <div class="price-included">
+      <h3>{v.price.includedHeading}</h3>
+      <ul class="feature-list feature-list-2col">
+        {v.price.included.map((item) => <li><Icon name="check" size={16} /><span set:html={inline(item)} /></li>)}
+      </ul>
+      <div class="scope-notes">
+        <p set:html={inline(v.price.scopeNote)} />
+        <p set:html={inline(v.price.implementationNote)} />
       </div>
     </div>
   </div>
 </section>
 
-<section class="band band-sand" id="check" aria-labelledby="check-h">
-  <div class="wrap">
-    <div class="split">
-      <div>
-        <h2 class="section-title" id="check-h" set:html={inline(c.heading)} />
-        <p set:html={inline(c.intro)} />
-      </div>
-
-      <div class="contact-card">
-        <a class="btn btn-primary" href={mailto}>
-          <Icon name="mail" size={18} />{c.buttonLabel}
-        </a>
-        <p class="contact-address">{copy.site.email}</p>
-        <p class="contact-note" set:html={inline(c.note)} />
-        <p class="contact-legal" set:html={inline(h.formDisclaimer)} />
-      </div>
+<section class="band" id="faq" aria-labelledby="faq-h">
+  <div class="wrap faq-layout">
+    <div class="section-head faq-head">
+      <p class="section-kicker">{v.sectionLabels.faq}</p>
+      <h2 id="faq-h" set:html={inline(v.faqHeading)} />
+      <p set:html={inline(v.faqIntro)} />
+    </div>
+    <div class="faq-list">
+      {v.faqs.map((item) => (
+        <details>
+          <summary><span set:html={inline(item.question)} /><span class="summary-mark" aria-hidden="true">+</span></summary>
+          <p set:html={inline(item.answer)} />
+        </details>
+      ))}
     </div>
   </div>
 </section>
 
-<section class="band" id="why-us" aria-labelledby="why-us-h">
-  <div class="wrap">
-    <h2 class="section-title" id="why-us-h" set:html={inline(h.comparison.heading)} />
-    {paragraphs(h.comparison.intro).map((t) => <p class="prose" set:html={inline(t)} />)}
-    <table class="compare">
-      <thead>
-        <tr>
-          <th scope="col"><span class="vh">Aspect</span></th>
-          <th scope="col" class="col-us">{h.comparison.colUs}</th>
-          <th scope="col">{h.comparison.colAi}</th>
-        </tr>
-      </thead>
-      <tbody>
-        {h.comparison.rows.map((r) => (
-          <tr>
-            <th scope="row" set:html={inline(r.factor)} />
-            <td class="col-us" data-label={h.comparison.colUs}>
-              <Icon name="check" size={15} /><span set:html={inline(r.us)} />
-            </td>
-            <td class="col-ai" data-label={h.comparison.colAi}>
-              <span set:html={inline(r.ai)} />
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section class="band band-sand" id="who-we-are" aria-labelledby="who-we-are-h">
-  <div class="wrap">
-    <div class="split">
-      <div>
-        <h2 class="section-title" id="who-we-are-h" set:html={inline(h.peopleHeading)} />
-        <p class="about" set:html={inline(h.peopleNote)} />
-      </div>
-
-      <div class="disclaimer">
-        <span class="tile tile-accent"><Icon name="shield" size={20} /></span>
-        <p set:html={inline(h.disclaimer)} />
-      </div>
+<section class="band contact-v5" id="check" aria-labelledby="contact-h">
+  <div class="wrap contact-v5-inner">
+    <div>
+      <p class="section-kicker">{copy.site.eyebrow}</p>
+      <h2 id="contact-h" set:html={inline(c.heading)} />
+      <p set:html={inline(c.intro)} />
+    </div>
+    <div class="contact-card">
+      <a class="btn btn-primary" href={mailto}><Icon name="mail" size={18} />{c.buttonLabel}</a>
+      <p class="contact-address">{copy.site.email}</p>
+      {paragraphs(c.note).map((text) => <p class="contact-note" set:html={inline(text)} />)}
+      <p class="contact-legal" set:html={inline(h.formDisclaimer)} />
     </div>
   </div>
 </section>

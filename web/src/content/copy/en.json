@@ -12,14 +12,14 @@
     "home": "Home"
   },
   "site": {
-    "wordmark": "Elbebridge",
-    "logotype": "elbebridge",
-    "tagline": "Compliance. Clarity. Confidence.",
+    "wordmark": "ElbeBridge",
+    "logotype": "ElbeBridge",
+    "tagline": "German-market compliance, made actionable.",
     "socialImage": {
       "src": "/og-en.png",
       "width": 1200,
       "height": 630,
-      "alt": "Elbebridge — three German obligations, checked against your website. BFSG, GPSR, LUCID."
+      "alt": "ElbeBridge German Market Compliance Audit — know what applies, see what is missing and know what to fix."
     },
     "organisation": {
       "legalName": "Elbebridge GbR",
@@ -28,32 +28,32 @@
       "addressLocality": "Hamburg",
       "addressCountry": "DE",
       "areaServed": "DE",
-      "description": "Fixed-price checks of three German obligations foreign online brands routinely get wrong: accessibility (BFSG), the product information Article 19 GPSR requires on every offer, and packaging registration (LUCID)."
+      "description": "Human-reviewed German-market compliance audits covering accessibility, product safety, packaging, consumer rights and relevant product information."
     },
-    "eyebrow": "German market compliance",
-    "title": "Elbebridge — German compliance checks for brands selling into Germany",
-    "metaDescription": "A fixed-price check of three German obligations foreign online brands routinely get wrong: accessibility (BFSG), the product information Article 19 GPSR requires on every offer, and packaging registration (LUCID).",
+    "eyebrow": "German Market Compliance Audit",
+    "title": "German Market Compliance Audit | ElbeBridge",
+    "metaDescription": "A human-reviewed German ecommerce compliance audit covering accessibility, product safety, packaging, consumer rights and relevant product information.",
     "email": "hallo@elbebridge.com",
-    "footerNote": "© 2026 Elbebridge, Hamburg. We don't track you: no cookies, no analytics, no third-party scripts.",
+    "footerNote": "© 2026 ElbeBridge, Hamburg. We don't track you: no cookies, no analytics, no third-party scripts.",
     "social": []
   },
   "nav": {
     "cta": {
       "href": "/#check",
-      "label": "Get a Check"
+      "label": "Get your audit — €890"
     },
     "primary": [
       {
-        "href": "/#what-we-do",
-        "label": "What we do"
+        "href": "/#what-we-check",
+        "label": "Five compliance areas"
       },
       {
-        "href": "/#price",
+        "href": "/#process",
+        "label": "What you get"
+      },
+      {
+        "href": "/#audit",
         "label": "Price"
-      },
-      {
-        "href": "/#check",
-        "label": "Get a Check"
       }
     ],
     "legal": [
@@ -73,44 +73,52 @@
     ]
   },
   "footer": {
-    "blurb": "Independent compliance checks for foreign brands entering Germany. Clear, fast, and honest about what we can and cannot tell you.",
+    "blurb": "One comprehensive review of the key requirements relevant to selling through ecommerce into Germany.",
     "location": "Hamburg, Germany",
     "columns": [
       {
-        "heading": "What we offer",
+        "heading": "The audit",
         "links": [
           {
-            "href": "/#what-we-do",
-            "label": "What we do"
+            "href": "/#what-we-check",
+            "label": "Five compliance areas"
           },
           {
-            "href": "/sample-report",
-            "label": "Sample report"
+            "href": "/#process",
+            "label": "What you get"
           },
           {
-            "href": "/#price",
+            "href": "/#audit",
             "label": "Price"
           },
           {
             "href": "/#check",
-            "label": "Get a Check"
+            "label": "Get your audit"
           }
         ]
       },
       {
-        "heading": "The three obligations",
+        "heading": "Compliance areas",
         "links": [
           {
-            "href": "/#obligation-bfsg",
-            "label": "Accessible Online Shop (BFSG)"
+            "href": "/#accessibility",
+            "label": "Accessibility & BFSG"
           },
           {
-            "href": "/#obligation-gpsr",
-            "label": "GPSR Product-Offer Information"
+            "href": "/#gpsr",
+            "label": "GPSR & Product Safety"
           },
           {
-            "href": "/#obligation-lucid",
-            "label": "Registered Packaging (LUCID)"
+            "href": "/#lucid",
+            "label": "Packaging & LUCID"
+          },
+          {
+            "href": "/#consumer-information",
+            "label": "Consumer Rights & Ecommerce"
+          },
+          {
+            "href": "/#product-information",
+            "label": "Product-specific information"
           }
         ]
       },
@@ -132,7 +140,7 @@
           },
           {
             "href": "/scanner",
-            "label": "About our crawler"
+            "label": "Crawler transparency"
           }
         ]
       }
@@ -150,17 +158,17 @@
     "copyright": "© 2026 Elbebridge GbR · Hamburg. All rights reserved."
   },
   "home": {
-    "headline": "Selling into Germany? Three obligations already apply. We show you the ==evidence==.",
-    "lede": "If you ship to German consumers these obligations apply to you, whether or not you have a company here — accessibility since 28 June 2025, product safety since 13 December 2024, and packaging since before your first parcel.\n\nWe check all three against your actual website and send a three-page report with the evidence behind every finding.",
-    "heroCta": "Get a Check",
+    "headline": "Selling into Germany? Know what's required before it becomes a problem.",
+    "lede": "ElbeBridge reviews your ecommerce presence across accessibility, product safety, packaging, consumer rights and product information — and gives you a clear plan to address the gaps.",
+    "heroCta": "Get your audit — €890",
     "heroCtaSecondary": {
-      "href": "/sample-report",
-      "label": "See a sample report"
+      "href": "/#what-we-check",
+      "label": "See what we check"
     },
     "trust": [
-      "Fixed price",
-      "1 business day",
-      "No commitment"
+      "Human-reviewed",
+      "Evidence-backed",
+      "Germany-focused"
     ],
     "journeyEnd": "Ready to sell in Germany",
     "heroImage": {
@@ -168,7 +176,7 @@
       "width": 1240,
       "height": 990
     },
-    "obligationsHeading": "The Three",
+    "obligationsHeading": "What we check",
     "obligations": [
       {
         "icon": "accessibility",
@@ -241,12 +249,12 @@
       {
         "icon": "search",
         "lead": "Scan.",
-        "text": "We check your website against the relevant accessibility requirements and verify the other two obligations through public registers."
+        "text": "We inspect the public storefront and representative product offers with deterministic technical checks and evidence capture."
       },
       {
         "icon": "document",
         "lead": "Findings report.",
-        "text": "A three-page report covering what applies to you, what we found, the evidence behind it, and what needs to be fixed. [See a sample report](/sample-report)."
+        "text": "A prioritized report covering what applies, what we found, the evidence behind it and what should be changed."
       },
       {
         "icon": "wrench",
@@ -262,27 +270,331 @@
     "priceHeading": "Price",
     "priceAmount": "€890",
     "priceLines": [
-      "For the check and the three-page findings report. Quoted before we start, invoiced once.",
+      "For the agreed audit scope and prioritized findings report. Scope is confirmed before work starts.",
       "**Fully credited if you proceed with remediation.**",
       "Remediation is a fixed quote priced from the findings. Quarterly monitoring, if you want it, is €290 per quarter."
     ],
     "contact": {
-      "heading": "Get a Check",
-      "intro": "Send us your website address. We reply within one business day with what we found on the public parts of it.",
-      "buttonLabel": "Get a Check",
-      "mailSubject": "Compliance check request",
-      "mailBody": "Website:\n\nCompany name (optional):\n\nAnything you already know is missing:\n",
-      "note": "This opens your email client with the details we need.\n\nNo form, no tracking, no third party in between — your message goes straight to our inbox."
+      "heading": "Ready to know what your German-market setup needs?",
+      "intro": "Send us your webshop address. We respond within one business day to confirm the scope and next steps.",
+      "buttonLabel": "Get your audit — €890",
+      "mailSubject": "German Market Compliance Audit request",
+      "mailBody": "Website:\n\nCompany name:\n\nMain product categories:\n\nAnything you already know is missing (optional):\n",
+      "note": "This opens your email client with the details we need.\n\nNo form, no tracking and no third party in between — your message goes straight to our inbox."
     },
     "peopleHeading": "About us",
-    "peopleNote": "We started Elbebridge to make selling in Germany feel less complicated. We help international businesses understand what's required, spot what's missing, and get the right pieces in place without getting lost in German bureaucracy.",
-    "disclaimer": "Elbebridge is not a law or a tax firm and does not provide legal advice. Information and findings provided through this website are for general informational purposes and do not replace advice from a qualified legal professional.",
-    "formDisclaimer": "Our check provides general information based on the website you provide. It does not constitute legal advice or create a lawyer-client relationship.",
+    "peopleNote": "We started ElbeBridge to make selling in Germany feel less complicated. We help international businesses understand what applies, see what is missing and turn findings into practical changes.",
+    "disclaimer": "ElbeBridge is not a law or tax firm and does not provide legal advice. Information and findings provided through this website are for general informational purposes and do not replace advice from a qualified legal professional.",
+    "formDisclaimer": "The audit provides technical and administrative information based on the agreed scope. It is not legal advice and does not create a lawyer-client relationship.",
+    "v5": {
+      "valueLine": [
+        "Know what's required.",
+        "See the gaps.",
+        "Get a clear action plan."
+      ],
+      "sectionLabels": {
+        "decision": "GPSR · Article 19(a)/(b)",
+        "audiences": "B2C ecommerce · Germany",
+        "process": "One audit · clear deliverables",
+        "findings": "Fictional report preview",
+        "why": "Why ElbeBridge",
+        "faq": "FAQ"
+      },
+      "heroPanel": {
+        "eyebrow": "Your audit",
+        "title": "Five compliance areas. One clear report.",
+        "status": "Confidential",
+        "intro": "A comprehensive review of the key requirements relevant to selling through ecommerce into Germany.",
+        "checks": [
+          { "label": "Accessibility / BFSG", "status": "Where applicable" },
+          { "label": "GPSR / product safety", "status": "Reviewed" },
+          { "label": "Packaging / LUCID", "status": "Reviewed" },
+          { "label": "Consumer rights / ecommerce", "status": "Reviewed" },
+          { "label": "Product-specific information", "status": "Where applicable" }
+        ],
+        "footer": "Your audit findings stay between you and ElbeBridge."
+      },
+      "workstreamsHeading": "Five compliance areas. One comprehensive audit.",
+      "workstreamsIntro": "Instead of commissioning separate reviews, you get one Germany-focused view of the requirements relevant to your webshop, products and business situation.",
+      "workstreams": [
+        {
+          "id": "accessibility",
+          "number": "01",
+          "icon": "accessibility",
+          "kicker": "Accessibility & BFSG",
+          "heading": "Make accessibility gaps visible",
+          "intro": "We review accessibility issues and the relevant accessibility requirements for your ecommerce presence, where applicable.",
+          "bullets": [
+            "Storefront accessibility and key customer journeys",
+            "Relevant BFSG information requirements",
+            "Prioritised issues with practical remediation guidance"
+          ],
+          "note": "Accessibility scope depends on the service and the requirements that apply. The audit is not a WCAG certification."
+        },
+        {
+          "id": "gpsr",
+          "number": "02",
+          "icon": "person",
+          "kicker": "GPSR & Product Safety",
+          "heading": "Review the information your product offers need",
+          "intro": "We review representative product offers for GPSR manufacturer, responsible-person and product-safety information where applicable.",
+          "bullets": [
+            "Manufacturer and contact information",
+            "Responsible-person information where applicable",
+            "Product identification, safety information and warnings",
+            "Representative product pages within the agreed scope"
+          ],
+          "note": "Requirements vary by establishment, product and supply-chain role. EU-based businesses are not assumed to require an additional EU Responsible Person."
+        },
+        {
+          "id": "lucid",
+          "number": "03",
+          "icon": "box",
+          "kicker": "Packaging & LUCID",
+          "heading": "Understand your German packaging readiness",
+          "intro": "We review relevant German packaging-registration obligations, your LUCID readiness and the support needed for next steps.",
+          "bullets": [
+            "Registration-obligation and readiness review",
+            "Relevant legal-entity and register information",
+            "Packaging workflow and next-step guidance",
+            "Support needs within the agreed scope"
+          ],
+          "note": "Packaging and LUCID are reviewed as their own compliance area."
+        },
+        {
+          "id": "consumer-information",
+          "number": "04",
+          "icon": "document",
+          "kicker": "Consumer Rights & Ecommerce",
+          "heading": "Make customer-facing information clear",
+          "intro": "We review the key ecommerce information German consumers rely on before and after purchase.",
+          "bullets": [
+            "Complaint handling and trader contact information",
+            "Statutory withdrawal rights and voluntary returns",
+            "Price, VAT, shipping, payment and delivery transparency",
+            "Legal guarantee and conformity information"
+          ]
+        },
+        {
+          "id": "product-information",
+          "number": "05",
+          "icon": "shirt",
+          "kicker": "Product-specific information",
+          "heading": "Include the information relevant to what you sell",
+          "intro": "We review product-specific customer information that falls within the agreed scope.",
+          "bullets": [
+            "Textile labelling where relevant",
+            "Category-specific product information",
+            "Clear identification of specialist requirements",
+            "Practical next steps for gaps in scope"
+          ],
+          "note": "Specialist or regulated product categories may require additional scoping."
+        }
+      ],
+      "decisionHeading": "The responsible-person branch is a decision, not a default",
+      "decisionIntro": "Article 19(a) manufacturer information is assessed for the online product offer. The additional Article 19(b) information depends on where that manufacturer is established.",
+      "decisions": [
+        {
+          "situation": "Manufacturer established in the EU",
+          "article": "Article 19(a)",
+          "result": "Assess manufacturer name and postal/electronic contact information. Additional Article 19(b) responsible-person information is not required."
+        },
+        {
+          "situation": "Manufacturer established outside the EU",
+          "article": "Articles 19(a) + 19(b)",
+          "result": "Assess the manufacturer information and, additionally, the relevant EU responsible person's name and postal/electronic address."
+        },
+        {
+          "situation": "Manufacturer establishment unknown",
+          "article": "Evidence required",
+          "result": "Do not assume Article 19(b). First establish what the available product-offer evidence supports."
+        },
+        {
+          "situation": "No manufacturer established from complete evidence",
+          "article": "Human review",
+          "result": "Review the evidence before issuing an adverse absence finding."
+        }
+      ],
+      "decisionNote": "The audit does not turn “the scanner could not find it” directly into “you are non-compliant.” Apparent absence is reviewed by a person first.",
+      "audiencesHeading": "Designed around your business, not a legal template",
+      "audiencesIntro": "Requirements vary depending on where your business is established, what you sell and your role in the supply chain. We determine the relevant audit scope.",
+      "audiences": [
+        {
+          "kicker": "EU-based brands",
+          "heading": "A focused review of your German-market setup",
+          "text": "Being established in the EU changes some obligations, but your webshop, products and customer information still need the relevant German-market review."
+        },
+        {
+          "kicker": "Non-EU brands entering Germany / the EU",
+          "heading": "Clarity before market entry",
+          "text": "We determine which requirements are relevant to your products, ecommerce presence and route into the German and EU markets."
+        },
+        {
+          "kicker": "Retailers & ecommerce businesses",
+          "heading": "One review across the customer journey",
+          "text": "We assess the relevant storefront, product-offer and consumer-information requirements for your role and agreed product scope."
+        }
+      ],
+      "audiencesCta": "**Not sure where to start?** We determine the relevant audit scope with you.",
+      "processHeading": "One audit. Everything your team needs to act.",
+      "processIntro": "The result is not a legal lecture. It is a clear, prioritised view of the gaps across your agreed German-market scope.",
+      "deliverablesHeading": "A straightforward path from request to remediation",
+      "deliverables": [
+        { "icon": "search", "label": "What's missing", "text": "A clear description of each gap." },
+        { "icon": "pin", "label": "Where we found it", "text": "The page, product or customer journey involved." },
+        { "icon": "shield", "label": "Why it matters", "text": "The requirement and practical relevance." },
+        { "icon": "wrench", "label": "What to change", "text": "Concrete remediation recommendations." },
+        { "icon": "person", "label": "How we can help", "text": "Implementation guidance and optional support." }
+      ],
+      "process": [
+        {
+          "number": "01",
+          "icon": "search",
+          "heading": "Request your audit",
+          "text": "Tell us about your webshop, products and German-market plans."
+        },
+        {
+          "number": "02",
+          "icon": "person",
+          "heading": "We review your setup",
+          "text": "ElbeBridge conducts the agreed review across the relevant compliance areas."
+        },
+        {
+          "number": "03",
+          "icon": "document",
+          "heading": "Receive your findings",
+          "text": "Get a clear, prioritised report with evidence and practical recommendations."
+        },
+        {
+          "number": "04",
+          "icon": "wrench",
+          "heading": "Fix the gaps",
+          "text": "Implement internally or ask ElbeBridge to support remediation."
+        }
+      ],
+      "processTrust": "Every audit is human-reviewed before findings are delivered. Your audit findings stay between you and ElbeBridge.",
+      "findingsHeading": "See the report format before you commit",
+      "findingsIntro": "This deliberately fictional marketing example shows how findings are structured. It contains no prospect, client or private audit data.",
+      "findingsClient": "Example Outdoor GmbH · German Market Compliance Audit",
+      "findingsBadge": "Fictional marketing example",
+      "findingLabels": {
+        "issue": "What's missing",
+        "evidence": "Where we found it",
+        "why": "Why it matters",
+        "change": "What to change",
+        "help": "How we can help"
+      },
+      "findings": [
+        {
+          "code": "A11Y · 01",
+          "category": "Checkout control labels",
+          "issue": "Two icon-only controls do not communicate their purpose to assistive technology.",
+          "evidence": "Example Outdoor GmbH · checkout · delivery step.",
+          "why": "Customers using a screen reader may not understand or operate the controls.",
+          "priority": "High priority",
+          "priorityTone": "high",
+          "change": "Add clear accessible names that describe each action.",
+          "help": "We can provide implementation guidance or scope the remediation."
+        },
+        {
+          "code": "GPSR · 02",
+          "category": "Example Product manufacturer information",
+          "issue": "The fictional product offer does not show complete manufacturer contact information.",
+          "evidence": "Example Trail Bottle · product-information section.",
+          "why": "Relevant manufacturer information must be available in the online product offer; responsible-person information is reviewed where applicable.",
+          "priority": "High priority",
+          "priorityTone": "high",
+          "change": "Add the complete applicable manufacturer information to the product offer.",
+          "help": "We can review the revised product-page presentation before publication."
+        },
+        {
+          "code": "ECOM · 03",
+          "category": "Voluntary returns and withdrawal rights",
+          "issue": "The fictional returns page presents a voluntary 30-day return policy without clearly distinguishing statutory withdrawal rights.",
+          "evidence": "Example Outdoor GmbH · returns page · opening section.",
+          "why": "Customers should be able to distinguish a voluntary commercial policy from their statutory rights.",
+          "priority": "Medium priority",
+          "priorityTone": "medium",
+          "change": "Separate the two concepts and link clearly to the statutory withdrawal information.",
+          "help": "We can provide an implementation example for your content team."
+        }
+      ],
+      "whyHeading": "A focused partner for the German market",
+      "whyIntro": "ElbeBridge brings the relevant areas together and turns them into a report your team can use.",
+      "advantages": [
+        {
+          "icon": "pin",
+          "heading": "Germany focused",
+          "text": "One focused review of the German-market requirements relevant to your ecommerce setup."
+        },
+        {
+          "icon": "document",
+          "heading": "Comprehensive",
+          "text": "Multiple compliance areas brought together in one engagement and one report."
+        },
+        {
+          "icon": "shield",
+          "heading": "Human reviewed",
+          "text": "Every delivered audit is reviewed before findings are issued."
+        },
+        {
+          "icon": "wrench",
+          "heading": "Actionable",
+          "text": "Clear recommendations, implementation guidance and optional remediation support."
+        }
+      ],
+      "price": {
+        "eyebrow": "German Market Compliance Audit",
+        "title": "A fixed launch price for a defined scope",
+        "amount": "€890",
+        "amountNote": "fixed launch price",
+        "intro": "One comprehensive review of the key requirements relevant to selling through ecommerce into Germany.",
+        "includedHeading": "Included in the audit",
+        "included": [
+          "Accessibility & BFSG",
+          "GPSR / product safety",
+          "Packaging / LUCID",
+          "Consumer-rights ecommerce review",
+          "Relevant product-information checks",
+          "Evidence-backed findings",
+          "Prioritised report",
+          "Implementation guidance",
+          "Human-reviewed delivery"
+        ],
+        "scopeNote": "**Scope note:** One webshop. Scope confirmed before work begins. Large catalogues and specialist product requirements may require additional scoping.",
+        "implementationNote": "Implementation and remediation are quoted separately.",
+        "cta": "Get your audit — €890"
+      },
+      "faqHeading": "Clear answers before you start",
+      "faqIntro": "The essentials about relevance, scope and what happens next.",
+      "faqs": [
+        {
+          "question": "I am already based in the EU. Is the audit relevant?",
+          "answer": "Yes. Which requirements apply depends on your business, products and role. Being EU-established changes some obligations but does not remove the German-market requirements relevant to your webshop."
+        },
+        {
+          "question": "What does the audit cover?",
+          "answer": "The agreed scope can cover accessibility and BFSG, GPSR and product safety, packaging and LUCID, consumer-rights ecommerce information and relevant product-specific information. Applicability depends on your business and products."
+        },
+        {
+          "question": "Does the audit cover my entire product catalogue?",
+          "answer": "The €890 audit covers the representative and agreed scope confirmed before work starts. Catalogue-wide, specialist-product or unusually complex reviews may require a separate scope."
+        },
+        {
+          "question": "Is this a certification or legal advice?",
+          "answer": "No. ElbeBridge provides a technical and administrative review with practical guidance. The audit is not a certification and does not replace advice from a qualified legal professional."
+        },
+        {
+          "question": "What happens after the audit?",
+          "answer": "You receive prioritized findings and remediation guidance. If you want help implementing changes or checking them again, that work is scoped and quoted separately."
+        }
+      ]
+    },
     "comparison": {
-      "heading": "Why not just ask an AI?",
-      "intro": "You can, and it will tell you something. Here is what it will not do.",
-      "colUs": "Elbebridge",
-      "colAi": "An AI or a free scanner",
+      "heading": "How the audit combines automation and review",
+      "intro": "Different parts of the work need different methods. The audit uses each where it adds value.",
+      "colUs": "ElbeBridge audit",
+      "colAi": "Automated layer",
       "rows": [
         {
           "factor": "Accessibility findings",
@@ -314,34 +626,34 @@
   },
   "sample": {
     "slug": "sample-report",
-    "title": "See a sample report",
-    "metaDescription": "The three-page findings report Elbebridge delivers, in full: what each German obligation requires, what we found on the site, the evidence behind every finding, and what it takes to fix.",
-    "intro": "This is the document you get for €890. It was produced by the same scanner and the same report generator a client’s report goes through — run against **Nordlicht Home**, a shop we invented for the purpose.\n\nWe never publish a real company’s findings. Yours would look like this, with your pages in the screenshots.",
-    "fileHref": "/sample-report.pdf",
-    "downloadLabel": "Open the sample report",
-    "fileMeta": "PDF · 3 pages",
-    "pagesHeading": "What is in it",
+    "title": "How the audit report is structured",
+    "metaDescription": "See how the ElbeBridge German Market Compliance Audit organizes scope, evidence, priority, remediation guidance and human-reviewed findings.",
+    "intro": "The v5 German Market Compliance Audit turns the agreed scope into a clear, prioritised plan for your team. It explains what is missing, where it was found, why it matters and what should change.\n\nEvery example published on this site is deliberately fictional and contains no prospect, client or private audit data.",
+    "fileHref": "/#findings",
+    "downloadLabel": "See example findings",
+    "fileMeta": "Fictional examples · no client data",
+    "pagesHeading": "The report structure",
     "pages": [
       {
         "n": "01",
-        "heading": "Summary",
-        "text": "The three obligations side by side, each with a status and one sentence saying what we found. Your legal entity as we read it from your own legal pages, the pages we tested, and the rule set we tested against."
+        "heading": "Scope and applicability",
+        "text": "The agreed webshop and representative product scope, the relevant business situation and the five compliance areas considered."
       },
       {
         "n": "02",
-        "heading": "The evidence",
-        "text": "For each obligation: what the law requires, what we found on your site, and the specific proof. Accessibility findings carry a cropped screenshot of the failing element on your own page, the {de|EN 301 549} clause it breaks, and how many instances we counted."
+        "heading": "Findings and evidence",
+        "text": "Each finding states what is missing, where it was found, why it matters, its priority and the recommended change."
       },
       {
         "n": "03",
-        "heading": "What it takes to fix",
-        "text": "Every rule group in priority order with an effort estimate, so you can hand it to a developer and get a quote — from us or from anyone else."
+        "heading": "What to change",
+        "text": "Practical remediation guidance, good and poor implementation examples where useful, and a clear description of how ElbeBridge can support implementation or rechecking."
       }
     ],
-    "note": "Automated testing finds a minority of accessibility barriers. The report says so on its own evidence page, because a clean automated scan is not a claim of accessibility and we will not print it as one.",
-    "ctaHeading": "Get one for your site",
-    "ctaText": "Send us your website address. We reply within one business day with what we found on the public parts of it.",
-    "ctaLabel": "Get a Check"
+    "note": "Every audit is human-reviewed before findings are delivered. The report provides technical and administrative guidance; it is not a certification or legal advice.",
+    "ctaHeading": "Get the v5 audit for your site",
+    "ctaText": "Send us your website address. We respond within one business day to confirm the representative scope and next steps.",
+    "ctaLabel": "Get your audit — €890"
   },
   "legal": [
     {
@@ -349,7 +661,7 @@
       "slug": "impressum",
       "lang": "de",
       "title": "Impressum",
-      "metaDescription": "Anbieterkennzeichnung gemäß § 5 DDG für Elbebridge, Hamburg.",
+      "metaDescription": "Anbieterkennzeichnung gemäß § 5 DDG für ElbeBridge, Hamburg.",
       "intro": "Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz).",
       "sections": [
         {
@@ -435,7 +747,7 @@
       "key": "privacy",
       "slug": "privacy",
       "title": "Privacy policy",
-      "metaDescription": "What personal data Elbebridge collects, why, on what legal basis, and what rights you have under the GDPR.",
+      "metaDescription": "What personal data ElbeBridge collects, why, on what legal basis, and what rights you have under the GDPR.",
       "intro": "How we handle personal data under the General Data Protection Regulation (GDPR). Last updated 15 August 2026.",
       "sections": [
         {
@@ -526,7 +838,7 @@
           "blocks": [
             {
               "type": "p",
-              "text": "Our scan reads publicly available pages of the website you ask us to check. We record company identification only — the legal entity, its registered address and its registration numbers, as published in that site's own legal notice. We do not log in, we do not place orders, we do not access anything behind authentication, and we do not collect details of named individuals. Our scanner respects robots.txt, identifies itself in its user agent, and makes at most one request per second."
+              "text": "When you ask us to audit a webshop, we review publicly accessible pages within the agreed scope and process the business information needed to produce the requested findings. We do not sign in, place orders, access authenticated areas or intentionally collect customer data. Our crawler identifies itself and respects robots.txt; further information is available on our [crawler transparency page](/scanner)."
             }
           ]
         },
@@ -615,11 +927,11 @@
           "blocks": [
             {
               "type": "p",
-              "text": "Automated testing with axe-core against the WCAG 2.2 AA and {de|EN 301 549} rule sets — the same scan we run for clients — followed by manual testing: keyboard-only navigation with the mouse unplugged, and a screen reader pass with NVDA."
+              "text": "We assess this website regularly using a combination of technical and practical accessibility checks against the relevant requirements."
             },
             {
               "type": "p",
-              "text": "Automated tools detect only a minority of accessibility problems. We say this on our own statement for the same reason we say it in every report we write: a clean automated scan is not a claim of accessibility."
+              "text": "No single testing method can establish complete accessibility. We therefore keep this statement under review and welcome feedback about barriers we may have missed."
             }
           ]
         },
@@ -655,16 +967,16 @@
     {
       "key": "scanner",
       "slug": "scanner",
-      "title": "About our crawler",
-      "metaDescription": "ElbeBridgeComplianceBot: who runs it, what it requests, how to recognise it in your logs, and how to block it if you would rather we did not look.",
-      "intro": "Our user agent points at this page, so that anyone who finds it in their logs can tell in one click who we are and what we were doing.",
+      "title": "Crawler transparency",
+      "metaDescription": "Who operates ElbeBridgeComplianceBot, how to recognise it, its access boundaries and how to block it through robots.txt.",
+      "intro": "Our user agent points here so website operators can identify ElbeBridgeComplianceBot, understand its boundaries and contact us directly.",
       "sections": [
         {
           "heading": "Who runs it",
           "blocks": [
             {
               "type": "p",
-              "text": "Elbebridge GbR, Hamburg. We check public websites against three German market obligations and sell the findings to the site owner. Write to [hallo@elbebridge.com](mailto:hallo@elbebridge.com) with any question about a request you have seen."
+              "text": "Elbebridge GbR, Hamburg. We provide German Market Compliance Audits to ecommerce businesses. Write to [hallo@elbebridge.com](mailto:hallo@elbebridge.com) with any question about a request you have seen."
             }
           ]
         },
@@ -681,39 +993,37 @@
             },
             {
               "type": "p",
-              "text": "It is a real browser engine rather than a plain HTTP client, because an online shop that renders its catalogue in the browser cannot be checked any other way."
+              "text": "The identifying address links back to this transparency page and our contact details."
             }
           ]
         },
         {
-          "heading": "What it requests",
+          "heading": "Access boundaries",
           "blocks": [
             {
               "type": "p",
-              "text": "A handful of pages per site, once:"
+              "text": "The crawler is limited to publicly accessible pages relevant to an agreed or requested review:"
             },
             {
               "type": "ul",
               "items": [
-                "your robots.txt, before anything else;",
-                "your home page;",
-                "one product page, reached from the home page or from a category listing;",
-                "the pages that carry your company details — {de|Impressum}, legal notice, terms, privacy or about;",
-                "your accessibility statement, if one is linked."
+                "it respects robots.txt;",
+                "it does not access authenticated or customer-account areas;",
+                "it does not submit forms, add products to a basket or place orders."
               ]
             },
             {
               "type": "p",
-              "text": "It never submits a form, never signs in, never adds to a basket, and never places an order."
+              "text": "If you believe an access fell outside these boundaries, contact us and we will investigate."
             }
           ]
         },
         {
-          "heading": "How often, and how fast",
+          "heading": "Responsible use",
           "blocks": [
             {
               "type": "p",
-              "text": "One request per second to any one host, at most, with no more than a handful of hosts in flight at a time. A whole site is usually finished inside a minute. We do not re-scan a site we have already read unless something has changed or the owner asks us to."
+              "text": "Access is kept proportionate to the requested review and designed to avoid unnecessary load on the website."
             }
           ]
         },
@@ -743,7 +1053,7 @@
           "blocks": [
             {
               "type": "p",
-              "text": "What a visitor to your site could see: the page text we read, a screenshot of the pages we tested, the accessibility findings, and the company details you publish. We do not collect personal data about your customers, and we do not sell what we find to anyone but you. See our [privacy policy](/privacy) for the detail."
+              "text": "We keep the information needed to deliver the requested audit and meet our business obligations. Audit findings are confidential and are not sold to third parties. We do not intentionally collect customer data. See our [privacy policy](/privacy) for details."
             }
           ]
         }

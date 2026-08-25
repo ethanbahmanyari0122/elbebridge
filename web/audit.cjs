@@ -66,7 +66,7 @@ function serve() {
     await pg.goto(BASE + p, { waitUntil: 'networkidle' });
     const r = await new AxeBuilder({ page: pg }).withTags(TAGS).analyze();
     ok(`${p} — 0 violations`, r.violations.length === 0,
-       r.violations.map((x) => `${x.id}(${x.nodes.length})`).join(', '));
+       r.violations.map((x) => `${x.id}(${x.nodes.length}): ${x.nodes.map((n) => n.target.join(' ') + ' ' + n.failureSummary).join(' || ')}`).join(', '));
     await ctx.close();
   }
 
@@ -77,8 +77,18 @@ function serve() {
     await pg.goto(BASE + p, { waitUntil: 'networkidle' });
     await pg.addStyleTag({ content: 'html{font-size:200% !important}' });
     await pg.waitForTimeout(150);
-    const over = await pg.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
-    ok(`${p} — no horizontal scroll`, over <= 1, `overflows by ${over}px`);
+    const over = await pg.evaluate(() => {
+      const root = document.documentElement;
+      const bad = [...document.querySelectorAll('body *')].filter((el) => {
+        const r = el.getBoundingClientRect();
+        return r.width > 0 && (r.right > root.clientWidth + 1 || r.left < -1);
+      }).slice(0, 8).map((el) => {
+        const r = el.getBoundingClientRect();
+        return `${el.tagName.toLowerCase()}.${String(el.className || '').split(' ')[0]}[${Math.round(r.left)},${Math.round(r.right)}]`;
+      });
+      return { delta: root.scrollWidth - root.clientWidth, bad };
+    });
+    ok(`${p} — no horizontal scroll`, over.delta <= 1, `overflows by ${over.delta}px: ${over.bad.join(', ')}`);
     await ctx.close();
   }
 
@@ -196,7 +206,7 @@ function serve() {
   }
 
   console.log('\n6. The enquiry route actually works');
-  for (const [p, subject] of [['/', 'Compliance check request'], ['/de/', 'Anfrage Compliance-Prüfung']]) {
+  for (const [p, subject] of [['/', 'German Market Compliance Audit request'], ['/de/', 'Anfrage German Market Compliance Audit']]) {
     const ctx = await b.newContext({ viewport: { width: 1366, height: 900 } });
     const pg = await ctx.newPage();
     await pg.goto(BASE + p, { waitUntil: 'networkidle' });
@@ -215,62 +225,62 @@ function serve() {
     await ctx.close();
   }
 
-  console.log('\n7. Each hero checkpoint lands on its own card');
+  console.log('\n7. The five compliance areas and buyer deliverables are complete');
   for (const url of ['/', '/de/']) {
     const ctx = await b.newContext({ viewport: { width: 390, height: 844 } });
     const pg = await ctx.newPage();
     await pg.goto(BASE + url, { waitUntil: 'networkidle' });
     const r = await pg.evaluate(() => {
-      const links = [...document.querySelectorAll('.checkpoints a')].map((a) => a.getAttribute('href'));
-      const targets = links.map((h) => {
-        const id = (h || '').split('#')[1];
-        return id ? Boolean(document.getElementById(id)) : false;
-      });
-      return { links, targets, unique: new Set(links).size };
+      const workstreams = [...document.querySelectorAll('.workstream-grid > li')].map((x) => x.id);
+      const deliverables = document.querySelectorAll('.deliverable-grid > li').length;
+      const reportBadge = document.querySelector('.report-example-badge')?.textContent.trim() || '';
+      const hrefs = [...document.querySelectorAll('header a, footer a')]
+        .map((a) => a.getAttribute('href')).filter(Boolean);
+      const localTargets = hrefs.filter((h) => h.includes('#')).map((h) => h.split('#')[1]).filter(Boolean);
+      return { workstreams, deliverables, reportBadge, localTargets };
     });
-    ok(`${url} — three checkpoints, three different targets`, r.unique === 3, r.links.join(' '));
-    ok(`${url} — every checkpoint target exists on the page`, r.targets.every(Boolean), JSON.stringify(r.links));
-    ok(`${url} — targets are the individual cards, not the section`,
-       r.links.every((h) => /#obligation-(bfsg|gpsr|lucid)$/.test(h || '')), r.links.join(' '));
+    ok(`${url} — five compliance areas render`,
+       JSON.stringify(r.workstreams) === JSON.stringify(['accessibility', 'gpsr', 'lucid', 'consumer-information', 'product-information']),
+       JSON.stringify(r.workstreams));
+    ok(`${url} — five buyer deliverables render`, r.deliverables === 5, String(r.deliverables));
+    ok(`${url} — report preview is explicitly fictional`, /fictional|fiktiv/i.test(r.reportBadge), r.reportBadge);
+    ok(`${url} — nav and footer section targets exist`,
+       r.localTargets.every((id) => Boolean(id) && ['what-we-check','process','audit','check','accessibility','gpsr','lucid','consumer-information','product-information'].includes(id)),
+       JSON.stringify(r.localTargets));
     await ctx.close();
   }
 
-  console.log('\n8. Hero artwork and the linked list never both show');
-  for (const [url, width, wantArt] of [['/', 1280, true], ['/', 390, false],
-                                       ['/de/', 1280, true], ['/de/', 390, false]]) {
+  console.log('\n8. The audit hero is complete at desktop and mobile widths');
+  for (const [url, width] of [['/', 1280], ['/', 390], ['/de/', 1280], ['/de/', 390]]) {
     const ctx = await b.newContext({ viewport: { width, height: 900 } });
     const pg = await ctx.newPage();
     await pg.goto(BASE + url, { waitUntil: 'networkidle' });
     const r = await pg.evaluate(() => {
-      const art = document.querySelector('.hero-art');
-      const list = document.querySelector('.journey');
       return {
-        art: art ? getComputedStyle(art).display !== 'none' : false,
-        list: list ? getComputedStyle(list).display !== 'none' : false,
+        headline: document.querySelector('h1')?.textContent.trim(),
+        preview: Boolean(document.querySelector('.audit-preview')),
+        checks: document.querySelectorAll('.audit-checks > li').length,
+        ctas: document.querySelectorAll('.hero-actions a').length,
       };
     });
-    ok(`${url} at ${width}px — exactly one hero rendering visible`,
-       r.art !== r.list, JSON.stringify(r));
-    ok(`${url} at ${width}px — ${wantArt ? 'artwork' : 'linked list'} is the one showing`,
-       r.art === wantArt, JSON.stringify(r));
+    ok(`${url} at ${width}px — headline, audit preview and two actions render`,
+       r.headline && r.preview && r.checks === 5 && r.ctas === 2, JSON.stringify(r));
     await ctx.close();
   }
 
-  console.log('\n9. The comparison table stacks properly on a phone');
+  console.log('\n9. The FAQ is native, complete and usable without JavaScript');
   for (const url of ['/', '/de/']) {
     const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
     const pg = await ctx.newPage();
     await pg.goto(BASE + url, { waitUntil: 'networkidle' });
     const r = await pg.evaluate(() => {
-      const th = document.querySelector('.compare tbody th');
-      if (!th) return null;
-      const row = th.closest('tr');
-      return { th: th.getBoundingClientRect().width, row: row.getBoundingClientRect().width,
-        text: th.textContent.trim() };
+      const rows = [...document.querySelectorAll('.faq-list details')];
+      rows[0].open = true;
+      return { count: rows.length, firstOpen: rows[0]?.open,
+        summaries: rows.map((x) => x.querySelector('summary')?.textContent.trim()) };
     });
-    // A row header squeezed into a narrow column hyphenates every word.
-    ok(`${url} — comparison row headers use the full width`,
-       r && r.th / r.row > 0.8, r ? `${Math.round(r.th)}px of ${Math.round(r.row)}px` : 'not found');
+    ok(`${url} — five FAQ items render and native disclosure opens`,
+       r.count === 5 && r.firstOpen && r.summaries.every(Boolean), JSON.stringify(r));
     await ctx.close();
   }
 
@@ -285,7 +295,7 @@ function serve() {
         await pg.waitForTimeout(150);
         const out = await pg.evaluate(() => {
           const bad = [];
-          document.querySelectorAll('.footer-grid > *, .footer-bar > *, .hero-grid > *, .split > *').forEach((col) => {
+          document.querySelectorAll('.footer-grid > *, .footer-bar > *, .hero-grid > *, .split > *, .workstream-grid > *, .audience-grid > *, .process-grid > *, .finding-grid > *, .price-v5 > *').forEach((col) => {
             const cb = col.getBoundingClientRect();
             col.querySelectorAll('*').forEach((el) => {
               const r = el.getBoundingClientRect();
@@ -329,7 +339,7 @@ function serve() {
     const home = await pg.evaluate(() =>
       [...document.querySelectorAll('header a, footer a')].map((a) => a.getAttribute('href')));
     ok(`${p} — section links point back at the home page`,
-       home.some((h) => /^\/(de\/)?#what-we-do$/.test(h || '')), home.filter((h) => (h || '').includes('#')).join(' '));
+       home.some((h) => /^\/(de\/)?#what-we-check$/.test(h || '')), home.filter((h) => (h || '').includes('#')).join(' '));
     await ctx.close();
   }
 
@@ -345,36 +355,39 @@ function serve() {
     const leaked = windows.find((w) => src.includes(w));
     ok('headline appears in the content file, not in a component',
        words.length >= 4 && src.includes('h.headline') && !leaked, leaked || '');
-    ok('price lives in the content file', en.home.priceAmount === '€890' && !src.includes('890'));
-    // Ornella asked for the checkpoints to lead to their explanation — and each
-    // one to its own card, not the top of the section.
-    const hero = fs.readFileSync(path.join(__dirname, 'src/components/HeroVisual.astro'), 'utf8');
-    ok('hero checkpoints link to individual obligation cards',
-       /journey/.test(hero) && hero.includes('#obligation-${code.toLowerCase()}'));
-    // Both locales now ship artwork with their own labels baked in; a missing
-    // file would silently fall back to the list and nobody would notice.
+    ok('price lives in the v5 content model', en.home.v5.price.amount === '€890' && !src.includes('€890'));
+    ok('the five compliance areas are data-driven',
+       en.home.v5.workstreams.length === 5 && en.home.v5.workstreams.every((x) => x.id && x.icon)
+       && src.includes('v.workstreams') && src.includes('item.icon'));
+    ok('the five buyer deliverables are data-driven',
+       en.home.v5.deliverables.length === 5 && src.includes('v.deliverables'));
+    // The supplied mark and refreshed social card must be available to every route.
     for (const loc of ['en', 'de']) {
       const c = JSON.parse(fs.readFileSync(path.join(__dirname, `src/content/copy/${loc}.json`), 'utf8'));
-      const img = c.home.heroImage;
-      ok(`${loc} — hero artwork declared and present on disk`,
-         Boolean(img) && fs.existsSync(path.join(__dirname, 'public', img.src.replace(/^\//, ''))),
-         JSON.stringify(img));
+      const img = c.site.socialImage;
+      ok(`${loc} — social card declared and present on disk`,
+         Boolean(img) && fs.existsSync(path.join(__dirname, 'public', img.src.replace(/^\//, ''))), JSON.stringify(img));
     }
+    ok('supplied brand mark is wired for header/footer and icons',
+       src.includes('audit-preview')
+       && fs.existsSync(path.join(__dirname, 'public/elbebridge-mark.jpg'))
+       && fs.existsSync(path.join(__dirname, 'public/favicon-32.png'))
+       && fs.existsSync(path.join(__dirname, 'public/favicon-192.png')));
 
-    ok('the AI comparison lives in content, not markup',
-       Array.isArray(en.home.comparison.rows) && en.home.comparison.rows.length >= 4
-       && !src.includes('Why not just ask an AI'));
-    // The brand is written Elbebridge in prose; lowercase survives only inside
-    // email addresses and domains.
+    ok('the active differentiation is concise and not framed as generic AI disparagement',
+       en.home.v5.advantages.length === 4 && !/why not just ask an ai/i.test(src));
+    const homeMarkup = fs.readFileSync(path.join(__dirname, 'dist/index.html'), 'utf8');
+    const internalMechanics = /Article 19\(|scanner could not|machine candidate|verified_absent|candidate states|evidence hashes?|run IDs?|queue architecture/i;
+    ok('public homepage does not expose internal checking mechanics',
+       !internalMechanics.test(homeMarkup), (homeMarkup.match(internalMechanics) || [])[0] || '');
+    ok('public report preview uses only fictional example identities',
+       /Example Outdoor GmbH/.test(homeMarkup) && /Fictional marketing example/.test(homeMarkup), 'homepage report preview');
+    // The public brand uses the supplied ElbeBridge capitalization. The legal
+    // entity remains whatever the Impressum states.
     for (const loc of ['en', 'de']) {
       const parsed = JSON.parse(fs.readFileSync(path.join(__dirname, `src/content/copy/${loc}.json`), 'utf8'));
-      // The logotype is deliberately lowercase — it is lettering, not prose.
-      const { logotype, ...restSite } = parsed.site;
-      const raw = JSON.stringify({ ...parsed, site: restSite });
-      const bad = raw.match(/(?<![\w@./-])elbebridge(?![\w.@-]*(?:\.com|\.de|@))/g);
-      ok(`${loc} — brand written "Elbebridge" outside addresses`, !bad, (bad || []).slice(0, 3).join(' '));
-      ok(`${loc} — the logo is lowercase, the written brand is not`,
-         parsed.site.logotype === 'elbebridge' && parsed.site.wordmark === 'Elbebridge',
+      ok(`${loc} — public wordmark and logotype use "ElbeBridge"`,
+         parsed.site.logotype === 'ElbeBridge' && parsed.site.wordmark === 'ElbeBridge',
          `${parsed.site.logotype} / ${parsed.site.wordmark}`);
     }
     ok('founder names are not on the marketing pages',
@@ -385,13 +398,12 @@ function serve() {
     ok('both representatives still named in the Impressum',
        /Bahmanyari/.test(JSON.stringify(impressumPage)) && /Buxbaum/.test(JSON.stringify(impressumPage)));
 
-    // The credit is the bridge from the report to paid work. Wording may
-    // change; the promise may not quietly disappear.
-    const CREDIT = /credited|comes off|angerechnet/i;
     for (const loc of ['en', 'de']) {
       const c = JSON.parse(fs.readFileSync(path.join(__dirname, `src/content/copy/${loc}.json`), 'utf8'));
-      ok(`${loc} — the price is credited against remediation`,
-         c.home.priceLines.some((l) => CREDIT.test(l)), JSON.stringify(c.home.priceLines));
+      const p = c.home.v5.price;
+      ok(`${loc} — price includes scope and separately quoted implementation notes`,
+         /scope|Umfang/i.test(p.scopeNote) && /separate|separat/i.test(p.implementationNote),
+         JSON.stringify({ scope: p.scopeNote, implementation: p.implementationNote }));
     }
     // Promising two days in one place and one in another is just a bug.
     for (const loc of ['en', 'de']) {
@@ -404,10 +416,8 @@ function serve() {
     ok('marketing copy avoids stating the law at people',
        !/German law applies to you/i.test(JSON.stringify(en)), 'lede');
 
-    ok('the accent word is content, not markup',
-       /==[^=]+==/.test(en.home.headline) && !src.includes('missing'));
     ok('icons are chosen in content, not hard-coded',
-       en.home.obligations.every((o) => !!o.icon) && !src.includes('accessibility"'));
+       en.home.v5.workstreams.every((o) => !!o.icon) && en.home.v5.advantages.every((o) => !!o.icon));
     const foot = fs.readFileSync(path.join(__dirname, 'src/components/SiteFooter.astro'), 'utf8');
     ok('footer columns come from content, not markup',
        en.footer.columns.length > 0 && !foot.includes('What we offer'));

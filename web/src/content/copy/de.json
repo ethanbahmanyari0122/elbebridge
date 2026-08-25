@@ -12,14 +12,14 @@
     "home": "Start"
   },
   "site": {
-    "wordmark": "Elbebridge",
-    "logotype": "elbebridge",
-    "tagline": "Klarheit. Sicherheit. Vertrauen.",
+    "wordmark": "ElbeBridge",
+    "logotype": "ElbeBridge",
+    "tagline": "Deutsche Marktanforderungen, klar umsetzbar.",
     "socialImage": {
       "src": "/og-de.png",
       "width": 1200,
       "height": 630,
-      "alt": "Elbebridge — drei deutsche Pflichten, geprüft an Ihrer Website. BFSG, GPSR, LUCID."
+      "alt": "ElbeBridge German Market Compliance Audit — wissen, was gilt, sehen, was fehlt und wissen, was zu tun ist."
     },
     "organisation": {
       "legalName": "Elbebridge GbR",
@@ -28,32 +28,32 @@
       "addressLocality": "Hamburg",
       "addressCountry": "DE",
       "areaServed": "DE",
-      "description": "Festpreis-Prüfung von drei deutschen Pflichten, bei denen ausländische Online-Marken regelmäßig danebenliegen: Barrierefreiheit (BFSG), die Produktangaben, die Artikel 19 GPSR in jedem Angebot verlangt, und Verpackungsregistrierung (LUCID)."
+      "description": "Menschlich geprüfte Audits für den deutschen Markt: Barrierefreiheit, Produktsicherheit, Verpackung, Verbraucherrechte und relevante Produktinformationen."
     },
-    "eyebrow": "Deutsche Marktpflichten",
-    "title": "Elbebridge — Prüfung der deutschen Pflichten für ausländische Online-Marken",
-    "metaDescription": "Festpreis-Prüfung von drei deutschen Pflichten, bei denen ausländische Online-Marken regelmäßig danebenliegen: Barrierefreiheit (BFSG), die Produktangaben, die Artikel 19 GPSR in jedem Angebot verlangt, und Verpackungsregistrierung (LUCID).",
+    "eyebrow": "German Market Compliance Audit",
+    "title": "German Market Compliance Audit | ElbeBridge",
+    "metaDescription": "Menschlich geprüftes Audit für deutschen E-Commerce: Barrierefreiheit, Produktsicherheit, Verpackung, Verbraucherrechte und relevante Produktinformationen.",
     "email": "hallo@elbebridge.com",
-    "footerNote": "© 2026 Elbebridge, Hamburg. Wir tracken Sie nicht: keine Cookies, keine Analyse, keine Skripte Dritter.",
+    "footerNote": "© 2026 ElbeBridge, Hamburg. Wir tracken Sie nicht: keine Cookies, keine Analyse, keine Skripte Dritter.",
     "social": []
   },
   "nav": {
     "cta": {
       "href": "/#check",
-      "label": "Prüfung anfragen"
+      "label": "Audit anfragen — 890 €"
     },
     "primary": [
       {
-        "href": "/#what-we-do",
-        "label": "Leistungen"
+        "href": "/#what-we-check",
+        "label": "Fünf Prüfbereiche"
       },
       {
-        "href": "/#price",
+        "href": "/#process",
+        "label": "Ihre Ergebnisse"
+      },
+      {
+        "href": "/#audit",
         "label": "Preis"
-      },
-      {
-        "href": "/#check",
-        "label": "Prüfung anfragen"
       }
     ],
     "legal": [
@@ -72,44 +72,52 @@
     ]
   },
   "footer": {
-    "blurb": "Unabhängige Prüfungen für ausländische Marken, die nach Deutschland verkaufen. Klar, schnell und ehrlich darüber, was wir Ihnen sagen können und was nicht.",
+    "blurb": "Eine umfassende Prüfung der zentralen Anforderungen für den E-Commerce-Verkauf nach Deutschland.",
     "location": "Hamburg, Deutschland",
     "columns": [
       {
-        "heading": "Unser Angebot",
+        "heading": "Das Audit",
         "links": [
           {
-            "href": "/#what-we-do",
-            "label": "Was wir tun"
+            "href": "/#what-we-check",
+            "label": "Fünf Prüfbereiche"
           },
           {
-            "href": "/beispielbericht",
-            "label": "Beispielbericht"
+            "href": "/#process",
+            "label": "Ihre Ergebnisse"
           },
           {
-            "href": "/#price",
+            "href": "/#audit",
             "label": "Preis"
           },
           {
             "href": "/#check",
-            "label": "Prüfung anfragen"
+            "label": "Audit anfragen"
           }
         ]
       },
       {
-        "heading": "Die drei Pflichten",
+        "heading": "Prüfbereiche",
         "links": [
           {
-            "href": "/#obligation-bfsg",
-            "label": "Barrierefreier Onlineshop (BFSG)"
+            "href": "/#accessibility",
+            "label": "Barrierefreiheit & BFSG"
           },
           {
-            "href": "/#obligation-gpsr",
-            "label": "GPSR-Produktangaben im Angebot"
+            "href": "/#gpsr",
+            "label": "GPSR & Produktsicherheit"
           },
           {
-            "href": "/#obligation-lucid",
-            "label": "Registrierte Verpackung (LUCID)"
+            "href": "/#lucid",
+            "label": "Verpackung & LUCID"
+          },
+          {
+            "href": "/#consumer-information",
+            "label": "Verbraucherrechte & E-Commerce"
+          },
+          {
+            "href": "/#product-information",
+            "label": "Produktspezifische Informationen"
           }
         ]
       },
@@ -130,7 +138,7 @@
           },
           {
             "href": "/scanner",
-            "label": "Über unseren Crawler"
+            "label": "Crawler-Transparenz"
           }
         ]
       }
@@ -148,17 +156,17 @@
     "copyright": "© 2026 Elbebridge GbR · Hamburg. Alle Rechte vorbehalten."
   },
   "home": {
-    "headline": "Sie verkaufen nach Deutschland? Drei Pflichten gelten bereits. Wir zeigen Ihnen die ==Nachweise==.",
-    "lede": "Wenn Sie an deutsche Verbraucher versenden, gelten diese Pflichten für Sie — ob Sie hier eine Gesellschaft haben oder nicht: Barrierefreiheit seit dem 28. Juni 2025, Produktsicherheit seit dem 13. Dezember 2024 und Verpackung seit vor Ihrem ersten Paket.\n\nWir prüfen alle drei an Ihrer tatsächlichen Website und schicken Ihnen einen dreiseitigen Bericht mit den Nachweisen zu jedem Befund.",
-    "heroCta": "Prüfung anfragen",
+    "headline": "Sie verkaufen nach Deutschland? Wissen Sie, was gilt — bevor daraus ein Problem wird.",
+    "lede": "ElbeBridge prüft Ihren E-Commerce-Auftritt in den Bereichen Barrierefreiheit, Produktsicherheit, Verpackung, Verbraucherrechte und Produktinformationen — und zeigt Ihnen klar, welche Lücken zu schließen sind.",
+    "heroCta": "Audit anfragen — 890 €",
     "heroCtaSecondary": {
-      "href": "/beispielbericht",
-      "label": "Beispielbericht ansehen"
+      "href": "/#what-we-check",
+      "label": "Prüfumfang ansehen"
     },
     "trust": [
-      "Festpreis",
-      "1 Werktag",
-      "Unverbindlich"
+      "Menschlich geprüft",
+      "Nachweisbasiert",
+      "Auf Deutschland fokussiert"
     ],
     "journeyEnd": "Bereit für den Verkauf in Deutschland",
     "heroImage": {
@@ -166,7 +174,7 @@
       "width": 1240,
       "height": 990
     },
-    "obligationsHeading": "Die Drei",
+    "obligationsHeading": "Unser Prüfumfang",
     "obligations": [
       {
         "icon": "accessibility",
@@ -239,12 +247,12 @@
       {
         "icon": "search",
         "lead": "Prüfung.",
-        "text": "Wir prüfen Ihre Website gegen die einschlägigen Anforderungen an die Barrierefreiheit und verifizieren die beiden anderen Pflichten über öffentliche Register."
+        "text": "Wir prüfen den öffentlichen Shop und repräsentative Produktangebote mit deterministischen technischen Checks und erfassen Nachweise."
       },
       {
         "icon": "document",
         "lead": "Prüfbericht.",
-        "text": "Ein dreiseitiger Bericht: was für Sie gilt, was wir gefunden haben, die Nachweise dazu und was behoben werden muss. [Beispielbericht ansehen](/de/beispielbericht)."
+        "text": "Ein priorisierter Bericht: was gilt, was wir gefunden haben, die Nachweise dazu und was geändert werden sollte."
       },
       {
         "icon": "wrench",
@@ -260,27 +268,331 @@
     "priceHeading": "Preis",
     "priceAmount": "890 €",
     "priceLines": [
-      "Für die Prüfung und den dreiseitigen Prüfbericht. Vorab genannt, einmalig in Rechnung gestellt.",
+      "Für den vereinbarten Auditumfang und den priorisierten Befundbericht. Der Umfang wird vor Arbeitsbeginn bestätigt.",
       "**Wird vollständig angerechnet, wenn Sie die Behebung beauftragen.**",
       "Die Behebung ist ein Festpreisangebot, kalkuliert aus den Befunden. Die quartalsweise Überwachung kostet, wenn Sie sie möchten, 290 € pro Quartal."
     ],
     "contact": {
-      "heading": "Prüfung anfragen",
-      "intro": "Schicken Sie uns Ihre Website-Adresse. Wir antworten innerhalb eines Werktags mit dem, was wir auf den öffentlichen Teilen gefunden haben.",
-      "buttonLabel": "Prüfung anfragen",
-      "mailSubject": "Anfrage Compliance-Prüfung",
-      "mailBody": "Website:\n\nFirmenname (optional):\n\nWas Ihnen bereits bekannt ist:\n",
-      "note": "Damit öffnet sich Ihr E-Mail-Programm mit den Angaben, die wir brauchen.\n\nKein Formular, kein Tracking, kein Dritter dazwischen — Ihre Nachricht geht direkt in unser Postfach."
+      "heading": "Bereit zu klären, was Ihr Deutschland-Geschäft braucht?",
+      "intro": "Schicken Sie uns die Adresse Ihres Webshops. Wir antworten innerhalb eines Werktags und bestätigen Umfang und nächste Schritte.",
+      "buttonLabel": "Audit anfragen — 890 €",
+      "mailSubject": "Anfrage German Market Compliance Audit",
+      "mailBody": "Website:\n\nFirmenname:\n\nWichtigste Produktkategorien:\n\nWas Ihnen bereits bekannt ist (optional):\n",
+      "note": "Damit öffnet sich Ihr E-Mail-Programm mit den Angaben, die wir brauchen.\n\nKein Formular, kein Tracking und kein Dritter dazwischen — Ihre Nachricht geht direkt in unser Postfach."
     },
     "peopleHeading": "Über uns",
-    "peopleNote": "Wir haben Elbebridge gegründet, damit der Verkauf nach Deutschland weniger kompliziert wird. Wir helfen internationalen Unternehmen zu verstehen, was gefordert ist, zu erkennen, was fehlt, und das Richtige aufzusetzen — ohne sich in der deutschen Bürokratie zu verlieren.",
-    "disclaimer": "Elbebridge ist keine Rechts- oder Steuerberatungsgesellschaft und erbringt keine Rechtsberatung. Informationen und Feststellungen auf dieser Website dienen der allgemeinen Information und ersetzen keine Beratung durch eine qualifizierte Anwältin oder einen qualifizierten Anwalt.",
-    "formDisclaimer": "Unsere Prüfung liefert allgemeine Informationen auf Grundlage der von Ihnen genannten Website. Sie stellt keine Rechtsberatung dar und begründet kein Mandatsverhältnis.",
+    "peopleNote": "Wir haben ElbeBridge gegründet, damit der Verkauf nach Deutschland weniger kompliziert wird. Wir helfen internationalen Unternehmen zu verstehen, was gilt, zu erkennen, was fehlt, und Befunde in praktische Änderungen zu übersetzen.",
+    "disclaimer": "ElbeBridge ist keine Rechts- oder Steuerberatungsgesellschaft und erbringt keine Rechtsberatung. Informationen und Feststellungen auf dieser Website dienen der allgemeinen Information und ersetzen keine Beratung durch eine qualifizierte Anwältin oder einen qualifizierten Anwalt.",
+    "formDisclaimer": "Das Audit liefert technische und administrative Informationen im vereinbarten Umfang. Es stellt keine Rechtsberatung dar und begründet kein Mandatsverhältnis.",
+    "v5": {
+      "valueLine": [
+        "Wissen, was erforderlich ist.",
+        "Lücken klar erkennen.",
+        "Mit einem konkreten Plan handeln."
+      ],
+      "sectionLabels": {
+        "decision": "GPSR · Artikel 19(a)/(b)",
+        "audiences": "B2C-E-Commerce · Deutschland",
+        "process": "Ein Audit · klare Ergebnisse",
+        "findings": "Fiktive Berichtsvorschau",
+        "why": "Warum ElbeBridge",
+        "faq": "Häufige Fragen"
+      },
+      "heroPanel": {
+        "eyebrow": "Ihr Audit",
+        "title": "Fünf Compliance-Bereiche. Ein klarer Bericht.",
+        "status": "Vertraulich",
+        "intro": "Eine umfassende Prüfung der zentralen Anforderungen für den E-Commerce-Verkauf nach Deutschland.",
+        "checks": [
+          { "label": "Barrierefreiheit / BFSG", "status": "Soweit anwendbar" },
+          { "label": "GPSR / Produktsicherheit", "status": "Geprüft" },
+          { "label": "Verpackung / LUCID", "status": "Geprüft" },
+          { "label": "Verbraucherrechte / E-Commerce", "status": "Geprüft" },
+          { "label": "Produktspezifische Informationen", "status": "Soweit anwendbar" }
+        ],
+        "footer": "Ihre Audit-Ergebnisse bleiben zwischen Ihnen und ElbeBridge."
+      },
+      "workstreamsHeading": "Fünf Compliance-Bereiche. Ein umfassendes Audit.",
+      "workstreamsIntro": "Statt mehrere Einzelprüfungen zu beauftragen, erhalten Sie einen auf Deutschland fokussierten Überblick über die Anforderungen, die für Ihren Shop, Ihre Produkte und Ihre Unternehmenssituation relevant sind.",
+      "workstreams": [
+        {
+          "id": "accessibility",
+          "number": "01",
+          "icon": "accessibility",
+          "kicker": "Barrierefreiheit & BFSG",
+          "heading": "Barrieren und Handlungsbedarf sichtbar machen",
+          "intro": "Wir prüfen Barrierefreiheitsprobleme und die relevanten Anforderungen an Ihren E-Commerce-Auftritt, soweit anwendbar.",
+          "bullets": [
+            "Barrierefreiheit des Shops und zentraler Kundenwege",
+            "Relevante Informationspflichten nach dem BFSG",
+            "Priorisierte Befunde mit praktischen Hinweisen zur Behebung"
+          ],
+          "note": "Der Umfang hängt vom Angebot und den anwendbaren Anforderungen ab. Das Audit ist keine WCAG-Zertifizierung."
+        },
+        {
+          "id": "gpsr",
+          "number": "02",
+          "icon": "person",
+          "kicker": "GPSR & Produktsicherheit",
+          "heading": "Relevante Angaben im Produktangebot prüfen",
+          "intro": "Wir prüfen repräsentative Produktangebote auf GPSR-Angaben zu Hersteller, verantwortlicher Person und Produktsicherheit, soweit anwendbar.",
+          "bullets": [
+            "Hersteller- und Kontaktinformationen",
+            "Angaben zur verantwortlichen Person, soweit anwendbar",
+            "Produktidentifikation, Sicherheitsinformationen und Warnhinweise",
+            "Repräsentative Produktseiten im vereinbarten Umfang"
+          ],
+          "note": "Die Anforderungen hängen von Niederlassung, Produkt und Rolle in der Lieferkette ab. Für Unternehmen mit EU-Sitz wird keine zusätzliche verantwortliche Person pauschal unterstellt."
+        },
+        {
+          "id": "lucid",
+          "number": "03",
+          "icon": "box",
+          "kicker": "Verpackung & LUCID",
+          "heading": "Ihre Verpackungsbereitschaft für Deutschland klären",
+          "intro": "Wir prüfen relevante deutsche Verpackungs- und Registrierungspflichten, Ihre LUCID-Bereitschaft und den Unterstützungsbedarf für die nächsten Schritte.",
+          "bullets": [
+            "Prüfung von Registrierungspflicht und Bereitschaft",
+            "Relevante Angaben zu Rechtseinheit und Register",
+            "Verpackungsablauf und konkrete nächste Schritte",
+            "Unterstützungsbedarf im vereinbarten Umfang"
+          ],
+          "note": "Verpackung und LUCID werden als eigener Compliance-Bereich geprüft."
+        },
+        {
+          "id": "consumer-information",
+          "number": "04",
+          "icon": "document",
+          "kicker": "Verbraucherrechte & E-Commerce",
+          "heading": "Kundeninformationen klar und nachvollziehbar gestalten",
+          "intro": "Wir prüfen zentrale E-Commerce-Informationen, auf die Verbraucherinnen und Verbraucher vor und nach dem Kauf angewiesen sind.",
+          "bullets": [
+            "Beschwerdebearbeitung und Kontaktinformationen des Unternehmers",
+            "Gesetzliches Widerrufsrecht und freiwillige Rückgaben",
+            "Transparenz zu Preis, Umsatzsteuer, Versand, Zahlung und Lieferung",
+            "Gesetzliche Gewährleistungs- und Konformitätsinformationen"
+          ]
+        },
+        {
+          "id": "product-information",
+          "number": "05",
+          "icon": "shirt",
+          "kicker": "Produktspezifische Informationen",
+          "heading": "Die Informationen einbeziehen, die zu Ihren Produkten gehören",
+          "intro": "Wir prüfen produktspezifische Kundeninformationen, soweit sie Teil des vereinbarten Umfangs sind.",
+          "bullets": [
+            "Textilkennzeichnung, soweit relevant",
+            "Warengruppenspezifische Produktinformationen",
+            "Klare Einordnung besonderer Anforderungen",
+            "Praktische nächste Schritte bei weiterem Prüfbedarf"
+          ],
+          "note": "Spezialisierte oder besonders regulierte Produktkategorien können eine zusätzliche Eingrenzung erfordern."
+        }
+      ],
+      "decisionHeading": "Der Zweig zur verantwortlichen Person ist eine Entscheidung, kein Standardfall",
+      "decisionIntro": "Für das Online-Produktangebot werden die Herstellerangaben nach Artikel 19(a) geprüft. Die zusätzlichen Angaben nach Artikel 19(b) hängen davon ab, wo dieser Hersteller niedergelassen ist.",
+      "decisions": [
+        {
+          "situation": "Hersteller in der EU niedergelassen",
+          "article": "Artikel 19(a)",
+          "result": "Name sowie Postanschrift und elektronische Kontaktadresse des Herstellers prüfen. Zusätzliche Angaben zu einer verantwortlichen Person nach Artikel 19(b) sind nicht erforderlich."
+        },
+        {
+          "situation": "Hersteller außerhalb der EU niedergelassen",
+          "article": "Artikel 19(a) + 19(b)",
+          "result": "Herstellerangaben und zusätzlich Name, Postanschrift und elektronische Adresse der relevanten verantwortlichen Person in der EU prüfen."
+        },
+        {
+          "situation": "Niederlassung des Herstellers unbekannt",
+          "article": "Nachweise erforderlich",
+          "result": "Artikel 19(b) nicht unterstellen. Zuerst feststellen, was die vorhandenen Nachweise im Produktangebot belegen."
+        },
+        {
+          "situation": "Aus der vollständigen Evidenz kein Hersteller feststellbar",
+          "article": "Menschliches Review",
+          "result": "Die Nachweise prüfen, bevor ein negativer Fehlensbefund ausgegeben wird."
+        }
+      ],
+      "decisionNote": "Das Audit macht aus „der Scanner konnte es nicht finden“ nicht direkt „Sie sind nicht konform“. Ein scheinbares Fehlen wird zuerst von einem Menschen geprüft.",
+      "audiencesHeading": "Passend zu Ihrem Unternehmen, nicht zu einer juristischen Schablone",
+      "audiencesIntro": "Welche Anforderungen gelten, hängt davon ab, wo Ihr Unternehmen sitzt, was Sie verkaufen und welche Rolle Sie in der Lieferkette haben. Gemeinsam bestimmen wir den relevanten Audit-Umfang.",
+      "audiences": [
+        {
+          "kicker": "Marken mit Sitz in der EU",
+          "heading": "Gezielte Prüfung Ihres Deutschland-Geschäfts",
+          "text": "Ein Sitz in der EU verändert einzelne Pflichten. Die für Ihren Shop, Ihre Produkte und Ihre Kundeninformationen relevanten Anforderungen des deutschen Marktes bleiben dennoch wichtig."
+        },
+        {
+          "kicker": "Nicht-EU-Marken beim Eintritt in Deutschland / die EU",
+          "heading": "Klarheit vor dem Markteintritt",
+          "text": "Wir bestimmen, welche Anforderungen für Ihre Produkte, Ihren E-Commerce-Auftritt und Ihren Vertriebsweg nach Deutschland und in die EU relevant sind."
+        },
+        {
+          "kicker": "Händler & E-Commerce-Unternehmen",
+          "heading": "Eine Prüfung entlang der Customer Journey",
+          "text": "Wir bewerten die relevanten Anforderungen an Shop, Produktangebote und Verbraucherinformationen für Ihre Rolle und den vereinbarten Produktumfang."
+        }
+      ],
+      "audiencesCta": "**Nicht sicher, wo Sie anfangen sollen?** Wir bestimmen den relevanten Audit-Umfang gemeinsam mit Ihnen.",
+      "processHeading": "Ein Audit. Alles, was Ihr Team zum Handeln braucht.",
+      "processIntro": "Sie erhalten keinen juristischen Vortrag, sondern einen klaren und priorisierten Überblick über die Lücken im vereinbarten Deutschland-Umfang.",
+      "deliverablesHeading": "Vom Auftrag zur Behebung — klar und nachvollziehbar",
+      "deliverables": [
+        { "icon": "search", "label": "Was fehlt", "text": "Eine klare Beschreibung jeder Lücke." },
+        { "icon": "pin", "label": "Wo wir es gefunden haben", "text": "Die betroffene Seite, das Produkt oder der Kundenweg." },
+        { "icon": "shield", "label": "Warum es relevant ist", "text": "Die Anforderung und ihre praktische Bedeutung." },
+        { "icon": "wrench", "label": "Was zu ändern ist", "text": "Konkrete Empfehlungen zur Behebung." },
+        { "icon": "person", "label": "Wie wir helfen können", "text": "Umsetzungshinweise und optionale Unterstützung." }
+      ],
+      "process": [
+        {
+          "number": "01",
+          "icon": "search",
+          "heading": "Audit anfragen",
+          "text": "Sie erzählen uns von Ihrem Shop, Ihren Produkten und Ihren Plänen für Deutschland."
+        },
+        {
+          "number": "02",
+          "icon": "person",
+          "heading": "Wir prüfen Ihren Aufbau",
+          "text": "ElbeBridge führt die vereinbarte Prüfung in den relevanten Compliance-Bereichen durch."
+        },
+        {
+          "number": "03",
+          "icon": "document",
+          "heading": "Befunde erhalten",
+          "text": "Sie erhalten einen klaren, priorisierten Bericht mit Nachweisen und praktischen Empfehlungen."
+        },
+        {
+          "number": "04",
+          "icon": "wrench",
+          "heading": "Lücken schließen",
+          "text": "Sie setzen intern um oder beauftragen ElbeBridge mit der Unterstützung bei der Behebung."
+        }
+      ],
+      "processTrust": "Jedes Audit wird vor Auslieferung der Befunde menschlich geprüft. Ihre Audit-Ergebnisse bleiben zwischen Ihnen und ElbeBridge.",
+      "findingsHeading": "Sehen Sie das Berichtsformat vor der Beauftragung",
+      "findingsIntro": "Dieses bewusst fiktive Marketingbeispiel zeigt den Aufbau der Befunde. Es enthält keine Daten von Interessenten, Kunden oder privaten Audits.",
+      "findingsClient": "Example Outdoor GmbH · German Market Compliance Audit",
+      "findingsBadge": "Fiktives Marketingbeispiel",
+      "findingLabels": {
+        "issue": "Was fehlt",
+        "evidence": "Wo wir es gefunden haben",
+        "why": "Warum es relevant ist",
+        "change": "Was zu ändern ist",
+        "help": "Wie wir helfen können"
+      },
+      "findings": [
+        {
+          "code": "A11Y · 01",
+          "category": "Beschriftungen im Checkout",
+          "issue": "Zwei reine Icon-Schaltflächen teilen assistiven Technologien ihren Zweck nicht mit.",
+          "evidence": "Example Outdoor GmbH · Checkout · Schritt Lieferung.",
+          "why": "Kundinnen und Kunden mit Screenreader können die Bedienelemente möglicherweise nicht verstehen oder bedienen.",
+          "priority": "Hohe Priorität",
+          "priorityTone": "high",
+          "change": "Aussagekräftige zugängliche Namen ergänzen, die jede Aktion beschreiben.",
+          "help": "Wir können Umsetzungshinweise geben oder die Behebung separat begleiten."
+        },
+        {
+          "code": "GPSR · 02",
+          "category": "Herstellerangaben beim Example Product",
+          "issue": "Im fiktiven Produktangebot fehlen vollständige Kontaktangaben des Herstellers.",
+          "evidence": "Example Trail Bottle · Bereich Produktinformationen.",
+          "why": "Relevante Herstellerangaben müssen im Online-Produktangebot verfügbar sein; Angaben zur verantwortlichen Person werden geprüft, soweit anwendbar.",
+          "priority": "Hohe Priorität",
+          "priorityTone": "high",
+          "change": "Die vollständigen anwendbaren Herstellerangaben im Produktangebot ergänzen.",
+          "help": "Wir können die überarbeitete Darstellung der Produktseite vor Veröffentlichung prüfen."
+        },
+        {
+          "code": "ECOM · 03",
+          "category": "Freiwillige Rückgabe und Widerrufsrecht",
+          "issue": "Die fiktive Rückgabeseite beschreibt eine freiwillige 30-Tage-Rückgabe, ohne sie klar vom gesetzlichen Widerrufsrecht abzugrenzen.",
+          "evidence": "Example Outdoor GmbH · Rückgabeseite · Einleitungsabschnitt.",
+          "why": "Kundinnen und Kunden sollten eine freiwillige Leistung von ihren gesetzlichen Rechten unterscheiden können.",
+          "priority": "Mittlere Priorität",
+          "priorityTone": "medium",
+          "change": "Beide Konzepte trennen und klar auf die gesetzlichen Widerrufsinformationen verweisen.",
+          "help": "Wir können Ihrem Content-Team ein konkretes Umsetzungsbeispiel bereitstellen."
+        }
+      ],
+      "whyHeading": "Ein fokussierter Partner für den deutschen Markt",
+      "whyIntro": "ElbeBridge führt die relevanten Bereiche zusammen und macht daraus einen Bericht, mit dem Ihr Team arbeiten kann.",
+      "advantages": [
+        {
+          "icon": "pin",
+          "heading": "Auf Deutschland fokussiert",
+          "text": "Eine gezielte Prüfung der für Ihren E-Commerce-Auftritt relevanten deutschen Marktanforderungen."
+        },
+        {
+          "icon": "document",
+          "heading": "Umfassend",
+          "text": "Mehrere Compliance-Bereiche in einem Auftrag und einem Bericht zusammengeführt."
+        },
+        {
+          "icon": "shield",
+          "heading": "Menschlich geprüft",
+          "text": "Jedes ausgelieferte Audit wird geprüft, bevor Befunde ausgegeben werden."
+        },
+        {
+          "icon": "wrench",
+          "heading": "Umsetzbar",
+          "text": "Klare Empfehlungen, Umsetzungshinweise und optionale Unterstützung bei der Behebung."
+        }
+      ],
+      "price": {
+        "eyebrow": "German Market Compliance Audit",
+        "title": "Ein fester Einführungspreis für einen definierten Umfang",
+        "amount": "890 €",
+        "amountNote": "fester Einführungspreis",
+        "intro": "Eine umfassende Prüfung der zentralen Anforderungen für den E-Commerce-Verkauf nach Deutschland.",
+        "includedHeading": "Im Audit enthalten",
+        "included": [
+          "Barrierefreiheit & BFSG",
+          "GPSR / Produktsicherheit",
+          "Verpackung / LUCID",
+          "E-Commerce-Review zu Verbraucherrechten",
+          "Relevante produktspezifische Prüfungen",
+          "Nachweisbasierte Befunde",
+          "Priorisierter Bericht",
+          "Umsetzungshinweise",
+          "Menschlich geprüfte Auslieferung"
+        ],
+        "scopeNote": "**Hinweis zum Umfang:** Ein Webshop. Der Umfang wird vor Beginn bestätigt. Große Kataloge und spezialisierte Produktanforderungen können eine zusätzliche Eingrenzung erfordern.",
+        "implementationNote": "Umsetzung und Behebung werden separat angeboten.",
+        "cta": "Audit anfragen — 890 €"
+      },
+      "faqHeading": "Klare Antworten vor dem Start",
+      "faqIntro": "Das Wichtigste zu Relevanz, Umfang und den nächsten Schritten.",
+      "faqs": [
+        {
+          "question": "Mein Unternehmen sitzt bereits in der EU. Ist das Audit trotzdem relevant?",
+          "answer": "Ja. Welche Anforderungen gelten, hängt von Ihrem Unternehmen, Ihren Produkten und Ihrer Rolle ab. Ein Sitz in der EU verändert einzelne Pflichten, beseitigt aber nicht die für Ihren Webshop relevanten Anforderungen des deutschen Marktes."
+        },
+        {
+          "question": "Was deckt das Audit ab?",
+          "answer": "Der vereinbarte Umfang kann Barrierefreiheit und BFSG, GPSR und Produktsicherheit, Verpackung und LUCID, E-Commerce-Informationen zu Verbraucherrechten sowie relevante produktspezifische Informationen umfassen. Was anwendbar ist, hängt von Ihrem Unternehmen und Ihren Produkten ab."
+        },
+        {
+          "question": "Deckt das Audit meinen gesamten Produktkatalog ab?",
+          "answer": "Das Audit für 890 € deckt den repräsentativen und vereinbarten Umfang ab, der vor Arbeitsbeginn bestätigt wird. Katalogweite, spezialisierte oder ungewöhnlich komplexe Prüfungen können einen separaten Umfang erfordern."
+        },
+        {
+          "question": "Ist das eine Zertifizierung oder Rechtsberatung?",
+          "answer": "Nein. ElbeBridge bietet eine technische und administrative Prüfung mit praktischen Hinweisen. Das Audit ist keine Zertifizierung und ersetzt keine Beratung durch eine qualifizierte Rechtsanwältin oder einen qualifizierten Rechtsanwalt."
+        },
+        {
+          "question": "Was passiert nach dem Audit?",
+          "answer": "Sie erhalten priorisierte Befunde und Hinweise zur Behebung. Wenn Sie Unterstützung bei der Umsetzung oder einer erneuten Prüfung möchten, werden Umfang und Preis dafür separat festgelegt."
+        }
+      ]
+    },
     "comparison": {
-      "heading": "Warum nicht einfach eine KI fragen?",
-      "intro": "Können Sie, und sie wird Ihnen etwas sagen. Das hier wird sie nicht tun.",
-      "colUs": "Elbebridge",
-      "colAi": "Eine KI oder ein kostenloser Scanner",
+      "heading": "So verbindet das Audit Automatisierung und Review",
+      "intro": "Verschiedene Teile der Arbeit brauchen verschiedene Methoden. Das Audit nutzt jede dort, wo sie Mehrwert schafft.",
+      "colUs": "ElbeBridge Audit",
+      "colAi": "Automatisierte Ebene",
       "rows": [
         {
           "factor": "Befunde zur Barrierefreiheit",
@@ -312,41 +624,41 @@
   },
   "sample": {
     "slug": "beispielbericht",
-    "title": "Beispielbericht ansehen",
-    "metaDescription": "Der dreiseitige Prüfbericht von Elbebridge, vollständig: was jede deutsche Pflicht verlangt, was wir auf der Website gefunden haben, die Nachweise zu jedem Befund und der Aufwand für die Behebung.",
-    "intro": "Das ist das Dokument, das Sie für 890 € erhalten. Erstellt wurde es mit demselben Scanner und demselben Berichtsgenerator wie jeder Kundenbericht — geprüft wurde **Nordlicht Home**, ein von uns erfundener Shop.\n\nBefunde echter Unternehmen veröffentlichen wir nie. Ihr Bericht sähe genauso aus, mit Ihren Seiten in den Screenshots.",
-    "fileHref": "/sample-report.pdf",
-    "downloadLabel": "Beispielbericht öffnen",
-    "fileMeta": "PDF · 3 Seiten · auf Englisch",
-    "pagesHeading": "Was drinsteht",
+    "title": "So ist der Auditbericht aufgebaut",
+    "metaDescription": "So strukturiert das ElbeBridge German Market Compliance Audit Umfang, Nachweise, Priorität, Hinweise zur Behebung und menschlich geprüfte Befunde.",
+    "intro": "Das v5 German Market Compliance Audit macht aus dem vereinbarten Umfang einen klaren, priorisierten Plan für Ihr Team. Es zeigt, was fehlt, wo es gefunden wurde, warum es relevant ist und was geändert werden sollte.\n\nJedes auf dieser Website veröffentlichte Beispiel ist bewusst fiktiv und enthält keine Daten von Interessenten, Kunden oder privaten Audits.",
+    "fileHref": "/de/#findings",
+    "downloadLabel": "Beispielbefunde ansehen",
+    "fileMeta": "Fiktive Beispiele · keine Kundendaten",
+    "pagesHeading": "Die Berichtsstruktur",
     "pages": [
       {
         "n": "01",
-        "heading": "Überblick",
-        "text": "Die drei Pflichten nebeneinander, jeweils mit Status und einem Satz zum Befund. Dazu Ihre Rechtsform, wie wir sie auf Ihren eigenen Rechtsseiten gelesen haben, die geprüften Seiten und das zugrunde gelegte Regelwerk."
+        "heading": "Umfang und Anwendbarkeit",
+        "text": "Der vereinbarte Webshop- und repräsentative Produktumfang, die relevante Unternehmenssituation und die fünf berücksichtigten Compliance-Bereiche."
       },
       {
         "n": "02",
-        "heading": "Die Nachweise",
-        "text": "Je Pflicht: was das Gesetz verlangt, was wir auf Ihrer Website gefunden haben, und der konkrete Nachweis. Befunde zur Barrierefreiheit enthalten einen Bildausschnitt des fehlerhaften Elements auf Ihrer eigenen Seite, die verletzte {de|EN 301 549}-Anforderung und die Anzahl der Fundstellen."
+        "heading": "Befunde und Nachweise",
+        "text": "Jeder Befund nennt, was fehlt, wo es gefunden wurde, warum es relevant ist, welche Priorität gilt und welche Änderung empfohlen wird."
       },
       {
         "n": "03",
-        "heading": "Was die Behebung erfordert",
-        "text": "Alle Regelgruppen in Reihenfolge der Dringlichkeit, mit Aufwandsschätzung — damit Sie den Bericht an eine Entwicklerin geben und ein Angebot einholen können, bei uns oder anderswo."
+        "heading": "Was zu ändern ist",
+        "text": "Praktische Hinweise zur Behebung, gute und schlechte Umsetzungsbeispiele, soweit hilfreich, und eine klare Beschreibung, wie ElbeBridge bei Umsetzung oder Nachprüfung unterstützen kann."
       }
     ],
-    "note": "Automatisierte Tests finden nur einen Teil der Barrieren. Das steht so im Bericht selbst, denn ein sauberer automatischer Scan ist keine Aussage über Barrierefreiheit — und wir drucken ihn nicht als eine.",
-    "ctaHeading": "Einen Bericht für Ihre Website",
-    "ctaText": "Schicken Sie uns Ihre Website-Adresse. Wir melden uns innerhalb eines Werktags mit dem, was wir auf den öffentlichen Teilen gefunden haben.",
-    "ctaLabel": "Prüfung anfragen"
+    "note": "Jedes Audit wird vor Auslieferung der Befunde menschlich geprüft. Der Bericht bietet technische und administrative Hinweise; er ist keine Zertifizierung und keine Rechtsberatung.",
+    "ctaHeading": "Das v5 Audit für Ihre Website",
+    "ctaText": "Schicken Sie uns Ihre Website-Adresse. Wir antworten innerhalb eines Werktags, um den repräsentativen Umfang und die nächsten Schritte zu bestätigen.",
+    "ctaLabel": "Audit anfragen — 890 €"
   },
   "legal": [
     {
       "key": "impressum",
       "slug": "impressum",
       "title": "Impressum",
-      "metaDescription": "Anbieterkennzeichnung gemäß § 5 DDG für Elbebridge, Hamburg.",
+      "metaDescription": "Anbieterkennzeichnung gemäß § 5 DDG für ElbeBridge, Hamburg.",
       "intro": "Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz).",
       "sections": [
         {
@@ -432,7 +744,7 @@
       "key": "privacy",
       "slug": "datenschutz",
       "title": "Datenschutzerklärung",
-      "metaDescription": "Welche personenbezogenen Daten Elbebridge verarbeitet, zu welchem Zweck, auf welcher Rechtsgrundlage und welche Rechte Sie nach der DSGVO haben.",
+      "metaDescription": "Welche personenbezogenen Daten ElbeBridge verarbeitet, zu welchem Zweck, auf welcher Rechtsgrundlage und welche Rechte Sie nach der DSGVO haben.",
       "intro": "Wie wir personenbezogene Daten nach der Datenschutz-Grundverordnung (DSGVO) verarbeiten. Zuletzt aktualisiert am 15. August 2026.",
       "sections": [
         {
@@ -523,7 +835,7 @@
           "blocks": [
             {
               "type": "p",
-              "text": "Unsere Prüfung liest öffentlich zugängliche Seiten der von Ihnen benannten Website. Wir erfassen ausschließlich Unternehmensangaben — die juristische Person, ihre Anschrift und ihre Registernummern, wie sie im Impressum der jeweiligen Website veröffentlicht sind. Wir melden uns nicht an, geben keine Bestellungen auf, greifen auf nichts hinter einer Anmeldung zu und erfassen keine Angaben zu benannten natürlichen Personen. Unser Prüfwerkzeug beachtet robots.txt, weist sich im User-Agent aus und stellt höchstens eine Anfrage pro Sekunde."
+              "text": "Wenn Sie uns mit dem Audit eines Webshops beauftragen, prüfen wir öffentlich zugängliche Seiten im vereinbarten Umfang und verarbeiten die Unternehmensinformationen, die für die angefragten Befunde erforderlich sind. Wir melden uns nicht an, geben keine Bestellungen auf, greifen nicht auf geschützte Bereiche zu und erfassen nicht gezielt Kundendaten. Unser Crawler weist sich aus und beachtet robots.txt; weitere Informationen finden Sie auf unserer [Seite zur Crawler-Transparenz](/de/scanner)."
             }
           ]
         },
@@ -612,11 +924,11 @@
           "blocks": [
             {
               "type": "p",
-              "text": "Automatisierte Prüfung mit axe-core gegen die Regelsätze WCAG 2.2 AA und EN 301 549 — dieselbe Prüfung, die wir für Kunden durchführen — ergänzt um manuelle Tests: Bedienung ausschließlich mit der Tastatur bei abgezogener Maus sowie ein Durchgang mit dem Screenreader NVDA."
+              "text": "Wir bewerten diese Website regelmäßig mit einer Kombination aus technischen und praktischen Barrierefreiheitsprüfungen anhand der relevanten Anforderungen."
             },
             {
               "type": "p",
-              "text": "Automatisierte Werkzeuge erkennen nur einen Teil der Barrieren. Wir schreiben das in unsere eigene Erklärung aus demselben Grund, aus dem wir es in jeden Bericht schreiben: eine saubere automatisierte Prüfung ist keine Zusicherung von Barrierefreiheit."
+              "text": "Keine einzelne Prüfmethode kann vollständige Barrierefreiheit feststellen. Deshalb halten wir diese Erklärung aktuell und freuen uns über Hinweise auf Barrieren, die wir möglicherweise übersehen haben."
             }
           ]
         },
@@ -652,16 +964,16 @@
     {
       "key": "scanner",
       "slug": "scanner",
-      "title": "Über unseren Crawler",
-      "metaDescription": "ElbeBridgeComplianceBot: wer ihn betreibt, welche Seiten er abruft, wie Sie ihn in Ihren Logs erkennen und wie Sie ihn aussperren, wenn Sie das möchten.",
-      "intro": "Unser User-Agent verweist auf diese Seite, damit jeder, der ihn in seinen Logs findet, mit einem Klick sieht, wer wir sind und was wir getan haben.",
+      "title": "Crawler-Transparenz",
+      "metaDescription": "Wer ElbeBridgeComplianceBot betreibt, wie Sie ihn erkennen, welche Zugriffsgrenzen gelten und wie Sie ihn über robots.txt sperren.",
+      "intro": "Unser User-Agent verweist auf diese Seite, damit Website-Betreiber ElbeBridgeComplianceBot identifizieren, seine Grenzen nachvollziehen und uns direkt kontaktieren können.",
       "sections": [
         {
           "heading": "Wer ihn betreibt",
           "blocks": [
             {
               "type": "p",
-              "text": "Elbebridge GbR, Hamburg. Wir prüfen öffentliche Websites auf drei deutsche Marktpflichten und verkaufen die Befunde an den Website-Betreiber. Fragen zu einem Zugriff, den Sie gesehen haben, gerne an [hallo@elbebridge.com](mailto:hallo@elbebridge.com)."
+              "text": "Elbebridge GbR, Hamburg. Wir bieten German Market Compliance Audits für E-Commerce-Unternehmen an. Fragen zu einem Zugriff, den Sie gesehen haben, gerne an [hallo@elbebridge.com](mailto:hallo@elbebridge.com)."
             }
           ]
         },
@@ -678,39 +990,37 @@
             },
             {
               "type": "p",
-              "text": "Er nutzt eine echte Browser-Engine und keinen einfachen HTTP-Client, weil ein Shop, der seinen Katalog erst im Browser aufbaut, anders nicht prüfbar ist."
+              "text": "Die angegebene Adresse verweist auf diese Transparenzseite und unsere Kontaktdaten."
             }
           ]
         },
         {
-          "heading": "Welche Seiten er abruft",
+          "heading": "Zugriffsgrenzen",
           "blocks": [
             {
               "type": "p",
-              "text": "Einige wenige Seiten pro Website, einmalig:"
+              "text": "Der Crawler ist auf öffentlich zugängliche Seiten begrenzt, die für eine vereinbarte oder angefragte Prüfung relevant sind:"
             },
             {
               "type": "ul",
               "items": [
-                "Ihre robots.txt, vor allem anderen;",
-                "Ihre Startseite;",
-                "eine Produktseite, erreicht über die Startseite oder eine Kategorieseite;",
-                "die Seiten mit Ihren Unternehmensangaben — Impressum, Rechtliches, AGB, Datenschutz oder Über uns;",
-                "Ihre Erklärung zur Barrierefreiheit, sofern verlinkt."
+                "er beachtet robots.txt;",
+                "er greift nicht auf geschützte Bereiche oder Kundenkonten zu;",
+                "er sendet keine Formulare ab, legt nichts in den Warenkorb und gibt keine Bestellungen auf."
               ]
             },
             {
               "type": "p",
-              "text": "Er sendet nie ein Formular ab, meldet sich nie an, legt nichts in den Warenkorb und bestellt nichts."
+              "text": "Sollten Sie glauben, dass ein Zugriff außerhalb dieser Grenzen lag, kontaktieren Sie uns bitte; wir prüfen den Vorgang."
             }
           ]
         },
         {
-          "heading": "Wie oft und wie schnell",
+          "heading": "Verantwortungsvoller Einsatz",
           "blocks": [
             {
               "type": "p",
-              "text": "Höchstens eine Anfrage pro Sekunde an einen Host, und nur wenige Hosts gleichzeitig. Eine ganze Website ist meist in unter einer Minute fertig. Wir prüfen eine Website nicht erneut, solange sich nichts geändert hat oder der Betreiber uns darum bittet."
+              "text": "Der Zugriff bleibt auf die angefragte Prüfung beschränkt und ist darauf ausgelegt, unnötige Last für die Website zu vermeiden."
             }
           ]
         },
@@ -740,7 +1050,7 @@
           "blocks": [
             {
               "type": "p",
-              "text": "Was auch eine Besucherin Ihrer Website sehen könnte: den Text der gelesenen Seiten, einen Screenshot der geprüften Seiten, die Befunde zur Barrierefreiheit und die von Ihnen veröffentlichten Unternehmensangaben. Wir erheben keine personenbezogenen Daten Ihrer Kundinnen und Kunden und geben Befunde an niemanden außer Sie weiter. Einzelheiten in unserer [Datenschutzerklärung](/de/datenschutz)."
+              "text": "Wir speichern die Informationen, die für die angefragte Prüfung und unsere geschäftlichen Pflichten erforderlich sind. Audit-Befunde sind vertraulich und werden nicht an Dritte verkauft. Kundendaten erfassen wir nicht gezielt. Einzelheiten finden Sie in unserer [Datenschutzerklärung](/de/datenschutz)."
             }
           ]
         }

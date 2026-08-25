@@ -10,6 +10,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "audit": "node audit.cjs",
+    "links": "node scripts/links.cjs",
     "contrast": "node scripts/contrast.cjs",
     "clean": "rm -rf .astro dist"
   },
@@ -20,7 +21,9 @@
     "astro": "^7.2.2"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
     "@axe-core/playwright": "^4.10.2",
-    "playwright": "^1.56.0"
+    "playwright": "^1.56.0",
+    "typescript": "^6.0.3"
   }
 }
