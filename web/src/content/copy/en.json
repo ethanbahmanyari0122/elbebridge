@@ -22,7 +22,7 @@
       "alt": "ElbeBridge German Market Compliance Audit — know what applies, see what is missing and know what to fix."
     },
     "organisation": {
-      "legalName": "Elbebridge GbR",
+      "legalName": "ElbeBridge GbR",
       "streetAddress": "Stormarner Straße 41",
       "postalCode": "22049",
       "addressLocality": "Hamburg",
@@ -32,15 +32,15 @@
     },
     "eyebrow": "German Market Compliance Audit",
     "title": "German Market Compliance Audit | ElbeBridge",
-    "metaDescription": "A human-reviewed German ecommerce compliance audit covering accessibility, product safety, packaging, consumer rights and relevant product information.",
-    "email": "hallo@elbebridge.com",
+    "metaDescription": "A human-reviewed German e-commerce compliance audit covering accessibility, product safety, packaging, consumer rights and relevant product information.",
+    "email": "hallo@ElbeBridge.com",
     "footerNote": "© 2026 ElbeBridge, Hamburg. We don't track you: no cookies, no analytics, no third-party scripts.",
     "social": []
   },
   "nav": {
     "cta": {
       "href": "/#check",
-      "label": "Get your audit — €890"
+      "label": "Get your audit"
     },
     "primary": [
       {
@@ -73,7 +73,7 @@
     ]
   },
   "footer": {
-    "blurb": "One comprehensive review of the key requirements relevant to selling through ecommerce into Germany.",
+    "blurb": "One comprehensive review of the key requirements relevant to selling through e-commerce into Germany.",
     "location": "Hamburg, Germany",
     "columns": [
       {
@@ -114,7 +114,7 @@
           },
           {
             "href": "/#consumer-information",
-            "label": "Consumer Rights & Ecommerce"
+            "label": "Consumer Rights & e-commerce"
           },
           {
             "href": "/#product-information",
@@ -147,23 +147,23 @@
     ],
     "contact": {
       "heading": "Get in touch",
-      "text": "Questions before ordering? We are happy to help.",
-      "responseNote": "Response within one business day."
+      "text": "Questions? We are happy to help.",
+      "responseNote": "You get a response within one business day."
     },
     "bar": {
       "icon": "shield",
       "disclaimer": "Technical and administrative services, not legal advice.",
       "privacyNote": "We don't track you. No cookies, no analytics."
     },
-    "copyright": "© 2026 Elbebridge GbR · Hamburg. All rights reserved."
+    "copyright": "© 2026 ElbeBridge GbR · Hamburg. All rights reserved."
   },
   "home": {
-    "headline": "Selling into Germany? Know what's required before it becomes a problem.",
-    "lede": "ElbeBridge reviews your ecommerce presence across accessibility, product safety, packaging, consumer rights and product information — and gives you a clear plan to address the gaps.",
-    "heroCta": "Get your audit — €890",
+    "headline": "Selling into Germany? The requirements are easy to miss. We make sure you don't.",
+    "lede": "Shipping B2C to Germany comes with a lot of bureaucracy. We help you make sense of it and take care of the details, so you can focus on sales!",
+    "heroCta": "Get your audit",
     "heroCtaSecondary": {
       "href": "/#what-we-check",
-      "label": "See what we check"
+      "label": "What we check"
     },
     "trust": [
       "Human-reviewed",
@@ -184,7 +184,7 @@
         "short": "Accessible Online Shop",
         "code": "BFSG",
         "law": "{de|Barrierefreiheitsstärkungsgesetz} (BFSG) — applies since 28 June 2025",
-        "text": "Your shop, checkout and customer account have to be usable by people with disabilities, measured against {de|EN 301 549}, and you need a published accessibility statement. The exemption is under 10 staff and under €2m turnover.\n\nSince January 2026 the German market surveillance authority has been running its own checks, not only responding to complaints."
+        "text": "Your shop, checkout and customer account have to be usable by people with disabilities, measured against {de|EN 301 549}, and you need a published accessibility statement. If your company has over 10 employees or generates over €2m turnover, this isn't optional, so it's worth getting right from the start.\n\nSince January 2026 the German market surveillance authority has been running its own checks, not only responding to complaints."
       },
       {
         "icon": "person",
@@ -192,7 +192,7 @@
         "short": "Product info on the offer",
         "code": "GPSR",
         "law": "General Product Safety Regulation (EU) 2023/988, Article 19 — applies since 13 December 2024",
-        "text": "Every online offer has to show the manufacturer's name, postal address and electronic address.\n\nOnly where the manufacturer is not established in the EU must the offer additionally name the responsible person in the Union — an EU manufacturer is that operator itself."
+        "text": "Every online offer has to show the manufacturer's name, postal address and electronic address.\n\nIf the manufacturer is not established in the EU, you must also name the responsible person in the Union. If the manufacturer is EU-established, it is itself considered that responsible person, so no additional name is required."
       },
       {
         "icon": "box",
@@ -275,12 +275,12 @@
       "Remediation is a fixed quote priced from the findings. Quarterly monitoring, if you want it, is €290 per quarter."
     ],
     "contact": {
-      "heading": "Ready to know what your German-market setup needs?",
-      "intro": "Send us your webshop address. We respond within one business day to confirm the scope and next steps.",
-      "buttonLabel": "Get your audit — €890",
+      "heading": "Ready to stop digging for issues and focus on sales?",
+      "intro": "Send us your webshop link. We respond within one business day to confirm the scope and next steps.",
+      "buttonLabel": "Get your audit",
       "mailSubject": "German Market Compliance Audit request",
       "mailBody": "Website:\n\nCompany name:\n\nMain product categories:\n\nAnything you already know is missing (optional):\n",
-      "note": "This opens your email client with the details we need.\n\nNo form, no tracking and no third party in between — your message goes straight to our inbox."
+      "note": "This opens your email client with the details we need.\n\nNo form, no tracking and no third party. Your message goes straight to our inbox."
     },
     "peopleHeading": "About us",
     "peopleNote": "We started ElbeBridge to make selling in Germany feel less complicated. We help international businesses understand what applies, see what is missing and turn findings into practical changes.",
@@ -294,7 +294,7 @@
       ],
       "sectionLabels": {
         "decision": "GPSR · Article 19(a)/(b)",
-        "audiences": "B2C ecommerce · Germany",
+        "audiences": "B2C e-commerce · Germany",
         "process": "One audit · clear deliverables",
         "findings": "Fictional report preview",
         "why": "Why ElbeBridge",
@@ -304,12 +304,12 @@
         "eyebrow": "Your audit",
         "title": "Five compliance areas. One clear report.",
         "status": "Confidential",
-        "intro": "A comprehensive review of the key requirements relevant to selling through ecommerce into Germany.",
+        "intro": "A comprehensive review of the key requirements relevant to selling through e-commerce into Germany.",
         "checks": [
           { "label": "Accessibility / BFSG", "status": "Where applicable" },
           { "label": "GPSR / product safety", "status": "Reviewed" },
           { "label": "Packaging / LUCID", "status": "Reviewed" },
-          { "label": "Consumer rights / ecommerce", "status": "Reviewed" },
+          { "label": "Consumer rights / e-commerce", "status": "Reviewed" },
           { "label": "Product-specific information", "status": "Where applicable" }
         ],
         "footer": "Your audit findings stay between you and ElbeBridge."
@@ -323,7 +323,7 @@
           "icon": "accessibility",
           "kicker": "Accessibility & BFSG",
           "heading": "Make accessibility gaps visible",
-          "intro": "We review accessibility issues and the relevant accessibility requirements for your ecommerce presence, where applicable.",
+          "intro": "We review accessibility issues and the relevant accessibility requirements for your e-commerce presence, where applicable.",
           "bullets": [
             "Storefront accessibility and key customer journeys",
             "Relevant BFSG information requirements",
@@ -365,9 +365,9 @@
           "id": "consumer-information",
           "number": "04",
           "icon": "document",
-          "kicker": "Consumer Rights & Ecommerce",
+          "kicker": "Consumer Rights & e-commerce",
           "heading": "Make customer-facing information clear",
-          "intro": "We review the key ecommerce information German consumers rely on before and after purchase.",
+          "intro": "We review the key e-commerce information German consumers rely on before and after purchase.",
           "bullets": [
             "Complaint handling and trader contact information",
             "Statutory withdrawal rights and voluntary returns",
@@ -427,10 +427,10 @@
         {
           "kicker": "Non-EU brands entering Germany / the EU",
           "heading": "Clarity before market entry",
-          "text": "We determine which requirements are relevant to your products, ecommerce presence and route into the German and EU markets."
+          "text": "We determine which requirements are relevant to your products, e-commerce presence and route into the German and EU markets."
         },
         {
-          "kicker": "Retailers & ecommerce businesses",
+          "kicker": "Retailers & e-commerce businesses",
           "heading": "One review across the customer journey",
           "text": "We assess the relevant storefront, product-offer and consumer-information requirements for your role and agreed product scope."
         }
@@ -525,7 +525,7 @@
         {
           "icon": "pin",
           "heading": "Germany focused",
-          "text": "One focused review of the German-market requirements relevant to your ecommerce setup."
+          "text": "One focused review of the German-market requirements relevant to your e-commerce setup."
         },
         {
           "icon": "document",
@@ -548,13 +548,13 @@
         "title": "A fixed launch price for a defined scope",
         "amount": "€890",
         "amountNote": "fixed launch price",
-        "intro": "One comprehensive review of the key requirements relevant to selling through ecommerce into Germany.",
+        "intro": "One comprehensive review of the key requirements relevant to selling through e-commerce into Germany.",
         "includedHeading": "Included in the audit",
         "included": [
           "Accessibility & BFSG",
           "GPSR / product safety",
           "Packaging / LUCID",
-          "Consumer-rights ecommerce review",
+          "Consumer-rights e-commerce review",
           "Relevant product-information checks",
           "Evidence-backed findings",
           "Prioritised report",
@@ -563,18 +563,18 @@
         ],
         "scopeNote": "**Scope note:** One webshop. Scope confirmed before work begins. Large catalogues and specialist product requirements may require additional scoping.",
         "implementationNote": "Implementation and remediation are quoted separately.",
-        "cta": "Get your audit — €890"
+        "cta": "Get your audit"
       },
       "faqHeading": "Clear answers before you start",
       "faqIntro": "The essentials about relevance, scope and what happens next.",
       "faqs": [
         {
           "question": "I am already based in the EU. Is the audit relevant?",
-          "answer": "Yes. Which requirements apply depends on your business, products and role. Being EU-established changes some obligations but does not remove the German-market requirements relevant to your webshop."
+          "answer": "Yes. What applies depends on your business, your products, and your role, and getting that scope right is exactly the work we do for you. Being EU-established changes some obligations, but it doesn't remove the German-market requirements relevant to your webshop."
         },
         {
           "question": "What does the audit cover?",
-          "answer": "The agreed scope can cover accessibility and BFSG, GPSR and product safety, packaging and LUCID, consumer-rights ecommerce information and relevant product-specific information. Applicability depends on your business and products."
+          "answer": "The agreed scope can cover accessibility and BFSG, GPSR and product safety, packaging and LUCID, consumer-rights e-commerce information and relevant product-specific information. Applicability depends on your business and products."
         },
         {
           "question": "Does the audit cover my entire product catalogue?",
@@ -598,7 +598,7 @@
       "rows": [
         {
           "factor": "Accessibility findings",
-          "us": "Tested with axe-core against WCAG 2.2 AA and {de|EN 301 549}, then checked by hand with a keyboard and a screen reader — which is where most real barriers show up.",
+          "us": "Tested with axe-core against WCAG 2.2 AA and {de|EN 301 549}, then checked by hand with a keyboard and a screen reader. This is where most real barriers show up.",
           "ai": "Finds only what a machine can detect, and reports that as the whole picture."
         },
         {
@@ -608,7 +608,7 @@
         },
         {
           "factor": "GPSR product-offer information",
-          "us": "We look on the pages the details have to appear on — including a product page, not a category listing — and tell you what was there.",
+          "us": "We check that GPSR details appear on the product pages where they're required, not just a category listing, and tell you what we found.",
           "ai": "Reads the requirement. Does not open your product pages."
         },
         {
@@ -642,7 +642,7 @@
       {
         "n": "02",
         "heading": "Findings and evidence",
-        "text": "Each finding states what is missing, where it was found, why it matters, its priority and the recommended change."
+        "text": "Skip the guesswork and jargon. Every finding shows you what's missing, why it's worth fixing, and what to do about it."
       },
       {
         "n": "03",
@@ -670,7 +670,7 @@
             {
               "type": "address",
               "lines": [
-                "Elbebridge GbR",
+                "ElbeBridge GbR",
                 "Stormarner Straße 41",
                 "22049 Hamburg",
                 "Deutschland"
@@ -686,7 +686,7 @@
               "items": [
                 {
                   "term": "E-Mail",
-                  "desc": "[hallo@elbebridge.com](mailto:hallo@elbebridge.com)"
+                  "desc": "[hallo@ElbeBridge.com](mailto:hallo@ElbeBridge.com)"
                 },
                 {
                   "term": "Telefon",
@@ -760,10 +760,10 @@
             {
               "type": "address",
               "lines": [
-                "Elbebridge GbR",
+                "ElbeBridge GbR",
                 "Stormarner Straße 41",
                 "22049 Hamburg, Germany",
-                "[hallo@elbebridge.com](mailto:hallo@elbebridge.com) · [+49 151 20277581](tel:+4915120277581)"
+                "[hallo@ElbeBridge.com](mailto:hallo@ElbeBridge.com) · [+49 151 20277581](tel:+4915120277581)"
               ]
             }
           ]
@@ -871,7 +871,7 @@
             },
             {
               "type": "p",
-              "text": "To exercise any of these, write to [hallo@elbebridge.com](mailto:hallo@elbebridge.com). You do not need to give a reason and it costs you nothing."
+              "text": "To exercise any of these, write to [hallo@ElbeBridge.com](mailto:hallo@ElbeBridge.com). You do not need to give a reason and it costs you nothing."
             }
           ]
         },
@@ -900,7 +900,7 @@
       "slug": "accessibility",
       "title": "Accessibility statement",
       "metaDescription": "How accessible this website is, how we tested it, and how to tell us if something does not work for you.",
-      "intro": "We ask other companies about their accessibility statement, so here is ours. This statement covers the website at elbebridge.com and was last reviewed on 15 August 2026.",
+      "intro": "We ask other companies about their accessibility statement, so here is ours. This statement covers the website at ElbeBridge.com and was last reviewed on 15 August 2026.",
       "sections": [
         {
           "heading": "How accessible this site is",
@@ -949,7 +949,7 @@
           "blocks": [
             {
               "type": "p",
-              "text": "If you find a barrier on this site, email [hallo@elbebridge.com](mailto:hallo@elbebridge.com) and tell us what you were trying to do. We reply within five working days. If you need information from this site in a different format, ask and we will send it."
+              "text": "If you find a barrier on this site, email [hallo@ElbeBridge.com](mailto:hallo@ElbeBridge.com) and tell us what you were trying to do. We reply within one working days. If you need information from this site in a different format, ask and we will send it."
             }
           ]
         },
@@ -976,7 +976,7 @@
           "blocks": [
             {
               "type": "p",
-              "text": "Elbebridge GbR, Hamburg. We provide German Market Compliance Audits to ecommerce businesses. Write to [hallo@elbebridge.com](mailto:hallo@elbebridge.com) with any question about a request you have seen."
+              "text": "ElbeBridge GbR, Hamburg. We provide German Market Compliance Audits to e-commerce businesses. Write to [hallo@ElbeBridge.com](mailto:hallo@ElbeBridge.com) with any question about a request you have seen."
             }
           ]
         },
@@ -989,7 +989,7 @@
             },
             {
               "type": "p",
-              "text": "`Mozilla/5.0 (compatible; ElbeBridgeComplianceBot/1.0; +https://elbebridge.com/scanner)`"
+              "text": "`Mozilla/5.0 (compatible; ElbeBridgeComplianceBot/1.0; +https://ElbeBridge.com/scanner)`"
             },
             {
               "type": "p",
