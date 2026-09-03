@@ -214,7 +214,7 @@ function serve() {
       const a = document.querySelector('.contact-card a.btn');
       return a ? { href: a.getAttribute('href'), text: a.textContent.trim() } : null;
     });
-    ok(`${p} — contact button exists and is a mailto`, r && r.href.startsWith('mailto:hallo@elbebridge.com'), JSON.stringify(r && r.href.slice(0, 60)));
+    ok(`${p} — contact button exists and is a mailto`, r && r.href.startsWith('mailto:hallo@Elbebridge.com'), JSON.stringify(r && r.href.slice(0, 60)));
     ok(`${p} — subject is prefilled in the page language`,
        r && decodeURIComponent(r.href).includes(subject), decodeURIComponent((r && r.href) || '').slice(0, 120));
     // Ornella's point: half the list are brands, not shops, so we ask for a
