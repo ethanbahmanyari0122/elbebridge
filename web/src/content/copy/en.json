@@ -33,7 +33,7 @@
     "eyebrow": "German Market Compliance Audit",
     "title": "German Market Compliance Audit | ElbeBridge",
     "metaDescription": "A human-reviewed German e-commerce compliance audit covering accessibility, product safety, packaging, consumer rights and relevant product information.",
-    "email": "hallo@ElbeBridge.com",
+    "email": "hallo@elbebridge.com",
     "footerNote": "© 2026 ElbeBridge, Hamburg. We don't track you: no cookies, no analytics, no third-party scripts.",
     "social": []
   },
@@ -686,7 +686,7 @@
               "items": [
                 {
                   "term": "E-Mail",
-                  "desc": "[hallo@ElbeBridge.com](mailto:hallo@ElbeBridge.com)"
+                  "desc": "[hallo@elbebridge.com](mailto:hallo@elbebridge.com)"
                 },
                 {
                   "term": "Telefon",
@@ -763,7 +763,7 @@
                 "ElbeBridge GbR",
                 "Stormarner Straße 41",
                 "22049 Hamburg, Germany",
-                "[hallo@ElbeBridge.com](mailto:hallo@ElbeBridge.com) · [+49 151 20277581](tel:+4915120277581)"
+                "[hallo@elbebridge.com](mailto:hallo@elbebridge.com) · [+49 151 20277581](tel:+4915120277581)"
               ]
             }
           ]
@@ -871,7 +871,7 @@
             },
             {
               "type": "p",
-              "text": "To exercise any of these, write to [hallo@ElbeBridge.com](mailto:hallo@ElbeBridge.com). You do not need to give a reason and it costs you nothing."
+              "text": "To exercise any of these, write to [hallo@elbebridge.com](mailto:hallo@elbebridge.com). You do not need to give a reason and it costs you nothing."
             }
           ]
         },
@@ -949,7 +949,7 @@
           "blocks": [
             {
               "type": "p",
-              "text": "If you find a barrier on this site, email [hallo@ElbeBridge.com](mailto:hallo@ElbeBridge.com) and tell us what you were trying to do. We reply within one working days. If you need information from this site in a different format, ask and we will send it."
+              "text": "If you find a barrier on this site, email [hallo@elbebridge.com](mailto:hallo@elbebridge.com) and tell us what you were trying to do. We reply within one working days. If you need information from this site in a different format, ask and we will send it."
             }
           ]
         },
@@ -976,7 +976,7 @@
           "blocks": [
             {
               "type": "p",
-              "text": "ElbeBridge GbR, Hamburg. We provide German Market Compliance Audits to e-commerce businesses. Write to [hallo@ElbeBridge.com](mailto:hallo@ElbeBridge.com) with any question about a request you have seen."
+              "text": "ElbeBridge GbR, Hamburg. We provide German Market Compliance Audits to e-commerce businesses. Write to [hallo@elbebridge.com](mailto:hallo@elbebridge.com) with any question about a request you have seen."
             }
           ]
         },
