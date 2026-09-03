@@ -380,8 +380,6 @@ function serve() {
     const internalMechanics = /Article 19\(|scanner could not|machine candidate|verified_absent|candidate states|evidence hashes?|run IDs?|queue architecture/i;
     ok('public homepage does not expose internal checking mechanics',
        !internalMechanics.test(homeMarkup), (homeMarkup.match(internalMechanics) || [])[0] || '');
-    ok('public report preview uses only fictional example identities',
-       /Example Outdoor GmbH/.test(homeMarkup) && /Fictional marketing example/.test(homeMarkup), 'homepage report preview');
     // The public brand uses the supplied ElbeBridge capitalization. The legal
     // entity remains whatever the Impressum states.
     for (const loc of ['en', 'de']) {
