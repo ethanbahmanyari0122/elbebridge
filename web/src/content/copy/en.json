@@ -416,7 +416,7 @@
         }
       ],
       "decisionNote": "The audit does not turn “the scanner could not find it” directly into “you are non-compliant.” Apparent absence is reviewed by a person first.",
-      "audiencesHeading": "Designed around your business, not a legal template",
+      "audiencesHeading": "Designed around your business",
       "audiencesIntro": "Requirements vary depending on where your business is established, what you sell and your role in the supply chain. We determine the relevant audit scope.",
       "audiences": [
         {
@@ -437,7 +437,7 @@
       ],
       "audiencesCta": "**Not sure where to start?** We determine the relevant audit scope with you.",
       "processHeading": "One audit. Everything your team needs to act.",
-      "processIntro": "The result is not a legal lecture. It is a clear, prioritised view of the gaps across your agreed German-market scope.",
+      "processIntro": "The result is not a legal lecture. It is a clear, prioritized view of the gaps across your agreed German-market scope.",
       "deliverablesHeading": "A straightforward path from request to remediation",
       "deliverables": [
         { "icon": "search", "label": "What's missing", "text": "A clear description of each gap." },
@@ -463,7 +463,7 @@
           "number": "03",
           "icon": "document",
           "heading": "Receive your findings",
-          "text": "Get a clear, prioritised report with evidence and practical recommendations."
+          "text": "Get a clear, prioritized audit with evidence and practical recommendations."
         },
         {
           "number": "04",
@@ -473,10 +473,10 @@
         }
       ],
       "processTrust": "Every audit is human-reviewed before findings are delivered. Your audit findings stay between you and ElbeBridge.",
-      "findingsHeading": "See the report format before you commit",
+      "findingsHeading": "See the format of the audit before you commit",
       "findingsIntro": "This deliberately fictional marketing example shows how findings are structured. It contains no prospect, client or private audit data.",
       "findingsClient": "Example Outdoor GmbH · German Market Compliance Audit",
-      "findingsBadge": "Fictional marketing example",
+      "findingsBadge": "Fictional example",
       "findingLabels": {
         "issue": "What's missing",
         "evidence": "Where we found it",
@@ -519,8 +519,8 @@
           "help": "We can provide an implementation example for your content team."
         }
       ],
-      "whyHeading": "A focused partner for the German market",
-      "whyIntro": "ElbeBridge brings the relevant areas together and turns them into a report your team can use.",
+      "whyHeading": "A focused audit for the German market",
+      "whyIntro": "ElbeBridge brings the relevant areas together and turns them into an audit your team can easily use.",
       "advantages": [
         {
           "icon": "pin",
@@ -545,10 +545,10 @@
       ],
       "price": {
         "eyebrow": "German Market Compliance Audit",
-        "title": "A fixed launch price for a defined scope",
+        "title": "Get clarity on your compliance for a fixed price and a defined scope",
         "amount": "€890",
         "amountNote": "fixed launch price",
-        "intro": "One comprehensive review of the key requirements relevant to selling through e-commerce into Germany.",
+        "intro": "You’ll get a clear assessment of where your website meets the key requirements, where it falls short, and what needs to be addressed to sell through e-commerce in Germany.",
         "includedHeading": "Included in the audit",
         "included": [
           "Accessibility & BFSG",
